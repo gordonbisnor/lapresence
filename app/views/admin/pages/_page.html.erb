@@ -1,0 +1,10 @@
+<% div_for page, :class => cycle("even","odd") do %>
+
+	<div class="actions">
+		<%= link_to "Edit", edit_admin_page_path(page) %>
+	</div>
+
+	<%= link_to page.title, "/#{page.slug}", :target => "_blank" %> 
+	
+	
+<% end %>

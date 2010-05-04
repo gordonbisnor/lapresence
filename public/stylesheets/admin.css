@@ -1,0 +1,40 @@
+ol {
+	padding: 0;
+}
+li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+fieldset {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+input[type="text"], textarea {
+	border: 1px solid #CCC;
+	padding: 4px;
+}
+input, textarea, label {
+	display: block;
+	font-family: arial;
+}
+label {
+	margin-top: 1em;
+}
+form {
+	padding: 0;
+}
+div.page {
+	padding: 5px;
+}
+
+div.page.odd {
+	background-color: #EEE;
+}
+div.page:hover {
+	background-color: #CCC;
+}
+div.actions {
+	float: right;
+}

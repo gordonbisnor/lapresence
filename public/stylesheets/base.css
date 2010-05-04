@@ -1,0 +1,137 @@
+a {
+	color: rgb(102,	153,	204);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+body, html {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: rgb(51,103,204);
+}
+#container {
+	width: 775px;
+	margin: auto;
+	background-color: white;
+	border: 2px solid white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#banner {
+	border: 0 solid rgb(112,	82,	136);
+	border-bottom-width: 1px;
+	display: block;
+}
+#navigation_container {
+	border: 0 solid rgb(175,	149,	214);
+	border-top-width: 1px;
+}
+#navigation {
+	background-color:rgb(88,181,215);
+	color: white;
+	margin: auto;
+	text-align: center;
+	padding: 0;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-size: 14px;
+	font-variant: small-caps;
+}
+#footer_navigation {
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 5px;
+}
+#navigation li, #footer_navigation li {
+	display: inline;
+	margin: 0;
+}
+#footer {
+	border: 0 solid #CCC;
+	border-top-width: 1px;
+	padding-top: 7px;
+	text-align: center;
+	font-size: 14px;
+}
+div#credit {
+	font-size: 12px;
+	text-align: center;
+	margin-top: 5px;
+}
+#footer_navigation li a {
+	color: #666edf;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+#footer_navigation li a:hover {
+	color: #3333a2;
+}
+#navigation li a {
+	padding: 8px;
+	color: black;
+	text-decoration: none;
+}
+#navigation li.selected a {
+	color: white;
+}
+#navigation li a:hover {
+	color: white;
+}
+div#content {
+	padding: 15px;
+	width: 745px;
+	overflow: hidden;
+	height: 100%;
+	display: box;
+}
+.float_right {
+	float: right;
+	margin: 15px;
+}
+h1, h2, h3, dt, sup {
+	color: rgb(88,181,215);
+}
+h1 {
+	margin-top: 0.5em;
+	font-weight: normal;
+}
+h2 {
+	font-size: 20px;
+}
+h3 { 
+	font-size: 16px;
+	}
+h2 + h3 {
+	margin-top: 0;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0;
+	margin-bottom: 1em;
+}
+div.right_column {
+	background-color:rgb(88,181,215);
+ 	height: 100%;
+	overflow: hidden;
+	float: right;
+}
+div.left_column {
+	width: 500px;
+}
+dl.book_details dd {
+	margin-bottom: 5px;
+}
+
+blockquote {
+	font-style :italic;
+	margin-left: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+
+}

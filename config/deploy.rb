@@ -7,7 +7,7 @@ domain = 'lapresence.webfactional.com'
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 set :keep_releases, 4 
-set :rake, "/home/#{user}/webapps/#{application}/bin/rake"
+set :rake, "GEM_PATH=/home/lapresence/webapps/lapresence/gems:/home/lapresence/webapps/lapresence/gems/bin  /home/#{user}/webapps/#{application}/bin/rake"
 set :webfaction_username, "#{user}"
 set :user, user
 set :domain, domain

@@ -3,7 +3,7 @@ module ApplicationHelper
     
   def navigation
     NAVIGATION.map { |item|
-      content_tag :li, link_to(item[0], send("#{item[1]}_path")), :class => "#{'selected' if action_name == item[1]}" }.join('')
+      content_tag :li, link_to(item[0], send("#{item[1]}_path")), :class => "#{'selected' if @page.present? && @page.slug == item[1]}" }.join('')
   end
   
   # Sets the page title and outputs title if container is passed in.

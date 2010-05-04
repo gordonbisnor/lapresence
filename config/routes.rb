@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.bio "/bio", :controller => "pages", :action => "show", :id => "bio"
   
   map.connect "/pages/approche.html" ,:controller => "redirects", :action => "approche"
-  map.approche "/approche", :controller => "pages", :action => "approche"
+  map.approche "/approche", :controller => "pages", :action => "show", :id => "approche"
   
   map.connect "/pages/livre.html" ,:controller => "redirects", :action => "bibliographie"
   map.bibliographie "/bibliographie", :controller => "pages", :action => "show", :id => "bibliographie"

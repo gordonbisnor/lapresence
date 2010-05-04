@@ -18,7 +18,8 @@ body {
 	background-color: white;
 	border: 2px solid white;
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
+	padding-bottom: 4px;
 }
 #banner {
 	border: 0 solid rgb(112,	82,	136);
@@ -44,7 +45,10 @@ body {
 	font-size: 14px;
 	padding: 0;
 	margin: 0;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
+	border: 0 solid #CCC;
+	border-bottom-width: 1px;
+	padding-bottom: 9px;
 }
 #navigation li, #footer_navigation li {
 	display: inline;
@@ -53,11 +57,13 @@ body {
 #footer {
 	border: 0 solid #CCC;
 	border-top-width: 1px;
+	padding-bottom: 7px;
 	padding-top: 7px;
 	text-align: center;
 	font-size: 14px;
 }
 div#credit {
+	float: left;
 	font-size: 12px;
 	text-align: center;
 	margin-top: 5px;
@@ -82,15 +88,18 @@ div#credit {
 	color: white;
 }
 div#content {
-	padding: 15px;
-	width: 745px;
+	background-image: url('/images/gradient.png');
+	background-repeat: repeat-x;
+	padding: 25px;
+	width: 725px;
 	overflow: hidden;
 	height: 100%;
-	display: box;
+	padding-bottom: 30px;
 }
 .float_right {
 	float: right;
 	margin: 15px;
+
 }
 h1, h2, h3, dt, sup {
 	color: rgb(88,181,215);
@@ -120,6 +129,10 @@ div.right_column {
  	height: 100%;
 	overflow: hidden;
 	float: right;
+	margin-left: 15px;
+	margin-right: 0px;
+	padding: 15px;
+	margin-bottom: 30px;
 }
 div.left_column {
 	width: 500px;
@@ -134,4 +147,40 @@ blockquote {
 	padding-left: 10px;
 	padding-right: 10px;
 
+}
+div.right_column img {
+	display: block;
+	margin-bottom: 30px;
+}
+strong {
+	color: rgb(63,	112,	224);
+	font-weight: normal;
+}
+div#content ul { 
+	padding-left: 15px;
+	}
+div#content ul li {
+	list-style-type: circle;
+	margin-bottom: 0.5em;
+}
+div#content div.left_column img + img {
+	margin-left: 15px;
+}
+div#content div.left_column div.images {
+	margin-top: 35px;
+	margin-bottom: 25px;
+}
+div#post_footer {
+	margin: auto;
+	width: 775px;
+	text-align: right;
+	font-size: 12px;
+	padding-bottom: 30px;
+	color: #CCC;
+	color: rgba(255,255,255,0.4);
+	
+}
+div#post_footer a {
+	color: #CCC;
+	color: rgba(255,255,255,0.3);
 }

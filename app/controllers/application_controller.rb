@@ -7,4 +7,14 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+  
+  protected
+  
+  # Automatically respond with 404 for ActiveRecord::RecordNotFound
+  def record_not_found
+    render :file => File.join(RAILS_ROOT, 'public', '404.html'), :status => 404
+  end
+  
 end

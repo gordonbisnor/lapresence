@@ -15,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   map.ateliers "/ateliers", :controller => "pages", :action => "show", :id => "ateliers"
   
   map.connect "/pages/groupes.html" ,:controller => "redirects", :action => "groupes"
-  map.groupes "/groupes", :controller => "pages", :action => "groupes"
+  map.groupes "/groupes", :controller => "pages", :action => "show", :id => "groupes"
   
   map.connect "/pages/consultations.html" ,:controller => "redirects", :action => "consultations"
   map.consultations "/consultations", :controller => "pages", :action => "show", :id => "consultations"  
@@ -24,8 +24,11 @@ ActionController::Routing::Routes.draw do |map|
   map.coordonnees "/coordonnees", :controller => "pages", :action => "show", :id => "coordonnees"
   
   
-  map.connect "/pages/extrait_impre.html" ,:controller => "redirects", :action => "extrait_du_livre"
-  map.extrait_du_livre "/extrait_du_livre", :controller => "pages", :action => "extrait_du_livre"
+  map.connect "/pages/extrait_livre.html" ,:controller => "redirects", :action => "extrait_du_livre"
+  map.extrait_du_livre "/extrait_du_livre", :controller => "pages", :action => "show", :id => "extrait_du_livre"
+  
+  map.connect "/pages/extrait_impr.html" ,:controller => "redirects", :action => "extrait_impr"
+  map.extrait_impr "/extrait_impr", :controller => "pages", :action => "extrait_impr"
   
   map.namespace :admin do |admin|
     admin.resources :pages

@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
   config.gem 'formtastic'
   config.gem 'tiny_mce', :lib => 'tiny_mce', :source => 'gems.github.com'
   config.gem 'hoptoad_notifier'
+  config.gem "prawn"
   
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

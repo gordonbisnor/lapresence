@@ -66,12 +66,14 @@ div#credit {
 	float: left;
 	font-size: 12px;
 	text-align: center;
-	margin-top: 5px;
 }
 #footer_navigation li a {
 	color: #666edf;
 	padding-left: 7px;
 	padding-right: 7px;
+}
+#footer_navigation li.selected a {
+	color: black;
 }
 #footer_navigation li a:hover {
 	color: #3333a2;
@@ -133,6 +135,14 @@ div.right_column {
 	margin-right: 0px;
 	padding: 15px;
 	margin-bottom: 30px;
+	color: white;
+}
+h2#techniques {
+	padding-top: 20px;
+}
+div.right_column a {
+	color: white;
+	color: rgba(255,255,255,0.7);
 }
 div.left_column {
 	width: 500px;
@@ -183,4 +193,21 @@ div#post_footer {
 div#post_footer a {
 	color: #CCC;
 	color: rgba(255,255,255,0.3);
+}
+table {
+	border-collapse: collapse;
+}
+td, th {
+	padding: 15px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(88,181,215);
+	border-color: rgba(88,181,215,0.2);
+	
+}
+div.close {
+	float: right;
+}
+dl dd ul {
+	margin: 0;
 }

@@ -38,3 +38,25 @@ div.page:hover {
 div.actions {
 	float: right;
 }
+#flash-notice, #flash-warning, #flash-error {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #bbdbe0;
+	background: #ecf9ff url(../images/info.gif) 12px 12px no-repeat;
+	color: #0888c3;
+}
+#flash-warning, #flash-error {
+	border: 1px solid #e9c59b;
+	background: #ffecce url(../images/error.gif) 12px 12px no-repeat;
+	color: #e3302c;
+}
+.close {
+	-moz-opacity: 0.7;
+	opacity: 0.7;
+}
+.close:hover {
+	cursor: pointer;
+	-moz-opacity: 1;
+	opacity: 1;
+}

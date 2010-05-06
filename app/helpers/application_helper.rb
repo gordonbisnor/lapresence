@@ -18,7 +18,8 @@ module ApplicationHelper
   def flash_messages
     messages = []
     %w(notice warning error).each do |msg|
-      messages << content_tag(:div, html_escape(flash[msg.to_sym]), :id => "flash-#{msg}") unless flash[msg.to_sym].blank?
+      content = "<div class='close'><a href='#close'><img src='/images/close.png' alt=''/></a></div>" + html_escape(flash[msg.to_sym])
+      messages << content_tag(:div, content, :id => "flash-#{msg}", :class => "flash") unless flash[msg.to_sym].blank?
     end
     messages
   end

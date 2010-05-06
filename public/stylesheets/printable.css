@@ -1,0 +1,6 @@
+div.printable {
+	width: 640px;
+	margin: auto;
+	padding: 30px;
+	border: 1px solid black;
+}

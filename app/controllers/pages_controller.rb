@@ -13,8 +13,5 @@ class PagesController < ApplicationController
   def index
     render :template => "pages/index", :layout => false
   end
-  
-  def bio
-  end
-  
+    
 end

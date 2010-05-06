@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   
-  map.connect "admin", :controller => "admin/pages"
+  map.admin_dashboard "admin", :controller => "admin/pages"
   
   map.connect "/pages/bio.html" ,:controller => "redirects", :action => "bio"
   map.bio "/bio", :controller => "pages", :action => "show", :id => "bio"

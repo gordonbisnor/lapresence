@@ -60,3 +60,31 @@ div.actions {
 	-moz-opacity: 1;
 	opacity: 1;
 }
+#admin #footer {
+	margin-top: 40px;
+}
+#versions {
+	margin-top: 40px;
+	border-color: rgb(88,181,215);
+	border-style: solid;
+	border-width: 1px;
+}
+#versions h2 {
+	padding: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: rgb(88,181,215);
+	color: white;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+#versions p {
+	font-size: 14px;
+	margin-top: 0;
+}
+#versions .content {
+	padding: 15px;
+}
+#versions ul {
+	margin: 0;
+}

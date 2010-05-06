@@ -21,7 +21,7 @@
 			<%= javascript_include_tag 'jquery' %>
 			<%= javascript_include_tag 'admin' %>
 	</head>
-	<body>
+	<body id="admin">
 		<div id="container">
 			
 			<div id="header">
@@ -34,12 +34,15 @@
 			</div>
 			
 			<div id="content">
+				
 				<div>
-					La Présence Admin
+					<%= link_to "La Présence Admin", admin_dashboard_path %>
 					<hr />
+					<!--
 					<%= link_to "New Page", new_admin_page_path %>
 					<hr />
 				</div>
+				-->
 				<%= flash_messages %>
 				<%= yield :layout %>
 			</div>

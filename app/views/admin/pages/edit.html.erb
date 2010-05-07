@@ -1,13 +1,15 @@
-<%= title "Edit Page" , :h1 %>
+<%= title "Edit Page", :h1 %>
+<%= content_tag :h2, "#{ 'Viewing Version: ' + params[:version] if params[:version].present?}" %>
+
 <%= render :partial => "admin/pages/form" %>
 
 <div id="versions">
-	<h2>Previous Versions</h2>
+	<h2>Recent Versions</h2>
 	<div class="content">
-		<p>Click to view, then press “Update Page” to revert permanently to that version</p>
+		<p>Click to view version. Press “Update Page” to revert permanently to that version</p>
 		<ul>
-			<% @versions.each do |version| -%>
-				<li><%= link_to "Version #{version.number} - #{version.created_at.to_s(:long_ordinal)}", edit_admin_page_path(:version=>version.number) %></li>
+			<% @versions.each_with_index do |version,index| -%>
+				<li><%= link_to "Version #{version.number} - #{version.created_at.to_s(:long_ordinal)}", edit_admin_page_path(:version=>version.number) %> <%= " - Current Version" if index == 0 %></li>
 			<% end if @versions.present? -%>
 			<%= content_tag :li, "No versions yet" if @versions.blank? %>	
 			</ul>

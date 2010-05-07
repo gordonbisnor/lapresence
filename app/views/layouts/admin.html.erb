@@ -23,21 +23,11 @@
 	</head>
 	<body id="admin">
 		<div id="container">
-			
-			<div id="header">
-				<%= image_tag "banner.jpg", :alt => "La Présence", :id => "banner" %>
-				<div id="navigation_container">
-					<ul id="navigation">
-						<%= navigation %>
-					</ul>
-				</div>
-			</div>
-			
 			<div id="content">
-				
-				<div>
+				<div id="admin_header">
+					<div class="actions"><%= link_to "Go To Site", root_path %></div>
 					<%= link_to "La Présence Admin", admin_dashboard_path %>
-					<hr />
+				</div>
 					<!--
 					<%= link_to "New Page", new_admin_page_path %>
 					<hr />
@@ -46,18 +36,6 @@
 				<%= flash_messages %>
 				<%= yield :layout %>
 			</div>
-				<div id="footer">
-        	<ul id="footer_navigation">
-						<%= navigation %>
-					</ul>
-					<a href="mailto:pratiquer@lapresence.ca">Pratiquer@LaPresence.ca</a>
-				</div>
-			</div>
-			<div id="post_footer">
-						<div id="credit">
-							designer web : <a href="mailto:arti@endirect.qc.ca">Johanne Ratt&eacute;</a> 2008
-						</div>
-				<a href="/admin">Admin</a>
 			</div>
 	</body>
 </html>

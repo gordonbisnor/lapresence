@@ -14,7 +14,7 @@ class Admin::PagesController < ApplicationController
   def edit
     @page = Page.find(params[:id])
     @page.revert_to(params[:version].to_i) if params[:version].present?
-    @versions = @page.versions.reverse[1...6]
+    @versions = @page.versions.reverse[0...6]
   end
   
   def create

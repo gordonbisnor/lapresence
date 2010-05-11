@@ -213,3 +213,7 @@ div.close {
 dl dd ul {
 	margin: 0;
 }
+img { 
+	border-width: 0;
+	border-color: transparent;
+	}

@@ -11,5 +11,5 @@ div#container {
 	margin-top: 210px;
 }
 img {
-	border-width: 0;
+	border-width: 0!important;
 }

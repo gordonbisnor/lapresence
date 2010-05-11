@@ -10,3 +10,6 @@ div#container {
 	width: 809px;
 	margin-top: 210px;
 }
+img {
+	border-width: 0;
+}

@@ -175,7 +175,7 @@ div#content ul li {
 	list-style-type: circle;
 	margin-bottom: 0.5em;
 }
-div#content div.left_column img + img {
+div#content div.left_column img + img, div#content div.left_column a + a {
 	margin-left: 15px;
 }
 div#content div.left_column div.images {

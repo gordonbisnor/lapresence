@@ -23,4 +23,5 @@ TINY_MCE_OPTIONS = {
                              :paste_unindented_list_class  => "unindentedList",
                              :paste_convert_headers_to_strong => true,
                              :theme_advanced_buttons3_add => %w{ pastetext,pasteword,selectall,fullscreen, advimage }
+                             
                            }

@@ -1,6 +1,8 @@
 <%= title "Edit Page", :h1 %>
 <%= content_tag :h2, "#{ 'Viewing Version: ' + params[:version] if params[:version].present?}" %>
 
+<p><%= link_to "Open Page In New Window", "/#{@page.slug}", :target => "_blank" %> </p>
+
 <%= render :partial => "admin/pages/form" %>
 
 <div id="versions">

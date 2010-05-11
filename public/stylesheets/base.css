@@ -12,6 +12,8 @@ body, html {
 body {
 	background-color: rgb(51,103,204);
 	font-size: 16px;
+	font-family: times, serif;
+	line-height: 1.4em;
 }
 #container {
 	width: 775px;

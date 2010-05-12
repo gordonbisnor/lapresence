@@ -19,6 +19,9 @@
 			<!--[if lt IE 8]>
 				<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
 			<![endif]-->
+			<!--[if IE ]>
+				<%= stylesheet_link_tag "ie" %>
+			<![endif]-->
 	</head>
 	<body>
 		<div id="container">
@@ -37,18 +40,18 @@
 				<%= yield :layout %>
 			</div>
 		
-				<div id="footer">
-        	<ul id="footer_navigation">
-						<%= navigation %>
-					</ul>
-					<a href="mailto:pratiquer@lapresence.ca">Pratiquer@LaPresence.ca</a>
-				</div>
+			<div id="footer">
+       	<ul id="footer_navigation">
+					<%= navigation %>
+				</ul>
+				<a href="mailto:pratiquer@lapresence.ca">Pratiquer@LaPresence.ca</a>
 			</div>
-			<div id="post_footer">
-						<div id="credit">
-							designer web : <a href="mailto:arti@endirect.qc.ca">Johanne Ratt&eacute;</a> 2008
-						</div>
-				<a href="/admin">Admin</a>
+		</div>
+		<div id="post_footer">
+			<div id="credit">
+				designer web : <a href="mailto:arti@endirect.qc.ca">Johanne Ratt&eacute;</a> 2008
 			</div>
+			<a href="/admin">Admin</a>
+		</div>
 	</body>
 </html>

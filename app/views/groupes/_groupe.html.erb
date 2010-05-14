@@ -1,0 +1,36 @@
+<% div_for groupe do -%>
+	
+	<%= image_tag groupe.picture.url(:thumb), :class => "float_right" %>
+
+	<h2><%= link_to groupe.title, groupe %></h2>
+
+	<%= groupe.content %>
+
+	<dl>
+		<% if dates(groupe).present? -%>
+			<dt>Dates</dt> <dd><%= dates(groupe) %></dd>
+		<% end %>
+		<% if groupe.schedule.present? -%>
+			<dt>Horaire</dt> <dd><%= groupe.schedule %></dd>
+		<% end -%>
+		<% if groupe.location.present? -%>
+		<dt>Lieu</dt> <dd><%= groupe.location %></dd>
+		<% end -%>
+		<% if groupe.cost.present? -%>
+		<dt>Coût</dt> <dd><%= groupe.cost %></dd>
+		<% end -%>
+		<% if groupe.available_spots.present? -%>
+		<dt>Places limitées</dt> <dd><%= groupe.available_spots %></dd>
+		<% end -%>
+		<% if groupe.notes.present? -%>
+		<dt>Notes complémentaires</dt> <dd><%= groupe.notes %></dd>
+		<% end %>
+	</dl>
+
+	<p class="caption"><%= link_to "[ Haut ]", "#top" %></p>
+	
+<% end -%>
+
+
+
+

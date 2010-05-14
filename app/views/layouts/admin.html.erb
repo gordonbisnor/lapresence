@@ -9,30 +9,27 @@
 		<meta name="robots" content="all" />	
 		<meta name="resource-type" content="document" />
 		<meta name="MSSmartTagsPreventParsing" content="true" />
-		<meta name="Description" content="Lorraine Desmarais, Th&eacute;rapeute, animatrice, Healer, connaissance de soi, amour de soi, gu&eacute;rison spirituelle, l&acirc;cher prise.
-		" />
-		<meta name="Keywords" content="Abus, accompagnement, accueillir, agression, amour de soi, apprendre &agrave; s&rsquo;aimer, apprendre &agrave; s&rsquo;aimer, approche &eacute;nerg&eacute;tique, bien-&ecirc;tre, bio-&eacute;nergie, blessures, chemin de transformation, cheminement spirituel, c&oelig;ur, col&egrave;re, compassion, connaissance de soi, conscience, Core Energetics, couples, &eacute;motions, &eacute;nergie, enracinement, &eacute;veil, &eacute;motions, &eacute;nergie, enracinement, &eacute;veil, formation Barbara Brennan, groupe de travail, gu&eacute;rison, gu&eacute;rison cabalistique, gu&eacute;rison spirituelle, hakomi, Healer, Healing, holistique, int&eacute;gration, intimit&eacute;, joie, Kabbalistic  healing, Kabbalistique Healing, l&acirc;cher prise, lib&eacute;ration, libert&eacute;, m&eacute;ditation, mieux-&ecirc;tre, non-duelle, oui, pr&eacute;sence, r&eacute;alit&eacute;, Rebirth, relations, Releasing, renaissance, respiration, sagesse, spiritualit&eacute;, structures de, d&eacute;fenses, th&eacute;rapie , th&eacute;rapie des champs &eacute;nerg&eacute;tiques, th&eacute;rapie psycho-corporelle
-		th&eacute;rapie psycho-spirituelle, Totalement humain, totalement divin, transformation, v&eacute;rit&eacute;, vibrant, vivant, Lorraine Desmarais, Desmarais, Dipl&ocirc;m&eacute;e de Barbara Brennan, Integrated Kabbalistic Healing
-		" />
-		<meta name="" content="Accompagnement, th&eacute;rapie psycho-corporelle, healing, Barbara Brennan, La Présence" />
 			<%= stylesheet_link_tag 'base' %>
 			<%= stylesheet_link_tag 'admin' %>
+			<%= stylesheet_link_tag "ui-lightness/jquery-ui-1.8.1.custom" %>
 			<%= include_tiny_mce_if_needed %>
 			<%= javascript_include_tag 'jquery' %>
+			<%= javascript_include_tag "jquery-ui-1.8.1.custom.min" %>
 			<%= javascript_include_tag 'admin' %>
 	</head>
 	<body id="admin">
 		<div id="container">
-			<div id="content">
 				<div id="admin_header">
 					<div class="actions"><%= link_to "Go To Site", root_path %></div>
-					<%= link_to "La Présence Admin", admin_dashboard_path %>
+					<%= link_to "La Présence Admin", admin_dashboard_path, :id => "home_link" %>
+					<ul id="nav">
+						<li><%= link_to "Pages", admin_pages_path, :class => "#{'selected' if controller_name == 'pages'}" %></li>
+						<li><%= link_to "Ateliers", admin_ateliers_path, :class => "#{'selected' if controller_name == 'ateliers'}" %></li>
+						<li><%= link_to "Groupes", admin_groupes_path, :class => "#{'selected' if controller_name == 'groupes'}" %></li>
+					</ul>
 				</div>
-					<!--
-					<%= link_to "New Page", new_admin_page_path %>
-					<hr />
-				</div>
-				-->
+			<div id="content">
+			
 				<%= flash_messages %>
 				<%= yield :layout %>
 			</div>

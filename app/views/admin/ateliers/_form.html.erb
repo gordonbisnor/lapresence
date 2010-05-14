@@ -1,0 +1,32 @@
+<%= javascript_include_tag "admin/events" %>
+
+<% semantic_form_for [:admin,@atelier], :html => {:multipart=>true} do |form| %>
+
+<ul class="tabs">
+	<li><a href="#details_tab" class="selected">Details</a></li>
+	<li><a href="#content_tab">Content</a></li>
+	<li><a href="#notes_tab">Final Notes</a></li>
+</ul>
+
+		<% form.inputs :title => "Details", :id => "details_tab", :class =>"tab" do %>
+			<%= form.input :title, :required => false %>
+			<%= form.input :start_date, :as => :string, :required => false, :input_html=>{:class=>"datepicker"} %>
+			<%= form.input :end_date, :as => :string, :required => false,:input_html=>{:class=>"datepicker"} %>
+			<%= form.input :location, :required => false %>
+			<%= form.input :cost, :required => false %>
+			<%= form.input :available_spots, :required => false %>
+			<%= form.input :schedule, :required => false %>
+			<%= form.input :picture, :required => false %>
+		<% end %>
+	
+		<% form.inputs :title => "Content", :id => "content_tab", :class => "tab"  do %>
+			<%= form.input :content, :required => false,  :input_html => { :class => "mceEditor", :style=>"width:680px;height:500px" } %>
+		<% end %>
+		
+		<% form.inputs :title => "Final Notes", :id => "notes_tab", :class => "tab" do %>
+			<%= form.input :notes, :required => false,  :input_html => { :class => "mceEditor", :style=>"width:680px;height:500px" } %>
+		<% end %>
+	
+		<%= form.buttons %>
+		
+<% end %>

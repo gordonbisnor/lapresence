@@ -1,0 +1,36 @@
+<% div_for atelier do -%>
+
+	<%= image_tag atelier.picture.url(:thumb), :class => "float_right" %>
+
+	<h2><%= link_to atelier.title, atelier %></h2>
+
+	<%= atelier.content %>
+
+	<dl>
+		<% if dates(atelier).present? -%>
+			<dt>Dates</dt> <dd><%= dates(atelier) %></dd>
+		<% end %>
+		<% if atelier.schedule.present? -%>
+			<dt>Horaire</dt> <dd><%= atelier.schedule %></dd>
+		<% end -%>
+		<% if atelier.location.present? -%>
+		<dt>Lieu</dt> <dd><%= atelier.location %></dd>
+		<% end -%>
+		<% if atelier.cost.present? -%>
+		<dt>Coût</dt> <dd><%= atelier.cost %></dd>
+		<% end -%>
+		<% if atelier.available_spots.present? -%>
+		<dt>Places limitées</dt> <dd><%= atelier.available_spots %></dd>
+		<% end -%>
+		<% if atelier.notes.present? -%>
+		<dt>Notes complémentaires</dt> <dd><%= atelier.notes %></dd>
+		<% end %>
+	</dl>
+	
+	<p class="caption"><%= link_to "[ Haut ]", "#top" %></p>	
+	
+<% end -%>
+
+
+
+

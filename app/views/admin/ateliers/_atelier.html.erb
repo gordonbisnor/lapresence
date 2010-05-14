@@ -1,0 +1,9 @@
+<% div_for atelier, :class => "item #{cycle("even","odd")}" do %>
+
+	<div class="actions">
+		<%= link_to "Edit", edit_admin_atelier_path(atelier) %>
+	</div>
+
+	<%= link_to atelier.title, atelier, :target => "_blank" %> 
+	
+<% end %>

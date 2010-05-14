@@ -1,0 +1,2 @@
+class Atelier < Event
+end

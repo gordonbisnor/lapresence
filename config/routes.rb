@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :events
   
-  map.admin_dashboard "admin", :controller => "admin/pages"
+  map.admin_dashboard "admin", :controller => "admin/dashboard"
   
   map.connect "/pages/bio.html" ,:controller => "redirects", :action => "bio"
   map.bio "/bio", :controller => "pages", :action => "show", :id => "bio"
@@ -12,10 +13,10 @@ ActionController::Routing::Routes.draw do |map|
   map.bibliographie "/bibliographie", :controller => "pages", :action => "show", :id => "bibliographie"
   
   map.connect "/pages/ateliers.html" ,:controller => "redirects", :action => "ateliers"
-  map.ateliers "/ateliers", :controller => "pages", :action => "show", :id => "ateliers"
+  map.resources :ateliers
   
   map.connect "/pages/groupes.html" ,:controller => "redirects", :action => "groupes"
-  map.groupes "/groupes", :controller => "pages", :action => "show", :id => "groupes"
+  map.resources :groupes
   
   map.connect "/pages/consultations.html" ,:controller => "redirects", :action => "consultations"
   map.consultations "/consultations", :controller => "pages", :action => "show", :id => "consultations"  
@@ -31,7 +32,10 @@ ActionController::Routing::Routes.draw do |map|
   map.extrait_impr "/extrait_impr", :controller => "pages", :action => "extrait_impr"
   
   map.namespace :admin do |admin|
+    admin.resources :dashboard, :only => "index"
     admin.resources :pages
+    admin.resources :ateliers
+    admin.resources :groupes
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,6 @@
+<h1>Groupes</h1>
+
+<p class="new_item"><%= link_to 'New Item', new_admin_groupe_path %></p>
+
+<%= render :partial => "admin/groupes/groupe", :collection => @groupes %>
+

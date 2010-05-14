@@ -1,0 +1,2 @@
+class Groupe < Event 
+end

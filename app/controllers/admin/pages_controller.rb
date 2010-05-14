@@ -1,7 +1,4 @@
-class Admin::PagesController < ApplicationController
-  layout 'admin'
-  before_filter :verifies_admin
-  uses_tiny_mce :only => [:new,:edit], :options => TINY_MCE_OPTIONS
+class Admin::PagesController < Admin::AdminController
   
   def index
     @pages = Page.all
@@ -44,13 +41,5 @@ class Admin::PagesController < ApplicationController
     @page.destroy
     redirect_to admin_pages_path
   end
-  
-  private
-    
-    def verifies_admin
-      authenticate_or_request_with_http_basic do |username, password|
-        username == "lap" && password == "7,desmarais,1."
-      end
-    end
   
 end

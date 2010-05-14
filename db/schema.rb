@@ -9,7 +9,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100506194142) do
+ActiveRecord::Schema.define(:version => 20100513234339) do
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "location"
+    t.string   "schedule"
+    t.string   "cost"
+    t.string   "type"
+    t.text     "content"
+    t.text     "notes"
+    t.string   "picture_file_name"
+    t.string   "picture_file_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "available_spots"
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "title"

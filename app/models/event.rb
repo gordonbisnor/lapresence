@@ -1,3 +1,14 @@
 class Event < ActiveRecord::Base
   has_attached_file :picture, :styles => { :thumb => "200x1000>" }
+  
+  def dates 
+     if start_date.present? && end_date.present?
+     "#{start_date} - #{end_date}"
+     elsif start_date.present?
+       start_date
+     else
+       nil
+     end
+   end
+  
 end

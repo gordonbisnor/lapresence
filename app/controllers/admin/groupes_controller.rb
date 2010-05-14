@@ -77,9 +77,10 @@ class Admin::GroupesController < Admin::AdminController
   def destroy
     @groupe = Groupe.find(params[:id])
     @groupe.destroy
+    flash[:notice] = 'Groupe was deleted.'
 
     respond_to do |format|
-      format.html { redirect_to(groupes_url) }
+      format.html { redirect_to(admin_groupes_path) }
       format.xml  { head :ok }
     end
   end

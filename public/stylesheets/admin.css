@@ -43,6 +43,9 @@ div.actions {
 	float: left;
 	margin-right: 20px;
 }
+div.actions a {
+	margin-right: 20px;
+}
 #flash-notice, #flash-warning, #flash-error {
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -209,5 +212,4 @@ fieldset.buttons {
 #page_form fieldset {
 	padding: 0;
 	border-width: 0;
-	
 }

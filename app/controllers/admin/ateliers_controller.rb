@@ -77,9 +77,10 @@ class Admin::AteliersController < Admin::AdminController
   def destroy
     @atelier = Atelier.find(params[:id])
     @atelier.destroy
+    flash[:notice] = 'Atelier was deleted.'
 
     respond_to do |format|
-      format.html { redirect_to(ateliers_url) }
+      format.html { redirect_to(admin_ateliers_path) }
       format.xml  { head :ok }
     end
   end

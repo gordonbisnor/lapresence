@@ -17,10 +17,10 @@
 	<% if @atelier.cost.present? -%>
 	<dt>Coût</dt> <dd><%= @atelier.cost %></dd>
 	<% end -%>
-	<% if atelier.available_spots.present? -%>
-	<dt>Places limitées</dt> <dd><%= atelier.available_spots %></dd>
+	<% if @atelier.available_spots.present? -%>
+	<dt>Places limitées</dt> <dd><%= @atelier.available_spots %></dd>
 	<% end -%>
-	<% if atelier.notes.present? -%>
-	<dt>Notes complémentaires</dt> <dd><%= atelier.notes %></dd>
+	<% if @atelier.notes.present? -%>
+	<dt>Notes complémentaires</dt> <dd><%= @atelier.notes %></dd>
 	<% end %>
 </dl>

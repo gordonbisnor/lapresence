@@ -17,10 +17,10 @@
 	<% if @groupe.cost.present? -%>
 	<dt>Coût</dt> <dd><%= @groupe.cost %></dd>
 	<% end -%>
-	<% if groupe.available_spots.present? -%>
-	<dt>Places limitées</dt> <dd><%= groupe.available_spots %></dd>
+	<% if @groupe.available_spots.present? -%>
+	<dt>Places limitées</dt> <dd><%= @groupe.available_spots %></dd>
 	<% end -%>
-	<% if groupe.notes.present? -%>
-	<dt>Notes complémentaires</dt> <dd><%= groupe.notes %></dd>
+	<% if @groupe.notes.present? -%>
+	<dt>Notes complémentaires</dt> <dd><%= @groupe.notes %></dd>
 	<% end %>
 </dl>

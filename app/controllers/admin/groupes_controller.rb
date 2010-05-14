@@ -84,4 +84,12 @@ class Admin::GroupesController < Admin::AdminController
       format.xml  { head :ok }
     end
   end
+  
+  def sort
+    params[:groupes].each_with_index do |id, pos|
+      Groupe.find(id).update_attribute(:position, pos+1)
+    end
+    render :nothing => true
+  end  
+  
 end

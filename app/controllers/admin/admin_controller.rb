@@ -2,7 +2,7 @@ class Admin::AdminController < ApplicationController
   layout 'admin'
   before_filter :verifies_admin
   uses_tiny_mce :only => [:new,:edit], :options => TINY_MCE_OPTIONS
-
+  
   private
     
     def verifies_admin

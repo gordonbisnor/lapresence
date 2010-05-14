@@ -84,4 +84,12 @@ class Admin::AteliersController < Admin::AdminController
       format.xml  { head :ok }
     end
   end
+  
+  def sort
+    params[:ateliers].each_with_index do |id, pos|
+      Atelier.find(id).update_attribute(:position, pos+1)
+    end
+    render :nothing => true
+  end
+  
 end

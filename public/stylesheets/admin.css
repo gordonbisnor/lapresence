@@ -1,3 +1,8 @@
+div#ateliers div:hover,
+div#groupes div:hover
+ {
+	cursor: move!important;
+}
 body {
 	font-size: 12px;
 }

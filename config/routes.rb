@@ -34,8 +34,8 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.resources :dashboard, :only => "index"
     admin.resources :pages
-    admin.resources :ateliers
-    admin.resources :groupes
+    admin.resources :ateliers, :collection => "sort"
+    admin.resources :groupes, :collection => "sort"
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

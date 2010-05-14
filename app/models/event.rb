@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  default_scope :order => "position ASC"
   has_attached_file :picture, :styles => { :thumb => "200x1000>" }
   
   def dates 

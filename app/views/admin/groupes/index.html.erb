@@ -2,5 +2,10 @@
 
 <p class="new_item"><%= link_to 'New Item', new_admin_groupe_path %></p>
 
-<%= render :partial => "admin/groupes/groupe", :collection => @groupes %>
+<p>Change item order by dragging and dropping them into place (the “move” icon is visible to indicate that the item is draggable)</p>
 
+<div id="groupes">
+	<%= render :partial => "admin/groupes/groupe", :collection => @groupes %>
+</div>
+
+<%= sortable_element('groupes', :url =>{ :controller => 'groupes', :action => 'sort' }) %>

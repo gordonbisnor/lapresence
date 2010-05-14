@@ -206,3 +206,8 @@ legend {
 fieldset.buttons {
 	border-width: 0;
 }
+#page_form fieldset {
+	padding: 0;
+	border-width: 0;
+	
+}

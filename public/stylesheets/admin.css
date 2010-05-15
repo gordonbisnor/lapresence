@@ -56,12 +56,12 @@ div.actions a {
 	margin-bottom: 10px;
 	padding: 10px;
 	border: 1px solid #bbdbe0;
-	background: #ecf9ff url(../images/info.gif) 12px 12px no-repeat;
+	background: #ecf9ff url(/images/info.gif) 12px 12px no-repeat;
 	color: #0888c3;
 }
 #flash-warning, #flash-error {
 	border: 1px solid #e9c59b;
-	background: #ffecce url(../images/error.gif) 12px 12px no-repeat;
+	background: #ffecce url(/images/error.gif) 12px 12px no-repeat;
 	color: #e3302c;
 }
 .close {

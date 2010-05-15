@@ -10,6 +10,6 @@ cucumber:
   <<: *non_production_settings
   
 production:
-  site_url: http://www.example.com
+  site_url: http://www.lapresence.ca
   site_name: La Présence
-  admin_email: bort@bort.com
+  admin_email: eakesj@joneakes.com

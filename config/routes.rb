@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :images
+
   map.resources :events
   
   map.admin_dashboard "admin", :controller => "admin/dashboard"
@@ -34,6 +36,7 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.resources :dashboard, :only => "index"
     admin.resources :pages
+    admin.resources :images
     admin.resources :ateliers, :collection => "sort"
     admin.resources :groupes, :collection => "sort"
   end

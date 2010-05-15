@@ -1,0 +1,13 @@
+<dl>
+  <dt>Name</dt>
+  <dd><%=h @image.name %></dd>
+  <dt>URL:</dt>
+  <dd><%= link_to @image.url, @image.url %></dd>
+</dl>
+
+<%= image_tag(@image.attachment.url) %>
+
+<p id="submit_buttons">
+	<%= link_to 'Edit', edit_admin_image_path(@image), :class => "submit" %>
+	<%= link_to 'Back', admin_images_path, :class => "submit" %>
+</p>

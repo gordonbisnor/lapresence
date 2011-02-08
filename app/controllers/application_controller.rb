@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   before_filter :core_redirect
   
   def core_redirect
-    redirect_to formation_path and return if request.domain =~ /coreenergeticsmontreal/ && !(request.request_uri =~ /formation/)
+    redirect_to "http://www.lapresence.ca/formation" and return if request.domain =~ /coreenergeticsmontreal/ && !(request.request_uri =~ /formation/)
   end
   
   protected

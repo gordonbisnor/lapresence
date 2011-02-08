@@ -6,7 +6,7 @@ NAVIGATION = [
 	["Bibliographie", "bibliographie"],
 	["Les Ateliers", "ateliers"],
 	["Les Groupes", "groupes"],
-	["Consultations Privées", "consultations"],
+	["Formation", "formation"],
 	["Coordonnées", "coordonnees"]
 ]
 

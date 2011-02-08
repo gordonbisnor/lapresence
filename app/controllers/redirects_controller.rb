@@ -21,7 +21,7 @@ class RedirectsController < ApplicationController
   end  
 
   def consultations
-    moved_to consultations_path
+    moved_to formation_path
   end
   
   def coordonnees

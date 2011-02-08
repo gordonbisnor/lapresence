@@ -20,8 +20,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/pages/groupes.html" ,:controller => "redirects", :action => "groupes"
   map.resources :groupes
   
-  map.connect "/pages/consultations.html" ,:controller => "redirects", :action => "consultations"
-  map.consultations "/consultations", :controller => "pages", :action => "show", :id => "consultations"  
+  map.connect "/pages/consultations.html" ,:controller => "redirects", :action => "formation"
+  map.consultations "/formation", :controller => "pages", :action => "show", :id => "formation"  
   
   map.connect "/pages/contact.html" ,:controller => "redirects", :action => "coordonnees"
   map.coordonnees "/coordonnees", :controller => "pages", :action => "show", :id => "coordonnees"

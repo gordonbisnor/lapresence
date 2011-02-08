@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+  before_filter :core_redirect
+  
+  def core_redirect
+    redirect_to formation_path and return if request.domain =~ /coreenergeticsmontreal/ && !(request.request_uri =~ /formation/)
+  end
   
   protected
   

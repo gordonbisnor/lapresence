@@ -1,4 +1,6 @@
 theme: advanced
+theme_advanced_font_sizes: "10px,12px,14px,16px,24px,36px,48px"
+theme_advanced_buttons1_add : "fontselect,fontsizeselect,forecolor"
 theme_advanced_resizing: true
 theme_advanced_resize_horizontal: false
 paste_create_paragraphs: false
@@ -8,14 +10,9 @@ paste_auto_cleanup_on_paste: true
 paste_convert_middot_lists: false
 paste_unindented_list_class: "unindentedList"
 paste_convert_headers_to_strong: true
- plugins:
- - table
- - fullscreen
- - paste
 theme_advanced_buttons3_add:
   - pastetext
   - pasteword
   - selectall
   - fullscreen
   - advimage
-                            

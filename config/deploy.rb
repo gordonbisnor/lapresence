@@ -1,8 +1,16 @@
+require "bundler/capistrano"
+
 user = 'lapresence'
 password = "a37df06c"
 application = "lapresence"
 domain = 'lapresence.webfactional.com'
 
+set :default_environment, {
+  'GEM_PATH' => "/home/lapresence/webapps/lapresence/gems/bin",
+  "GEM_HOME" => "/home/lapresence/webapps/lapresence/gems",
+  'PATH' => "/home/lapresence/webapps/lapresence/bin:/usr/local/bin:/bin:/usr/bin",
+  'BUNDLE_PATH' => '/home/lapresence/webapps/lapresence/bin'  
+}
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true

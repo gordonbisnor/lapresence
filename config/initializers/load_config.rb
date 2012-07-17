@@ -6,7 +6,7 @@ NAVIGATION = [
 	["Bibliographie", "bibliographie"],
 	["Les Ateliers", "ateliers"],
 	["Les Groupes", "groupes"],
-	["Formation", "formation"],
+	["Formation", "http://www.coeurenergetique.ca/formation"],
 	["Coordonnées", "coordonnees"]
 ]
 

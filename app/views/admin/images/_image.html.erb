@@ -1,7 +1,7 @@
 <tr>
 	<td><%= link_to image_tag(image.attachment.url(:thumb)), admin_image_path(image) %></td>
   <td><%=h image.name %></td>
-  <td><%= link_to image.url, image.url %></td>
+  <td><%= link_to 'Link', image.url %></td>
   <td><%= link_to 'Edit', edit_admin_image_path(image) %></td>
   <td><%= link_to 'Delete', admin_image_path(image), :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>

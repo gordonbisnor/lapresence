@@ -2,25 +2,26 @@ require "bundler/capistrano"
 
 user = 'lapresence'
 password = "a37df06c"
-application = "lapresence"
+application = "lap"
 domain = 'lapresence.webfactional.com'
 
+set :deploy_to, "/home/#{user}/webapps/#{application}/#{application}"
+
 set :default_environment, {
-  'GEM_PATH' => "/home/lapresence/webapps/lapresence/gems/bin",
-  "GEM_HOME" => "/home/lapresence/webapps/lapresence/gems",
-  'PATH' => "/home/lapresence/webapps/lapresence/bin:/usr/local/bin:/bin:/usr/bin",
-  'BUNDLE_PATH' => '/home/lapresence/webapps/lapresence/bin'  
+  'GEM_PATH' => "/home/lapresence/webapps/lap/gems/bin",
+  'GEM_HOME' => "/home/lapresence/webapps/lap/gems",
+  'PATH' => '/home/lapresence/webapps/lap/bin:$PATH'
 }
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 set :keep_releases, 4 
-set :rake, "GEM_PATH=/home/lapresence/webapps/lapresence/gems:/home/lapresence/webapps/lapresence/gems/bin  /home/#{user}/webapps/#{application}/bin/rake"
+set :rake, "GEM_PATH=/home/lapresence/webapps/lap/gems:/home/lapresence/webapps/lap/gems/bin  /home/#{user}/webapps/#{application}/bin/rake"
 set :webfaction_username, "#{user}"
 set :user, user
 set :domain, domain
 set :application, "#{application}"
-set :repository,  "#{user}@#{domain}:/home/#{user}/git/#{application}"
+set :repository,  "#{user}@#{domain}:/home/#{user}/git/lapresence"
 set :scm, :git
 set :deploy_via, :checkout 
 set :scm_command, "/home/#{user}/bin/git"
@@ -32,7 +33,6 @@ set :use_sudo, false
 set :branch, "master"
 set :scm_verbose, true
 set :git_shallow_clone, 1
-set :deploy_to, "/home/#{user}/webapps/#{application}/#{application}"
 set :group_writable, false     
  
 role :app, domain

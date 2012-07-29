@@ -1,9 +1,6 @@
-<% div_for groupe, :class => "item #{cycle("even","odd")}" do %>
-
+<div class="item <%= cycle("even","odd") %>" id="sort_item_<%= groupe.id %>">
 	<div class="actions">
 		<%= link_to "Edit", edit_admin_groupe_path(groupe) %> <%= link_to "Delete", admin_groupe_path(groupe), :method => :delete, :confirm => "Are you sure?" %>
 	</div>
-
 	<%= link_to groupe.title, groupe, :target => "_blank" %> 
-	
-<% end %>
+</div>

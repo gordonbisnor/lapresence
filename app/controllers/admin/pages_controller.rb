@@ -17,8 +17,7 @@ class Admin::PagesController < Admin::AdminController
   def create
     @page = Page.new(params[:page])
     if @page.save
-      flash[:notice] = "Page Created"
-      redirect_to admin_pages_path
+      redirect_to admin_pages_path, :notice => "Page was successfully created."
     else
       flash[:error] = "Error Updating Page"
       render :template => "admin/pages/new"
@@ -29,8 +28,7 @@ class Admin::PagesController < Admin::AdminController
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
       expire(@page)
-      flash[:notice] = "Page Updated"
-      redirect_to admin_pages_path
+      redirect_to admin_pages_path, :notice => "Page was successfully updated."
     else
       flash[:error] = "Error Updating Page"
       render :template => "admin/pages/edit"

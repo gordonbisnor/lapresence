@@ -4,8 +4,8 @@
 
 <p>Change item order by dragging and dropping them into place (the “move” icon is visible to indicate that the item is draggable)</p>
 
-<div id="groupes">
+<div id="groupes" class="sortable" data-target="/admin/groupes/sort">
 	<%= render :partial => "admin/groupes/groupe", :collection => @groupes %>
 </div>
 
-<%= sortable_element('groupes', :url =>{ :controller => 'groupes', :action => 'sort' }) %>
+

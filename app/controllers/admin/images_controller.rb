@@ -38,8 +38,7 @@ class Admin::ImagesController <  Admin::AdminController
 
     respond_to do |format|
       if @image.save
-        flash[:notice] = 'Image was successfully created.'
-        format.html { redirect_to(admin_images_path) }
+        format.html { redirect_to(admin_images_path, :notice => 'Image was successfully created.') }
       else
         format.html { render :action => "new" }
       end
@@ -52,8 +51,7 @@ class Admin::ImagesController <  Admin::AdminController
 
     respond_to do |format|
       if @image.update_attributes(params[:image])
-        flash[:notice] = 'Image was successfully updated.'
-        format.html { redirect_to(admin_images_path) }
+        format.html { redirect_to(admin_images_path, :notice => 'Image was successfully updated.') }
       else
         format.html { render :action => "edit" }
       end

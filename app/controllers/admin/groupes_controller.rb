@@ -46,8 +46,7 @@ class Admin::GroupesController < Admin::AdminController
     respond_to do |format|
       if @groupe.save
         expire_index
-        flash[:notice] = 'Groupe was successfully created.'
-        format.html { redirect_to(admin_groupes_path) }
+        format.html { redirect_to(admin_groupes_path, :notice => 'Groupe was successfully created.') }
         format.xml  { render :xml => @groupe, :status => :created, :location => @groupe }
       else
         format.html { render :action => "new" }
@@ -65,8 +64,7 @@ class Admin::GroupesController < Admin::AdminController
       if @groupe.update_attributes(params[:groupe])
         expire(@groupe)
         expire_index
-        flash[:notice] = 'Groupe was successfully updated.'
-        format.html { redirect_to(admin_groupes_path) }
+        format.html { redirect_to(admin_groupes_path, :notice => 'Groupe was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -82,21 +80,13 @@ class Admin::GroupesController < Admin::AdminController
     @groupe.destroy
     expire(@groupe)
     expire_index
-    flash[:notice] = 'Groupe was deleted.'
 
     respond_to do |format|
-      format.html { redirect_to(admin_groupes_path) }
+      format.html { redirect_to(admin_groupes_path, :notice => 'Groupe was deleted.') }
       format.xml  { head :ok }
     end
   end
-  
-  def sort
-    params[:groupes].each_with_index do |id, pos|
-      Groupe.find(id).update_attribute(:position, pos+1)
-    end
-    render :nothing => true
-  end  
-  
+    
   private
   
     def expire groupe
@@ -105,6 +95,10 @@ class Admin::GroupesController < Admin::AdminController
   
     def expire_index
       expire_page "/groupes.html"
+    end
+  
+    def get_sort_items
+      @items = Groupes.order("position ASC").all
     end
   
 end

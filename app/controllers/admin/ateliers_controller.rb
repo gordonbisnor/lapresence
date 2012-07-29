@@ -46,8 +46,7 @@ class Admin::AteliersController < Admin::AdminController
     respond_to do |format|
       if @atelier.save
         expire_index
-        flash[:notice] = 'Atelier was successfully created.'
-        format.html { redirect_to(admin_ateliers_path) }
+        format.html { redirect_to(admin_ateliers_path, :notice => 'Atelier was successfully created.') }
         format.xml  { render :xml => @atelier, :status => :created, :location => @atelier }
       else
         format.html { render :action => "new" }
@@ -65,8 +64,7 @@ class Admin::AteliersController < Admin::AdminController
       if @atelier.update_attributes(params[:atelier])
         expire_index
         expire(@atelier)
-        flash[:notice] = 'Atelier was successfully updated.'
-        format.html { redirect_to(admin_ateliers_path) }
+        format.html { redirect_to(admin_ateliers_path, :notice => 'Atelier was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -82,21 +80,13 @@ class Admin::AteliersController < Admin::AdminController
     @atelier.destroy
     expire_index
     expire(@atelier)
-    flash[:notice] = 'Atelier was deleted.'
 
     respond_to do |format|
-      format.html { redirect_to(admin_ateliers_path) }
+      format.html { redirect_to(admin_ateliers_path, :notice => 'Atelier was deleted.') }
       format.xml  { head :ok }
     end
   end
-  
-  def sort
-    params[:ateliers].each_with_index do |id, pos|
-      Atelier.find(id).update_attribute(:position, pos+1)
-    end
-    render :nothing => true
-  end
-  
+    
   private
 
     def expire_index
@@ -105,6 +95,10 @@ class Admin::AteliersController < Admin::AdminController
   
     def expire atelier
       expire_page "/ateliers/#{atelier.id}.html"
+    end
+  
+    def get_sort_items
+      @items = Atelier.order("position ASC").all
     end
   
 end

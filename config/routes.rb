@@ -1,88 +1,51 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :images
-
-  map.resources :events
+Lapresence::Application.routes.draw do
   
-  map.admin_dashboard "admin", :controller => "admin/dashboard"
+  resources :groupes
+  resources :ateliers
+  resources :images
+  resources :events
   
-  map.connect "/pages/bio.html" ,:controller => "redirects", :action => "bio"
-  map.bio "/bio", :controller => "pages", :action => "show", :id => "bio"
-  
-  map.connect "/pages/approche.html" ,:controller => "redirects", :action => "approche"
-  map.approche "/approche", :controller => "pages", :action => "show", :id => "approche"
-  
-  map.connect "/pages/livre.html" ,:controller => "redirects", :action => "bibliographie"
-  map.bibliographie "/bibliographie", :controller => "pages", :action => "show", :id => "bibliographie"
-  
-  map.connect "/pages/ateliers.html" ,:controller => "redirects", :action => "ateliers"
-  map.resources :ateliers
-  
-  map.connect "/pages/groupes.html" ,:controller => "redirects", :action => "groupes"
-  map.resources :groupes
-  
-  map.connect "/pages/consultations.html" ,:controller => "redirects", :action => "formation"
-  map.formation "/formation", :controller => "pages", :action => "show", :id => "formation"  
-  
-  map.connect "/pages/contact.html" ,:controller => "redirects", :action => "coordonnees"
-  map.coordonnees "/coordonnees", :controller => "pages", :action => "show", :id => "coordonnees"
-  
-  
-  map.connect "/pages/extrait_livre.html" ,:controller => "redirects", :action => "extrait_du_livre"
-  map.extrait_du_livre "/extrait_du_livre", :controller => "pages", :action => "show", :id => "extrait_du_livre"
-  
-  map.connect "/pages/extrait_impr.html" ,:controller => "redirects", :action => "extrait_impr"
-  map.extrait_impr "/extrait_impr", :controller => "pages", :action => "extrait_impr"
-  
-  map.namespace :admin do |admin|
-    admin.resources :dashboard, :only => "index"
-    admin.resources :pages
-    admin.resources :images
-    admin.resources :ateliers, :collection => "sort"
-    admin.resources :groupes, :collection => "sort"
-  end
-  
-  # The priority is based upon order of creation: first created -> highest priority.
-
-  # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   map.resources :products
-
-  # Sample resource route with options:
-  #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
-
-  # Sample resource route with sub-resources:
-  #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
-  # Sample resource route with more complex sub-resources
-  #   map.resources :products do |products|
-  #     products.resources :comments
-  #     products.resources :sales, :collection => { :recent => :get }
-  #   end
-
-  # Sample resource route within a namespace:
-  #   map.namespace :admin do |admin|
-  #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-  #     admin.resources :products
-  #   end
-
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-   map.root :controller => "pages"
-
-  # See how all your routes lay out with "rake routes"
-
-  # Install the default routes as the lowest priority.
-  # Note: These default routes make all actions in every controller accessible via GET requests. You should
-  # consider removing or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
-  
-  map.connect ':id', :controller => "pages", :action => "show"
+  match "admin" => "admin/dashboard#index", :as => :admin_dashboard 
     
+  match 'ateliers/:id' => 'ateliers#show'
+  match 'groupes/:id' => 'groupes#show'
+  match ':id' => 'pages#show'
+  
+  match "/pages/bio.html"             => "redirects#bio"  
+  match "/pages/approche.html"        => "redirects#approche"
+  match "/pages/livre.html"           => "redirects#bibliographie"
+  match "/pages/ateliers.html"        => "redirects#ateliers"
+  match "/pages/groupes.html"         => "redirects#groupes"
+  match "/pages/extrait_impr.html"    => "redirects#extrait_impr"
+  match "/pages/contact.html"         => "redirects#coordonnees"
+  match "/pages/consultations.html"   => "redirects#formation"
+  match "/pages/extrait_livre.html"   => "redirects#extrait_du_livre"
+  
+  match  "/bibliographie"     => "pages#show",    :id => "bibliographie",     :as => :bibliographie 
+  match  "/bio"               => "pages#show",    :id  => "bio",              :as => :bio
+  match  "/approche"          => "pages#show",    :id => "approche",          :as => :approche
+  match  "/formation"         => "pages#show",    :id => "formation",         :as => :formation
+  match  "/coordonnees"       => "pages#show",    :id => "coordonnees",       :as => :coordonnees
+  match  "/extrait_du_livre"  => "pages#show",    :id => "extrait_du_livre",  :as => :extrait_du_livre
+
+  match  "/extrait_impr"      => "pages#extrait_impr", :as => :extrait_impr
+ 
+  namespace :admin do
+    resources :dashboard, :only => "index"
+    resources :pages
+    resources :images
+    resources :ateliers do
+       collection do
+         match "sort"
+        end
+      end
+    resources :groupes do
+      collection do
+        match "sort"
+      end
+    end
+  end
+
+ root :to => 'pages#index'
+   
 end

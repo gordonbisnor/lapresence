@@ -1,4 +1,4 @@
-<% semantic_form_for([:admin, @image], :html => {:multipart=>true}) do |form| %>
+<%= semantic_form_for([:admin, @image], :html => {:multipart=>true}) do |form| %>
 	<%= form.inputs :name, :attachment %>
-	<%= form.buttons %>
+	<%= form.actions %>
 <% end %>

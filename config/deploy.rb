@@ -1,22 +1,25 @@
 require "bundler/capistrano"
+require 'airbrake/capistrano'
 
 user = 'lapresence'
 password = "a37df06c"
-application = "lap"
+application = "lap2"
 domain = 'lapresence.webfactional.com'
+path = "/home/#{user}/webapps/lap2/"
 
-set :deploy_to, "/home/#{user}/webapps/#{application}/#{application}"
+set :deploy_to, path
 
 set :default_environment, {
-  'GEM_PATH' => "/home/lapresence/webapps/lap/gems/bin",
-  'GEM_HOME' => "/home/lapresence/webapps/lap/gems",
-  'PATH' => '/home/lapresence/webapps/lap/bin:$PATH'
+  'GEM_PATH' => "#{path}/gems/bin",
+  'GEM_HOME' => "#{path}/gems",
+  'PATH' => "#{path}/bin:$PATH"
 }
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
+
 set :keep_releases, 4 
-set :rake, "GEM_PATH=/home/lapresence/webapps/lap/gems:/home/lapresence/webapps/lap/gems/bin  /home/#{user}/webapps/#{application}/bin/rake"
+set :rake, "GEM_PATH=#{path}/gems:#{path}/gems/bin  #{path}/bin/rake"
 set :webfaction_username, "#{user}"
 set :user, user
 set :domain, domain
@@ -30,7 +33,7 @@ set :scm_username, user
 set :scm_password, "#{password}"
 set :scm_passphrase, "#{password}"
 set :use_sudo, false                                 
-set :branch, "master"
+set :branch, "rails3"
 set :scm_verbose, true
 set :git_shallow_clone, 1
 set :group_writable, false     
@@ -47,10 +50,4 @@ namespace :deploy do
  end
 end
 
-after "deploy:update", "deploy:cleanup" # OTHER WISE OLD RELEASES WILL NOT BE DELETED EVEN THOUGH KEEP IS SET
-
-Dir[File.join(File.dirname(__FILE__), '..', 'vendor', 'gems', 'hoptoad_notifier-*')].each do |vendored_notifier|
-  $: << File.join(vendored_notifier, 'lib')
-end
-
-require 'hoptoad_notifier/capistrano'
+after "deploy:update", "deploy:cleanup"

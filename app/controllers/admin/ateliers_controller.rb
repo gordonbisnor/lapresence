@@ -45,8 +45,7 @@ class Admin::AteliersController < Admin::AdminController
 
     respond_to do |format|
       if @atelier.save
-        expire_page :action => :index, :controller => :ateliers
-        
+        expire_index
         flash[:notice] = 'Atelier was successfully created.'
         format.html { redirect_to(admin_ateliers_path) }
         format.xml  { render :xml => @atelier, :status => :created, :location => @atelier }
@@ -64,7 +63,8 @@ class Admin::AteliersController < Admin::AdminController
 
     respond_to do |format|
       if @atelier.update_attributes(params[:atelier])
-        expire_page :action => [:index, :show], :controller => :ateliers
+        expire_index
+        expire(@atelier)
         flash[:notice] = 'Atelier was successfully updated.'
         format.html { redirect_to(admin_ateliers_path) }
         format.xml  { head :ok }
@@ -80,6 +80,8 @@ class Admin::AteliersController < Admin::AdminController
   def destroy
     @atelier = Atelier.find(params[:id])
     @atelier.destroy
+    expire_index
+    expire(@atelier)
     flash[:notice] = 'Atelier was deleted.'
 
     respond_to do |format|
@@ -94,5 +96,15 @@ class Admin::AteliersController < Admin::AdminController
     end
     render :nothing => true
   end
+  
+  private
+
+    def expire_index
+      expire_page "/ateliers.html"
+    end
+  
+    def expire atelier
+      expire_page "/ateliers/#{atelier.id}.html"
+    end
   
 end

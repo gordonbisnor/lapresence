@@ -28,7 +28,7 @@ class Admin::PagesController < Admin::AdminController
   def update
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
-      expire_page "/#{@page.slug}.html"
+      expire(@page)
       flash[:notice] = "Page Updated"
       redirect_to admin_pages_path
     else
@@ -40,7 +40,15 @@ class Admin::PagesController < Admin::AdminController
   def destroy
     @page = Page.find(params[:id])
     @page.destroy
+    expire(@page)
     redirect_to admin_pages_path
   end
-  
+    
+  private
+
+    def expire page
+      expire_page "/#{page.slug}.html"
+    end
+    
+    
 end

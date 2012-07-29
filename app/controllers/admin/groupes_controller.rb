@@ -45,8 +45,7 @@ class Admin::GroupesController < Admin::AdminController
 
     respond_to do |format|
       if @groupe.save
-        expire_page :action => :index, :controller => :groupes
-
+        expire_index
         flash[:notice] = 'Groupe was successfully created.'
         format.html { redirect_to(admin_groupes_path) }
         format.xml  { render :xml => @groupe, :status => :created, :location => @groupe }
@@ -64,7 +63,8 @@ class Admin::GroupesController < Admin::AdminController
 
     respond_to do |format|
       if @groupe.update_attributes(params[:groupe])
-        expire_page :action => [:show, :index], :controller => :groupes        
+        expire(@groupe)
+        expire_index
         flash[:notice] = 'Groupe was successfully updated.'
         format.html { redirect_to(admin_groupes_path) }
         format.xml  { head :ok }
@@ -80,6 +80,8 @@ class Admin::GroupesController < Admin::AdminController
   def destroy
     @groupe = Groupe.find(params[:id])
     @groupe.destroy
+    expire(@groupe)
+    expire_index
     flash[:notice] = 'Groupe was deleted.'
 
     respond_to do |format|
@@ -94,5 +96,15 @@ class Admin::GroupesController < Admin::AdminController
     end
     render :nothing => true
   end  
+  
+  private
+  
+    def expire groupe
+      expire_page "/groupes/#{groupe.id}.html"
+    end
+  
+    def expire_index
+      expire_page "/groupes.html"
+    end
   
 end

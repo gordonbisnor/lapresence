@@ -26,7 +26,7 @@ set :domain, domain
 set :application, "#{application}"
 set :repository,  "#{user}@#{domain}:/home/#{user}/git/lapresence"
 set :scm, :git
-set :deploy_via, :checkout 
+set :deploy_via, :remote_cache 
 set :scm_command, "/home/#{user}/bin/git"
 set :local_scm_command, "git"
 set :scm_username, user
@@ -51,3 +51,14 @@ namespace :deploy do
 end
 
 after "deploy:update", "deploy:cleanup"
+
+desc "deploy the precompiled assets"
+ task :deploy_assets, :except => { :no_release => true } do
+    run_locally("rake RAILS_ENV=development assets:clean && rake RAILS_ENV=development assets:precompile")
+    upload("public/assets", "#{release_path}/public/assets", :via =>
+:scp, :recursive => true)
+    run_locally "rm -rf public/assets"
+ end
+
+after 'deploy:update_code', 'deploy_assets'
+

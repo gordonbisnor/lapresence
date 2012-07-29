@@ -45,6 +45,8 @@ class Admin::GroupesController < Admin::AdminController
 
     respond_to do |format|
       if @groupe.save
+        expire_page :action => :index, :controller => :groupes
+
         flash[:notice] = 'Groupe was successfully created.'
         format.html { redirect_to(admin_groupes_path) }
         format.xml  { render :xml => @groupe, :status => :created, :location => @groupe }
@@ -62,6 +64,7 @@ class Admin::GroupesController < Admin::AdminController
 
     respond_to do |format|
       if @groupe.update_attributes(params[:groupe])
+        expire_page :action => [:show, :index], :controller => :groupes        
         flash[:notice] = 'Groupe was successfully updated.'
         format.html { redirect_to(admin_groupes_path) }
         format.xml  { head :ok }

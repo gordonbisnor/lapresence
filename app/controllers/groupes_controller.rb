@@ -1,6 +1,7 @@
 class GroupesController < ApplicationController
   before_filter :french
-
+  caches_page :index, :show
+  
   # GET /groupes
   def index
     @groupes = Groupe.all

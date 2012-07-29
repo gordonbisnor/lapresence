@@ -1,5 +1,5 @@
 class Admin::AteliersController < Admin::AdminController
-  
+   
   # GET /ateliers
   # GET /ateliers.xml
   def index
@@ -45,6 +45,8 @@ class Admin::AteliersController < Admin::AdminController
 
     respond_to do |format|
       if @atelier.save
+        expire_page :action => :index, :controller => :ateliers
+        
         flash[:notice] = 'Atelier was successfully created.'
         format.html { redirect_to(admin_ateliers_path) }
         format.xml  { render :xml => @atelier, :status => :created, :location => @atelier }
@@ -62,6 +64,7 @@ class Admin::AteliersController < Admin::AdminController
 
     respond_to do |format|
       if @atelier.update_attributes(params[:atelier])
+        expire_page :action => [:index, :show], :controller => :ateliers
         flash[:notice] = 'Atelier was successfully updated.'
         format.html { redirect_to(admin_ateliers_path) }
         format.xml  { head :ok }

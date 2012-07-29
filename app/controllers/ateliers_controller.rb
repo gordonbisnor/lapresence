@@ -1,4 +1,6 @@
 class AteliersController < ApplicationController
+  caches_page :index, :show
+  
   before_filter :french
   
   # GET /ateliers

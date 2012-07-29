@@ -28,6 +28,7 @@ class Admin::PagesController < Admin::AdminController
   def update
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
+      expire_page :action => :show, :controller => :pages
       flash[:notice] = "Page Updated"
       redirect_to admin_pages_path
     else

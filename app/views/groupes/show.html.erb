@@ -21,6 +21,6 @@
 	<dt>Places limitées</dt> <dd><%= @groupe.available_spots %></dd>
 	<% end -%>
 	<% if @groupe.notes.present? -%>
-	<dt>Notes complémentaires</dt> <dd><%= @groupe.notes %></dd>
+	<dt>Notes complémentaires</dt> <dd><%= raw @groupe.notes %></dd>
 	<% end %>
 </dl>

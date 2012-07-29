@@ -4,7 +4,7 @@
 
 	<h2><%= link_to atelier.title, atelier %></h2>
 
-	<%= atelier.content %>
+	<%= raw atelier.content %>
 
 	<dl>
 		<% if dates(atelier).present? -%>
@@ -23,7 +23,7 @@
 		<dt>Places limitées</dt> <dd><%= atelier.available_spots %></dd>
 		<% end -%>
 		<% if atelier.notes.present? -%>
-		<dt>Notes complémentaires</dt> <dd><%= atelier.notes %></dd>
+		<dt>Notes complémentaires</dt> <dd><%= raw atelier.notes %></dd>
 		<% end %>
 	</dl>
 	

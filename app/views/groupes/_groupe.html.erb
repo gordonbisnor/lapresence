@@ -4,7 +4,7 @@
 
 	<h2><%= link_to groupe.title, groupe %></h2>
 
-	<%= groupe.content %>
+	<%= raw groupe.content %>
 
 	<dl>
 		<% if dates(groupe).present? -%>
@@ -23,7 +23,7 @@
 		<dt>Places limitées</dt> <dd><%= groupe.available_spots %></dd>
 		<% end -%>
 		<% if groupe.notes.present? -%>
-		<dt>Notes complémentaires</dt> <dd><%= groupe.notes %></dd>
+		<dt>Notes complémentaires</dt> <dd><%= raw groupe.notes %></dd>
 		<% end %>
 	</dl>
 

@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  caches_page :index
 
   def extrait_impr
     @page = Page.find_by_slug("extrait_impr")

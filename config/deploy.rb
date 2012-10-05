@@ -33,7 +33,7 @@ set :scm_username, user
 set :scm_password, "#{password}"
 set :scm_passphrase, "#{password}"
 set :use_sudo, false                                 
-set :branch, "rails3"
+set :branch, "master"
 set :scm_verbose, true
 set :git_shallow_clone, 1
 set :group_writable, false     

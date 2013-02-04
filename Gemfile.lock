@@ -108,6 +108,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    make_resourceful (1.0.1)
     mime-types (1.19)
     multi_json (1.5.0)
     mysql2 (0.3.11)
@@ -214,6 +215,7 @@ DEPENDENCIES
   formtastic (= 2.2.1)
   jquery-rails
   launchy
+  make_resourceful
   mysql2 (~> 0.3.11)
   paperclip (= 3.1.4)
   rails (= 3.2.11)

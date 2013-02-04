@@ -7,6 +7,7 @@ gem 'tinymce-rails'
 gem 'airbrake'
 gem 'vestal_versions', '1.2.2', :git => 'git://github.com/futurechimp/vestal_versions.git'
 gem 'paperclip', '3.1.4'
+gem 'make_resourceful'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

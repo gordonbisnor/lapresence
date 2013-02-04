@@ -44,7 +44,6 @@ end
 
 Then /^I should see that atelier$/ do
   page.should have_content(@atelier.title)
-  page.should have_content("Atelier was successfully created.")
 end
 
 When /^I update an atelier$/ do
@@ -56,7 +55,6 @@ end
 
 Then /^I should see that atelier updated$/ do
   page.should have_content("New Title")
-  page.should have_content("Atelier was successfully updated.")
 end
 
 When /^I delete an atelier$/ do
@@ -66,6 +64,5 @@ When /^I delete an atelier$/ do
 end
 
 Then /^that atelier should be gone$/ do
-  page.should have_content("Atelier was deleted.")
   page.should_not have_content(@atelier.title)
 end

@@ -8,8 +8,6 @@ Then /^I should see the page content$/ do
   page.should have_content(@page.content)
 end
 
-#
-
 When /^I view the admin pages section$/ do
   @page = FactoryGirl.create(:page)
   visit "/admin/pages"
@@ -28,7 +26,6 @@ end
 
 Then /^I should see that page$/ do
   page.should have_content(@page.title)
-  page.should have_content("Page was successfully created.")
 end
 
 When /^I update a page$/ do
@@ -40,5 +37,4 @@ end
 
 Then /^I should see that page updated$/ do
   page.should have_content("New Title")
-  page.should have_content("Page was successfully updated.")
 end

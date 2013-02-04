@@ -44,7 +44,6 @@ end
 
 Then /^I should see that groupe$/ do
   page.should have_content(@groupe.title)
-  page.should have_content("Groupe was successfully created.")
 end
 
 When /^I update a groupe$/ do
@@ -56,7 +55,6 @@ end
 
 Then /^I should see that groupe updated$/ do
   page.should have_content("New Title")
-  page.should have_content("Groupe was successfully updated.")
 end
 
 When /^I delete a groupe$/ do
@@ -66,6 +64,5 @@ When /^I delete a groupe$/ do
 end
 
 Then /^that groupe should be gone$/ do
-  page.should have_content("Groupe was deleted.")
   page.should_not have_content(@groupe.title)
 end

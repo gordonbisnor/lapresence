@@ -7,7 +7,9 @@ class Admin::AteliersController < Admin::AdminController
       expire_page "/ateliers.html"
     end
 
-    response_for :create, :update { redirect_to :action => 'index' }
+    response_for :create, :update do
+      redirect_to :action => 'index'
+    end
   end
     
   private

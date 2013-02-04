@@ -45,7 +45,7 @@ class Admin::AteliersController < Admin::AdminController
 
     respond_to do |format|
       if @atelier.save
-        expire_index
+        expire(@atelier)
         format.html { redirect_to(admin_ateliers_path, :notice => 'Atelier was successfully created.') }
         format.xml  { render :xml => @atelier, :status => :created, :location => @atelier }
       else
@@ -59,13 +59,13 @@ class Admin::AteliersController < Admin::AdminController
   # PUT /ateliers/1.xml
   def update
     @atelier = Atelier.find(params[:id])
-
+  
     respond_to do |format|
+
       if @atelier.update_attributes(params[:atelier])
-        expire_index
         expire(@atelier)
         format.html { redirect_to(admin_ateliers_path, :notice => 'Atelier was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml  { head(:ok) }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @atelier.errors, :status => :unprocessable_entity }
@@ -78,7 +78,6 @@ class Admin::AteliersController < Admin::AdminController
   def destroy
     @atelier = Atelier.find(params[:id])
     @atelier.destroy
-    expire_index
     expire(@atelier)
 
     respond_to do |format|
@@ -88,12 +87,9 @@ class Admin::AteliersController < Admin::AdminController
   end
     
   private
-
-    def expire_index
-      expire_page "/ateliers.html"
-    end
   
     def expire atelier
+      expire_page "/ateliers.html"
       expire_page "/ateliers/#{atelier.id}.html"
     end
   

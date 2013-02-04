@@ -45,7 +45,7 @@ class Admin::GroupesController < Admin::AdminController
 
     respond_to do |format|
       if @groupe.save
-        expire_index
+        expire(@groupe)
         format.html { redirect_to(admin_groupes_path, :notice => 'Groupe was successfully created.') }
         format.xml  { render :xml => @groupe, :status => :created, :location => @groupe }
       else
@@ -63,7 +63,6 @@ class Admin::GroupesController < Admin::AdminController
     respond_to do |format|
       if @groupe.update_attributes(params[:groupe])
         expire(@groupe)
-        expire_index
         format.html { redirect_to(admin_groupes_path, :notice => 'Groupe was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -79,7 +78,6 @@ class Admin::GroupesController < Admin::AdminController
     @groupe = Groupe.find(params[:id])
     @groupe.destroy
     expire(@groupe)
-    expire_index
 
     respond_to do |format|
       format.html { redirect_to(admin_groupes_path, :notice => 'Groupe was deleted.') }
@@ -91,12 +89,9 @@ class Admin::GroupesController < Admin::AdminController
   
     def expire groupe
       expire_page "/groupes/#{groupe.id}.html"
-    end
-  
-    def expire_index
       expire_page "/groupes.html"
     end
-  
+    
     def get_sort_items
       @items = Groupes.order("position ASC").all
     end

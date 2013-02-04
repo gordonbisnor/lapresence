@@ -1,5 +1,5 @@
 require "bundler/capistrano"
-require 'airbrake/capistrano'
+#require 'airbrake/capistrano'
 
 user = 'lapresence'
 password = "a37df06c"

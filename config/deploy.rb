@@ -24,14 +24,10 @@ set :webfaction_username, "#{user}"
 set :user, user
 set :domain, domain
 set :application, "#{application}"
-set :repository,  "#{user}@#{domain}:/home/#{user}/git/lapresence"
 set :scm, :git
-set :deploy_via, :remote_cache 
-set :scm_command, "/home/#{user}/bin/git"
+set :deploy_via, :checkout
 set :local_scm_command, "git"
-set :scm_username, user
-set :scm_password, "#{password}"
-set :scm_passphrase, "#{password}"
+set :repository,  "ssh://git@bitbucket.org/gordonbisnor/lapresence.git"
 set :use_sudo, false                                 
 set :branch, "master"
 set :scm_verbose, true

@@ -1,9 +1,6 @@
 class Admin::PagesController < Admin::AdminController
   make_resourceful do
     actions :index, :show, :new, :create, :update, :destroy
-    after :create, :update, :destroy do
-     expire_page "/#{@page.slug}.html" 
-    end
 
     response_for :create, :update do 
       redirect_to :action => 'index' 

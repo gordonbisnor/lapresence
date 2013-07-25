@@ -1,10 +1,7 @@
 class AteliersController < ApplicationController
-  caches_page :index, :show
-  
   before_filter :french
   
   # GET /ateliers
-  # GET /ateliers.xml
   def index
     @ateliers = Atelier.all
 
@@ -14,7 +11,6 @@ class AteliersController < ApplicationController
   end
 
   # GET /ateliers/1
-  # GET /ateliers/1.xml
   def show
     @atelier = Atelier.find(params[:id])
 

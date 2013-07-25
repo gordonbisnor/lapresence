@@ -1,5 +1,5 @@
 jQuery(document).ready(function(){
-	jQuery(".datepicker").datepicker();
+	jQuery(".datepicker").datepicker({dateFormat:'yy-mm-dd'});
 	jQuery('#content_tab, #notes_tab').hide();
 	jQuery('.tabs li a').click(function(){
 		jQuery('.tabs li a').removeClass('selected');

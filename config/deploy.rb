@@ -2,7 +2,7 @@ require "bundler/capistrano"
 #require 'airbrake/capistrano'
 
 user = 'lapresence'
-password = "a37df06c"
+password = "99#k:T7+89M4.qz7WU3n?.,g7&9(@y"
 application = "lap2"
 domain = 'lapresence.webfactional.com'
 path = "/home/#{user}/webapps/lap2/"

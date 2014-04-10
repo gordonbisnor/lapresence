@@ -4,6 +4,10 @@ new:
 server:
 99#k:T7+89M4.qz7WU3n?.,g7&9(@y
 
+mailboxes:
+lap: 8s[.W[t(D9/b#4)739$rr=33^f86fo
+pratiquer: 8C]6Q37/,6=4[#72&G64uo+b(kX,tB
+
 ***** SERVER INFORMATION *****
 * Ip address of the machine: 75.125.121.198
 * Url of your site: http://lapresence.webfactional.com

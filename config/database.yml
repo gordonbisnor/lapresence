@@ -44,7 +44,7 @@ production:
   database: lapresence_lap2
   pool: 5
   username: lapresence_lap2
-  password: bb1939e2
+  password: 'EqP4,{;^7om34{fn&Q=/C^B3363]98'
 
 
 cucumber:

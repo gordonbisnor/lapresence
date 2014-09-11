@@ -33,7 +33,7 @@ Lapresence::Application.routes.draw do
   namespace :admin do
     resources :dashboard, :only => "index"
     resources :pages
-    resources :images
+    resources :attachments
     resources :ateliers do
        collection do
          match "sort"

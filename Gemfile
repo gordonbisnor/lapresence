@@ -22,6 +22,7 @@ gem 'jquery-rails'
 group :development do
   gem 'capistrano'
   gem 'thin'
+  gem 'brakeman', require: false
 end
 
 group :test do

@@ -10,7 +10,7 @@
 		<th>Dates</th>
 		<th>Lieu</th>
 	</tr>
-	<% @ateliers.each do |atelier| %>
+	<% @items.each do |atelier| %>
 		<tr>
 			<td><%= link_to atelier.title, "#atelier_#{atelier.id}" %></td>
 			<td><%= dates(atelier) %></td>
@@ -19,4 +19,4 @@
 	<% end -%>
 </table>
 
-<%= render @ateliers %>
+<%= render @items %>

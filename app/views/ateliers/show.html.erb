@@ -1,26 +1,26 @@
-<h1><%= link_to @atelier.title, @atelier %></h1>
+<h1><%= link_to @item.title, @item %></h1>
 
-<%= image_tag @atelier.picture.url(:thumb), :class => "float_right" %>
+<%= image_tag @item.picture.url(:thumb), :class => "float_right" %>
 
-<%= raw @atelier.content %>
+<%= raw @item.content %>
 
 <dl>
-	<% if dates(@atelier).present? -%>
-		<dt>Dates</dt> <dd><%= dates(@atelier) %></dd>
+	<% if dates(@item).present? -%>
+		<dt>Dates</dt> <dd><%= dates(@item) %></dd>
 	<% end %>
-	<% if @atelier.schedule.present? -%>
-		<dt>Horaire</dt> <dd><%= @atelier.schedule %></dd>
+	<% if @item.schedule.present? -%>
+		<dt>Horaire</dt> <dd><%= @item.schedule %></dd>
 	<% end -%>
-	<% if @atelier.location.present? -%>
-	<dt>Lieu</dt> <dd><%= @atelier.location %></dd>
+	<% if @item.location.present? -%>
+	<dt>Lieu</dt> <dd><%= @item.location %></dd>
 	<% end -%>
-	<% if @atelier.cost.present? -%>
-	<dt>Coût</dt> <dd><%= @atelier.cost %></dd>
+	<% if @item.cost.present? -%>
+	<dt>Coût</dt> <dd><%= @item.cost %></dd>
 	<% end -%>
-	<% if @atelier.available_spots.present? -%>
-	<dt>Places limitées</dt> <dd><%= @atelier.available_spots %></dd>
+	<% if @item.available_spots.present? -%>
+	<dt>Places limitées</dt> <dd><%= @item.available_spots %></dd>
 	<% end -%>
-	<% if @atelier.notes.present? -%>
-	<dt>Notes complémentaires</dt> <dd><%= raw @atelier.notes %></dd>
+	<% if @item.notes.present? -%>
+	<dt>Notes complémentaires</dt> <dd><%= raw @item.notes %></dd>
 	<% end %>
 </dl>

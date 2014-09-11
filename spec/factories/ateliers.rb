@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :event do
+  factory :atelier do
     title "welcome"
     start_date Time.now
     end_date Time.now
@@ -9,14 +9,5 @@ FactoryGirl.define do
     schedule "yes"
     cost "FREE"
     available_spots "2"
-
-    factory :atelier do
-      type "Atelier"
-    end
-    
-    factory :groupe do
-      type "Groupe"
-    end
-    
   end
 end

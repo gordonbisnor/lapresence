@@ -1,2 +1,15 @@
 @import "jquery-ui";
+@import "bootstrap-sprockets"; //this allow the gliphicon to work
 @import "bootstrap";
+@import "bootstrap/theme";
+
+body { padding-top: 60px;}
+
+.offset-right {
+	margin-right: 1em;
+}
+.admin-button {
+	padding-left: 7px;
+	padding-right: 7px;
+	font-size: 14px;
+}

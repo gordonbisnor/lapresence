@@ -1,0 +1,14 @@
+%a{:name => "top"}
+= title "Les Groupes", :h1
+%p Les Groupes Animés Par Lorraine Desmarais
+%table.scrollto
+  %tr
+    %th Groupe
+    %th Dates
+    %th Lieu
+  - @items.each do |groupe|
+    %tr
+      %td= link_to groupe.title, "#groupe_#{groupe.id}"
+      %td= dates(groupe)
+      %td= groupe.location
+= render @items

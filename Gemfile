@@ -3,7 +3,7 @@ gem 'rake', '10.0.3'
 gem 'json', '1.7.7'
 gem 'rails', '4.2.0.beta1'
 gem 'mysql2', '~> 0.3.11'
-gem 'simple_form'
+gem 'simple_form', '3.1.0.rc2'
 gem 'tinymce-rails', '4.1.5'
 gem 'airbrake', '4.1.0'
 gem 'paperclip', '3.1.4'
@@ -17,9 +17,12 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'spring'
 gem 'paper_trail', '3.0.6' # versioning
+
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'bootstrap-sass-extras'
 gem 'haml-rails'
+
 
 group :development do
   gem 'capistrano', '~> 2.15.5'
@@ -36,5 +39,3 @@ group :test do
   gem 'launchy'
   gem 'shoulda-matchers', require: false
 end
-
-gem "erb2haml", :group => :development

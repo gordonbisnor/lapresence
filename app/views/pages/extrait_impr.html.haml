@@ -1,0 +1,11 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=ISO-8859-1", "http-equiv" => "Content-Type"}/
+    %title La conscience et le processus d'incarnation
+    = stylesheet_link_tag "printable"
+  %body
+    .printable
+      = raw @page.content
+      %p
+        %a{href: "/extrait_du_livre"} Retour

@@ -1,0 +1,20 @@
+= simple_form_for [:admin,@item]  do |f|
+  #details_tab.tab
+    .row
+      .col-sm-3= f.input :title
+      .col-sm-3= f.input :start_date, as: :string, input_html: {class: "datepicker"}
+      .col-sm-3= f.input :end_date, as: :string, input_html: {class: "datepicker"}
+      .col-sm-3= f.input :location
+    .row
+      .col-sm-3= f.input :cost
+      .col-sm-3= f.input :available_spots
+      .col-sm-3= f.input :schedule
+      .col-sm-3= f.input :picture
+    .row
+      .col-sm-6= f.input :content,  input_html: { class: "tinymce", style: "width:680px;height:500px" }
+      .col-sm-6= f.input :notes,  input_html: { class: "tinymce", style: "width:680px;height:500px" }
+  .btn-group
+    = f.submit class: 'btn btn-primary'
+    = link_to "Cancel", :back, class: 'btn btn-default'
+
+- content_for :js, tinymce 

@@ -11,5 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery.scrollTo-1.4.2-min
-//= require lapresence
+//= require jquery_ujs
+//= require jquery-ui
+//= require tinymce-jquery
+//= require admin/general
+//= require admin/events

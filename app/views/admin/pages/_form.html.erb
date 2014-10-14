@@ -1,7 +1,0 @@
-<div id="page_form">
-<%= simple_form_for [:admin,@item] do |f| %>
-		<%= f.input :title %>
-		<%= f.input :content,  input_html: { class: "tinymce", cols: 90, rows: 50 } %>
-	<%= f.submit %>
-<% end %>
-</div>

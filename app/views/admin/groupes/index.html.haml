@@ -1,0 +1,9 @@
+.page-header
+	.pull-right
+		.alert.alert-info Change item order by dragging and dropping them into place.
+	%h1 Groupes
+
+= link_to 'New Item', new_admin_groupe_path, class: 'btn btn-default'
+%hr
+#groupes.sortable{"data-target" => "/admin/groupes/sort"}
+	= render partial: "admin/groupes/groupe", collection: @items

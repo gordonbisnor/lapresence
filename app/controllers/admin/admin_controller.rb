@@ -66,7 +66,7 @@ class Admin::AdminController < ApplicationController
   private
     
     def undo_link
-      view_context.link_to("Undo", admin_revert_version_path(@item.versions.scoped.last), method: :post, class: "btn btn-mini pull-right btn-success")
+      view_context.link_to('Undo', admin_revert_version_path(@item.versions.last), method: :post, class: "btn btn-xs pull-right btn-success") if @item.respond_to?(:versions) && @item.versions.present?
     end
     
     def get_klass   
@@ -87,7 +87,7 @@ class Admin::AdminController < ApplicationController
     end
     
     def get_object_params
-      @object_params = params[@klass.to_s.underscore.downcase.to_sym]
+      @object_params = params.require(@klass.to_s.underscore.downcase.to_sym).permit!
     end
 
     def get_sort_items

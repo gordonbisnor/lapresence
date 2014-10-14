@@ -12,6 +12,8 @@ end
 module Lapresence
   class Application < Rails::Application
         
+    config.assets.precompile += %w(admin-application.css admin-application.js tinymce-jquery.js)
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

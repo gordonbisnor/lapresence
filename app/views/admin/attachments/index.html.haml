@@ -1,0 +1,14 @@
+.page-header
+	%h1 Attachments
+
+= link_to 'New Attachment', new_admin_attachment_path, class: 'btn btn-default'
+
+%hr
+
+%table.table
+	%tr
+		%th
+		%th Thumb
+		%th Name
+		%th Type
+	= render @items

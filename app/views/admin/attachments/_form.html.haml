@@ -1,0 +1,7 @@
+
+= simple_form_for([:admin, @item]) do |f|
+  = f.input :name
+  = f.input :attachment
+  .btn-group
+    = f.submit class: 'btn btn-primary'
+    = link_to "Cancel", :back, class: 'btn btn-default'

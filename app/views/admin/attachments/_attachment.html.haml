@@ -1,0 +1,10 @@
+%tr
+	%td
+		= link_to link_button, attachment.url, target: '_blank'
+		= link_to edit_button, edit_admin_attachment_path(attachment)
+		= link_to delete_button, admin_attachment_path(attachment), :confirm => 'Are you sure?', method: :delete
+	%td
+		= link_to image_tag(attachment.attachment.url(:thumb)), admin_attachment_path(attachment) if attachment.image?
+	%td= link_to attachment.name, admin_attachment_path(attachment)
+	%td= attachment.content_type
+

@@ -46,6 +46,9 @@ Lapresence::Application.routes.draw do
     end
   end
 
+  post "admin/versions/:id/revert" => "admin/versions#revert", as: "admin_revert_version"
+
+
  root :to => 'pages#index'
    
 end

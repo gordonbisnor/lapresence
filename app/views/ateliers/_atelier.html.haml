@@ -1,0 +1,24 @@
+= div_for atelier do
+  = image_tag atelier.picture.url(:thumb), class: "float_right"
+  %h2= link_to atelier.title, atelier
+  = raw atelier.content
+  %dl
+    - if dates(atelier).present?
+      %dt Dates
+      %dd= dates(atelier)
+    - if atelier.schedule.present?
+      %dt Horaire
+      %dd= atelier.schedule
+    - if atelier.location.present?
+      %dt Lieu
+      %dd= atelier.location
+    - if atelier.cost.present?
+      %dt Coût
+      %dd= atelier.cost
+    - if atelier.available_spots.present?
+      %dt Places limitées
+      %dd= atelier.available_spots
+    - if atelier.notes.present?
+      %dt Notes complémentaires
+      %dd= raw atelier.notes
+  %p.caption= link_to "[ Haut ]", "#top"

@@ -1,0 +1,6 @@
+%div{:class => "item #{cycle("even","odd")}", :id => "sort_item_#{groupe.id}"}
+	.pull-left.offset-right
+		= link_to edit_button, edit_admin_groupe_path(groupe)
+		= link_to delete_button, admin_groupe_path(groupe), method: :delete, data: {confirm: "Are you sure?"}
+	= link_to groupe.title, groupe, target: "_blank"
+	%hr

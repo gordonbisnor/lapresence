@@ -1,0 +1,22 @@
+%h1= link_to @item.title, @item
+= image_tag @item.picture.url(:thumb), class: "float_right"
+= raw @item.content
+%dl
+  - if dates(@item).present?
+    %dt Dates
+    %dd= dates(@item)
+  - if @item.schedule.present?
+    %dt Horaire
+    %dd= @item.schedule
+  - if @item.location.present?
+    %dt Lieu
+    %dd= @item.location
+  - if @item.cost.present?
+    %dt Coût
+    %dd= @item.cost
+  - if @item.available_spots.present?
+    %dt Places limitées
+    %dd= @item.available_spots
+  - if @item.notes.present?
+    %dt Notes complémentaires
+    %dd= raw @item.notes

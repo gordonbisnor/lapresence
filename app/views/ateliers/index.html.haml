@@ -1,0 +1,14 @@
+%a{:name => "top"}
+= title "Les Ateliers", :h1
+%p Horaire Des Ateliers
+%table.scrollto
+  %tr
+    %th Atelier
+    %th Dates
+    %th Lieu
+  - @items.each do |atelier|
+    %tr
+      %td= link_to atelier.title, "#atelier_#{atelier.id}"
+      %td= dates(atelier)
+      %td= atelier.location
+= render @items

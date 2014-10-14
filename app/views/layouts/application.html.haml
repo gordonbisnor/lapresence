@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+    %title= @page_title || APP_CONFIG[:site_name]
+    %meta{:content => "text/xhtml; charset=utf-8", "http-equiv" => "content-type"}/
+    %meta{:content => "no", "http-equiv" => "imagetoolbar"}/
+    %meta{:content => "all", :name => "distribution"}/
+    %meta{:content => "all", :name => "robots"}/
+    %meta{:content => "document", :name => "resource-type"}/
+    %meta{:content => "true", :name => "MSSmartTagsPreventParsing"}/
+    %meta{:content => "Lorraine Desmarais, Th&eacute;rapeute, animatrice, Healer, connaissance de soi, amour de soi, gu&eacute;rison spirituelle, l&acirc;cher prise.\n\t\t", :name => "Description"}/
+    %meta{:content => "Abus, accompagnement, accueillir, agression, amour de soi, apprendre &agrave; s&rsquo;aimer, apprendre &agrave; s&rsquo;aimer, approche &eacute;nerg&eacute;tique, bien-&ecirc;tre, bio-&eacute;nergie, blessures, chemin de transformation, cheminement spirituel, c&oelig;ur, col&egrave;re, compassion, connaissance de soi, conscience, Core Energetics, couples, &eacute;motions, &eacute;nergie, enracinement, &eacute;veil, &eacute;motions, &eacute;nergie, enracinement, &eacute;veil, formation Barbara Brennan, groupe de travail, gu&eacute;rison, gu&eacute;rison cabalistique, gu&eacute;rison spirituelle, hakomi, Healer, Healing, holistique, int&eacute;gration, intimit&eacute;, joie, Kabbalistic  healing, Kabbalistique Healing, l&acirc;cher prise, lib&eacute;ration, libert&eacute;, m&eacute;ditation, mieux-&ecirc;tre, non-duelle, oui, pr&eacute;sence, r&eacute;alit&eacute;, Rebirth, relations, Releasing, renaissance, respiration, sagesse, spiritualit&eacute;, structures de, d&eacute;fenses, th&eacute;rapie , th&eacute;rapie des champs &eacute;nerg&eacute;tiques, th&eacute;rapie psycho-corporelle\n\t\tth&eacute;rapie psycho-spirituelle, Totalement humain, totalement divin, transformation, v&eacute;rit&eacute;, vibrant, vivant, Lorraine Desmarais, Desmarais, Dipl&ocirc;m&eacute;e de Barbara Brennan, Integrated Kabbalistic Healing\n\t\t", :name => "Keywords"}/
+    %meta{:content => "Accompagnement, th&eacute;rapie psycho-corporelle, healing, Barbara Brennan, La Présence", :name => ""}/
+    = stylesheet_link_tag    "application", :media => "all"
+    /[if lt IE 8]
+      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+    = csrf_meta_tags
+  %body
+    #container
+      #header
+        = image_tag "banner.jpg", :alt => "La Présence", id: "banner"
+        #navigation_container
+          %ul#navigation
+            = raw navigation
+      #content
+        = raw flash_messages
+        = yield :layout
+      #footer
+        %ul#footer_navigation
+          = raw navigation
+        %a{href: "mailto:pratiquer@lapresence.ca"} Pratiquer@LaPresence.ca
+    #post_footer
+      #credit
+        designer web :
+        %a{href: "mailto:arti@endirect.qc.ca"} Johanne Ratté 2008
+        |
+        = succeed ":" do
+          %a{href: "http://www.isnorcreative.com"} Ruby on Rails Development
+        Isnor Creative
+      %a{href: "/admin"} Admin
+    = javascript_include_tag "application"

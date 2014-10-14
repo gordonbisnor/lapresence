@@ -1,0 +1,11 @@
+.page-header
+	.pull-right	
+		.alert.alert-info Change item order by dragging and dropping them into place.
+	%h1 Ateliers
+
+= link_to 'New Item', new_admin_atelier_path, class: 'btn btn-default'
+
+%hr
+
+#ateliers.sortable{"data-target" => "/admin/ateliers/sort"}
+	= render @items

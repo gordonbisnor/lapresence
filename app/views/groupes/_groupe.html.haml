@@ -1,0 +1,24 @@
+= div_for groupe do
+  = image_tag groupe.picture.url(:thumb), class: "float_right"
+  %h2= link_to groupe.title, groupe
+  = raw groupe.content
+  %dl
+    - if dates(groupe).present?
+      %dt Dates
+      %dd= dates(groupe)
+    - if groupe.schedule.present?
+      %dt Horaire
+      %dd= groupe.schedule
+    - if groupe.location.present?
+      %dt Lieu
+      %dd= groupe.location
+    - if groupe.cost.present?
+      %dt Coût
+      %dd= groupe.cost
+    - if groupe.available_spots.present?
+      %dt Places limitées
+      %dd= groupe.available_spots
+    - if groupe.notes.present?
+      %dt Notes complémentaires
+      %dd= raw groupe.notes
+  %p.caption= link_to "[ Haut ]", "#top"

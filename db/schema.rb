@@ -9,21 +9,21 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140911145028) do
+ActiveRecord::Schema.define(version: 20141013235406) do
 
-  create_table "attachments", :force => true do |t|
+  create_table "attachments", force: true do |t|
     t.string   "name"
     t.string   "attachment_file_name"
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "events", :force => true do |t|
+  create_table "events", force: true do |t|
     t.string   "title"
     t.date     "start_date"
     t.date     "end_date"
@@ -37,13 +37,13 @@ ActiveRecord::Schema.define(:version => 20140911145028) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "available_spots"
     t.integer  "position"
   end
 
-  create_table "pages", :force => true do |t|
+  create_table "pages", force: true do |t|
     t.string   "title"
     t.string   "slug"
     t.text     "content"
@@ -51,25 +51,15 @@ ActiveRecord::Schema.define(:version => 20140911145028) do
     t.datetime "updated_at"
   end
 
-  create_table "versions", :force => true do |t|
-    t.integer  "versioned_id"
-    t.string   "versioned_type"
-    t.integer  "user_id"
-    t.string   "user_type"
-    t.string   "user_name"
-    t.text     "modifications"
-    t.integer  "number"
-    t.string   "tag"
+  create_table "versions", force: true do |t|
+    t.string   "item_type",  null: false
+    t.integer  "item_id",    null: false
+    t.string   "event",      null: false
+    t.string   "whodunnit"
+    t.text     "object"
     t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "reverted_from"
   end
 
-  add_index "versions", ["created_at"], :name => "index_versions_on_created_at"
-  add_index "versions", ["number"], :name => "index_versions_on_number"
-  add_index "versions", ["tag"], :name => "index_versions_on_tag"
-  add_index "versions", ["user_id", "user_type"], :name => "index_versions_on_user_id_and_user_type"
-  add_index "versions", ["user_name"], :name => "index_versions_on_user_name"
-  add_index "versions", ["versioned_id", "versioned_type"], :name => "index_versions_on_versioned_id_and_versioned_type"
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
 end

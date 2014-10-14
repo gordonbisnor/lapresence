@@ -25,3 +25,5 @@ class CreateVestalVersions < ActiveRecord::Migration
     drop_table :versions
   end
 end
+
+

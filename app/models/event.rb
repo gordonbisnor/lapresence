@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  default_scope :order => "position ASC"
+  default_scope {order("position ASC")}
 
   has_attached_file :picture,
     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",

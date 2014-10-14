@@ -18,12 +18,12 @@
 		<div id="container">
 				<div id="admin_header">
 					<div class="actions"><%= link_to "Go To Site", root_path %></div>
-					<%= link_to "La Présence Admin", admin_dashboard_path, :id => "home_link" %>
+					<%= link_to "La Présence Admin", admin_dashboard_path, id: "home_link" %>
 					<ul id="nav">
-						<li><%= link_to "Pages", admin_pages_path, :class => "#{'selected' if controller_name == 'pages'}" %></li>
-						<li><%= link_to "Ateliers", admin_ateliers_path, :class => "#{'selected' if controller_name == 'ateliers'}" %></li>
-						<li><%= link_to "Groupes", admin_groupes_path, :class => "#{'selected' if controller_name == 'groupes'}" %></li>
-						<li><%= link_to "Attachments", admin_attachments_path, :class => "#{'selected' if controller_name == 'attachments'}" %></li>
+						<li><%= link_to "Pages", admin_pages_path, class: "#{'selected' if controller_name == 'pages'}" %></li>
+						<li><%= link_to "Ateliers", admin_ateliers_path, class: "#{'selected' if controller_name == 'ateliers'}" %></li>
+						<li><%= link_to "Groupes", admin_groupes_path, class: "#{'selected' if controller_name == 'groupes'}" %></li>
+						<li><%= link_to "Attachments", admin_attachments_path, class: "#{'selected' if controller_name == 'attachments'}" %></li>
 
 					</ul>
 				</div>

@@ -6,5 +6,5 @@
   <td><%= attachment.content_type %></td>
   <td><%= link_to 'Link', attachment.url %></td>
   <td><%= link_to 'Edit', edit_admin_attachment_path(attachment) %></td>
-  <td><%= link_to 'Delete', admin_attachment_path(attachment), :confirm => 'Are you sure?', :method => :delete %></td>
+  <td><%= link_to 'Delete', admin_attachment_path(attachment), :confirm => 'Are you sure?', method: :delete %></td>
 </tr>

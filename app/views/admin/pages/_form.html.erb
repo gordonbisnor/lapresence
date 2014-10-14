@@ -1,9 +1,7 @@
 <div id="page_form">
-<%= semantic_form_for [:admin,@page] do |form| %>
-	<%= form.inputs do %>
-		<%= form.input :title %>
-		<%= form.input :content,  :input_html => { :class => "tinymce", :cols => 90, :rows => 50 } %>
-	<% end %>
-	<%= form.actions %>
+<%= simple_form_for [:admin,@item] do |f| %>
+		<%= f.input :title %>
+		<%= f.input :content,  input_html: { class: "tinymce", cols: 90, rows: 50 } %>
+	<%= f.submit %>
 <% end %>
 </div>

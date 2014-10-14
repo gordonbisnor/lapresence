@@ -1,36 +1,40 @@
 source 'https://rubygems.org'
 gem 'rake', '10.0.3'
 gem 'json', '1.7.7'
-gem 'rails', '3.2.13'
+gem 'rails', '4.2.0.beta1'
 gem 'mysql2', '~> 0.3.11'
-gem 'formtastic', '2.2.1'
-gem 'tinymce-rails'
-gem 'airbrake'
-gem 'vestal_versions', '1.2.2', :git => 'git://github.com/futurechimp/vestal_versions.git'
+gem 'simple_form'
+gem 'tinymce-rails', '4.1.5'
+gem 'airbrake', '4.1.0'
 gem 'paperclip', '3.1.4'
-gem 'make_resourceful'
-
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-  gem 'therubyracer', '0.11.4'
-  gem 'execjs'
-end
-
+gem 'make_resourceful', '1.0.1'
+gem 'sass-rails',   '~> 5.0.0.beta1'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'uglifier', '>= 1.0.3'
+gem 'therubyracer', '0.11.4'
+gem 'execjs'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'spring'
+gem 'paper_trail', '3.0.6' # versioning
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'haml-rails'
 
 group :development do
-  gem 'capistrano'
+  gem 'capistrano', '~> 2.15.5'
   gem 'thin'
   gem 'brakeman', require: false
+  gem "spring-commands-rspec"
 end
 
 group :test do
-  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'rspec-rails'
+  gem 'minitest'
+  gem 'rspec-rails', '~> 2.14.1'
   gem 'launchy'
   gem 'shoulda-matchers', require: false
 end
+
+gem "erb2haml", :group => :development

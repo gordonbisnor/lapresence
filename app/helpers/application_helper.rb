@@ -15,9 +15,9 @@ module ApplicationHelper
     items = []
     NAVIGATION.map { |item|
       begin
-        items << content_tag(:li, link_to(item[0], send("#{item[1]}_path")), :class => "#{'selected' if @page.present? && @page.slug == item[1]}")
+        items << content_tag(:li, link_to(item[0], send("#{item[1]}_path")), class: "#{'selected' if @page.present? && @page.slug == item[1]}")
       rescue
-        items << content_tag(:li, link_to(item[0], item[1], :target => "_blank"))
+        items << content_tag(:li, link_to(item[0], item[1], target: "_blank"))
       end
     }
     return items.join(' ')
@@ -36,7 +36,7 @@ module ApplicationHelper
     messages = []
     %w(notice warning error).each do |msg|
       content = "<div class='close'><a href='#close'><img src='/assets/close.png' alt=''/></a></div>" + html_escape(flash[msg.to_sym])
-      messages << content_tag(:div, raw(content), :id => "flash-#{msg}", :class => "flash") unless flash[msg.to_sym].blank?
+      messages << content_tag(:div, raw(content), id: "flash-#{msg}", class: "flash") unless flash[msg.to_sym].blank?
     end
     messages.join
   end

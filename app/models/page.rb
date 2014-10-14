@@ -1,3 +1,3 @@
 class Page < ActiveRecord::Base
-  versioned
+	has_paper_trail
 end

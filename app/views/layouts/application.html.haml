@@ -26,9 +26,10 @@
         = raw flash_messages
         = yield :layout
       #footer
-        %ul#footer_navigation
-          = raw navigation
-        %a{href: "mailto:pratiquer@lapresence.ca"} Pratiquer@LaPresence.ca
+        %ul#footer_navigation= raw navigation
+        .container
+          .pull-left= link_to "Inscrivez-vous à ma liste d’envoi", "http://eepurl.com/bf-L71", class: 'btn btn-primary'
+          %a{href: "mailto:pratiquer@lapresence.ca"} Pratiquer@LaPresence.ca
     #post_footer
       #credit
         designer web :

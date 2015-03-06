@@ -15,12 +15,11 @@ gem 'execjs'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'spring'
-gem 'paper_trail', '3.0.6' # versioning
+gem 'paper_trail', '4.0.0.beta2' # versioning
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass-extras'
 gem 'haml-rails'
-
 
 group :development do
   gem 'capistrano', '~> 2.15.5'

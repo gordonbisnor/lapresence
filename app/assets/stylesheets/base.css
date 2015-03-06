@@ -100,7 +100,7 @@ div#content {
 	background-image: url('/assets/gradient.png');
 	background-repeat: repeat-x;
 	padding: 25px;
-	width: 725px;
+	width: 100%;
 	overflow: hidden;
 	height: 100%;
 	padding-bottom: 30px;

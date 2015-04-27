@@ -1,6 +1,8 @@
+$icon-font-path: "../fonts/bootstrap";
+
 @import "jquery-ui";
 @import "bootstrap-sprockets"; //this allow the gliphicon to work
-@import "bootstrap";
+
 @import "bootstrap/theme";
 
 body { padding-top: 60px;}

@@ -13,4 +13,8 @@
 				%li{class: "#{active_on('groupes')}" }= link_to "Groupes", admin_groupes_path
 				%li{class: "#{active_on('attachments')}" }= link_to "Attachments", admin_attachments_path
 				%li= link_to "Go To Site", root_path
-
+			%ul.nav.navbar-nav.pull-right
+				%li 
+					%a Signed in as #{current_user.email}
+				%li
+					= link_to "Sign Out", destroy_user_session_path, method: :delete

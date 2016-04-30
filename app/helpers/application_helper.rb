@@ -34,7 +34,7 @@ module ApplicationHelper
   # Outputs the corresponding flash message if any are set
   def flash_messages
     messages = []
-    %w(notice warning error).each do |msg|
+    %w(notice alert warning error).each do |msg|
       content = "<div class='close'><a href='#close'><img src='/assets/close.png' alt=''/></a></div>" + html_escape(flash[msg.to_sym])
       messages << content_tag(:div, raw(content), id: "flash-#{msg}", class: "flash") unless flash[msg.to_sym].blank?
     end

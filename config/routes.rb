@@ -1,5 +1,6 @@
 Lapresence::Application.routes.draw do
   
+  devise_for :users
   resources :groupes
   resources :ateliers
   resources :images

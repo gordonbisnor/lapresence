@@ -1,5 +1,7 @@
 Lapresence::Application.configure do
-
+  
+  config.action_mailer.default_url_options = { host: 'lapresence.ca' }
+  
   config.eager_load = true
   
   # Settings specified here will take precedence over those in config/application.rb

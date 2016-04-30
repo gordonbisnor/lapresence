@@ -23,6 +23,7 @@ body {
 	margin-top: 10px;
 	margin-bottom: 5px;
 	padding-bottom: 4px;
+	overflow: hidden;
 }
 #banner {
 	border: 0 solid rgb(112,	82,	136);
@@ -100,7 +101,6 @@ div#content {
 	background-image: url('/assets/gradient.png');
 	background-repeat: repeat-x;
 	padding: 25px;
-	width: 100%;
 	overflow: hidden;
 	height: 100%;
 	padding-bottom: 30px;

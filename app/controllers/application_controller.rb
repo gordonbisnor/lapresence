@@ -19,5 +19,9 @@ class ApplicationController < ActionController::Base
   def french
     I18n.locale = :fr
   end
+
+  def after_sign_in_path_for(resource)
+    admin_dashboard_url
+  end
     
 end

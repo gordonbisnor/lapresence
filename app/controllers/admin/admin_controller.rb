@@ -1,8 +1,9 @@
 class Admin::AdminController < ApplicationController
   layout 'admin'
-  before_filter :verifies_admin
   before_filter :get_klass
   before_filter :get_object_params, only: [:create,:update]
+  
+  before_action :authenticate_user!
   
   def index
     @items = @klass.sortable? ? @klass.order("position ASC").all : @klass.order("id DESC").all
@@ -78,12 +79,6 @@ class Admin::AdminController < ApplicationController
       rescue
         @klass = nil
       end
-    end
-  
-    def verifies_admin
-      authenticate_or_request_with_http_basic do |username, password|
-        username == "lap" && password == "7,desmarais,1."
-      end if Rails.env == 'production'
     end
     
     def get_object_params

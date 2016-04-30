@@ -4,8 +4,8 @@ gem 'rack', '~> 1.6.2'
 
 gem 'rake', '10.0.3'
 gem 'json', '~> 1.8.0'
-gem 'rails', '4.2.5'
-gem 'nokogiri', '~> 1.6.6.4'
+gem 'rails', '4.2.5.2'
+gem 'nokogiri', '~> 1.6.7.2'
 gem 'mysql2', '~> 0.4.2'
 gem 'simple_form', '3.1.0.rc2'
 gem 'tinymce-rails', '4.1.5'
@@ -21,6 +21,7 @@ gem 'jquery-ui-rails'
 gem 'spring'
 gem 'paper_trail', '4.0.0.beta2' # versioning
 gem 'haml-rails'
+gem 'devise'
 
 group :development do
   gem 'bundler-audit'

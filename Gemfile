@@ -21,7 +21,7 @@ gem 'jquery-ui-rails'
 gem 'spring'
 gem 'paper_trail', '4.0.0.beta2' # versioning
 gem 'haml-rails'
-gem 'devise'
+gem 'devise', '~> 3.5.8'
 gem 'mime-types', '< 3'
 
 group :development do

@@ -22,6 +22,7 @@ gem 'spring'
 gem 'paper_trail', '4.0.0.beta2' # versioning
 gem 'haml-rails'
 gem 'devise'
+gem 'mime-types', '< 3'
 
 group :development do
   gem 'bundler-audit'

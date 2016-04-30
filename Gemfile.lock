@@ -117,9 +117,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    mime-types (3.0)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0221)
+    mime-types (2.99.1)
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -258,6 +256,7 @@ DEPENDENCIES
   jquery-ui-rails
   json (~> 1.8.0)
   launchy
+  mime-types (< 3)
   minitest
   mysql2 (~> 0.4.2)
   nokogiri (~> 1.6.7.2)

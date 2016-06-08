@@ -1,14 +1,20 @@
 %a{:name => "top"}
-= title "Les Groupes", :h1
-%p Les Groupes Animés Par Lorraine Desmarais
+
+= title t('groups.header'), :h1
+
+%p= t('groups.subheader')
+
 %table.scrollto
-  %tr
-    %th Groupe
-    %th Dates
-    %th Lieu
-  - @items.each do |groupe|
+  %thead
     %tr
-      %td= link_to groupe.title, "#groupe_#{groupe.id}"
-      %td= dates(groupe)
-      %td= groupe.location
+      %th= t 'group'
+      %th= t 'dates'
+      %th= t 'location'
+  %tbody
+    - @items.each do |groupe|
+      %tr
+        %td= link_to groupe.title, "#groupe_#{groupe.id}"
+        %td= dates(groupe)
+        %td= groupe.location
+
 = render @items

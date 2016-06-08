@@ -1,0 +1,13 @@
+en:
+  admin:
+    new_item: 'New Item'
+    ateliers:
+      header: Ateliers
+    groupes:
+      header: Groupes
+    attachments:
+      header: Attachments
+    pages:
+      header: Pages
+    dashboard:
+      header: La Présence Administration Dashboard

@@ -1,6 +1,6 @@
 %div{:class => "item #{cycle("even","odd")}", :id => "sort_item_#{atelier.id}"}
 	.pull-left.offset-right
-		= link_to edit_button, edit_admin_atelier_path(atelier)
-		= link_to delete_button, admin_atelier_path(atelier), method: :delete, data: {confirm: "Are you sure?"}
+		= link_to edit_button, edit_admin_atelier_path(atelier), title: "Edit", class: "edit-button"
+		= link_to delete_button, admin_atelier_path(atelier), method: :delete, data: {confirm: "Are you sure?"}, title: "Delete", class: "delete-button"
 	= link_to atelier.title, atelier, target: "_blank"
 	%hr

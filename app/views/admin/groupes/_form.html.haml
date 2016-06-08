@@ -2,8 +2,18 @@
   #details_tab.tab
     .row
       .col-sm-3= f.input :title
-      .col-sm-3= f.input :start_date, as: :string, input_html: {class: "datepicker"}
-      .col-sm-3= f.input :end_date, as: :string, input_html: {class: "datepicker"}
+
+      .col-sm-3
+        = f.label :start_date
+        .input-group
+          = f.text_field :start_date, class: "datepicker form-control"
+          .input-group-addon.clear-date Clear
+      .col-sm-3
+        = f.label :end_date
+        .input-group
+          = f.text_field :end_date, class: "datepicker form-control"
+          .input-group-addon.clear-date Clear
+
       .col-sm-3= f.input :location
     .row
       .col-sm-3= f.input :cost
@@ -14,7 +24,7 @@
       .col-sm-6= f.input :content,  input_html: { class: "tinymce", style: "width:680px;height:500px" }
       .col-sm-6= f.input :notes,  input_html: { class: "tinymce", style: "width:680px;height:500px" }
   .btn-group
-    = f.submit class: 'btn btn-primary'
+    = f.submit class: 'btn btn-primary', id: "submit"
     = link_to "Cancel", :back, class: 'btn btn-default'
 
 - content_for :js, tinymce 

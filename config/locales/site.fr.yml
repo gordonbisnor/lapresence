@@ -1,0 +1,13 @@
+fr:
+  groups:
+    header: Les Groupes
+    subheader: Les Groupes Animés Par Lorraine Desmarais
+    group: Groupe
+    dates: Dates
+    location: Lieu
+  ateliers:
+    header: Les Ateliers
+    subheader: Horaire Des Ateliers
+    atelier: Atelier
+    dates: Dates
+    location: Lieu

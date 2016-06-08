@@ -1,15 +1,15 @@
 class RedirectsController < ApplicationController
   
   def bio
-    moved_to bio_path
+    moved_to page_path('bio')
   end
 
   def approche
-    moved_to approche_path
+    moved_to page_path('approche')
   end
   
   def bibliographie
-    moved_to bibliographie_path
+    moved_to page_path('bibliographie')
   end
   
   def ateliers
@@ -21,15 +21,15 @@ class RedirectsController < ApplicationController
   end  
 
   def consultations
-    moved_to formation_path
+    moved_to page_path('formation')
   end
   
   def coordonnees
-    moved_to coordonnees_path
+    moved_to page_path('coordonnees')
   end
   
   def extrait_du_livre
-    moved_to extrait_du_livre_path
+    moved_to page_path('extrait_du_livre')
   end
   
   def extrait_impr

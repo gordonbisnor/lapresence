@@ -3,6 +3,6 @@
 		= f.input :title
 		= f.input :content,  input_html: { class: "tinymce", rows: 30 }
 		.btn-group
-			= f.submit class: 'btn btn-primary'
+			= f.submit class: 'btn btn-primary', id: "submit"
 			= link_to "Cancel", :back, class: 'btn btn-default'
 - content_for :js, tinymce 

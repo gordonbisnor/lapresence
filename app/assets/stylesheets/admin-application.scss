@@ -1,5 +1,6 @@
 @import "jquery-ui";
 
+
 body { padding-top: 60px;}
 
 .offset-right {
@@ -9,4 +10,9 @@ body { padding-top: 60px;}
 	padding-left: 7px;
 	padding-right: 7px;
 	font-size: 14px;
+}
+.clear-date {
+	&:hover {
+		cursor: pointer;
+	}
 }

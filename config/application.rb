@@ -11,7 +11,9 @@ end
 
 module Lapresence
   class Application < Rails::Application
-        
+    
+    config.active_record.raise_in_transactional_callbacks = true        
+    
     config.assets.precompile += %w(admin-application.css admin-application.js tinymce-jquery.js)
 
     # Settings in config/environments/* take precedence over those specified here.

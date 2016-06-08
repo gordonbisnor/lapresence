@@ -1,14 +1,20 @@
 %a{:name => "top"}
-= title "Les Ateliers", :h1
-%p Horaire Des Ateliers
+
+= title t('ateliers.header'), :h1
+
+%p= t('ateliers.subheader')
+
 %table.scrollto
-  %tr
-    %th Atelier
-    %th Dates
-    %th Lieu
-  - @items.each do |atelier|
+  %thead
     %tr
-      %td= link_to atelier.title, "#atelier_#{atelier.id}"
-      %td= dates(atelier)
-      %td= atelier.location
+      %th= t 'atelier' 
+      %th= t 'dates'
+      %th= t 'location'
+  %tbody
+    - @items.each do |atelier|
+      %tr
+        %td= link_to atelier.title, "#atelier_#{atelier.id}"
+        %td= dates(atelier)
+        %td= atelier.location
+
 = render @items

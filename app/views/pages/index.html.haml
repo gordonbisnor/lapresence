@@ -13,5 +13,6 @@
     %meta{:content => "Accompagnement, th&eacute;rapie psycho-corporelle, healing, Barbara Brennan, La Présence", :name => ""}/
     = stylesheet_link_tag    "application", :media => "all"
   %body#home
-    #container
-      = link_to image_tag("index2.jpg", :alt => "La Présence"), bio_path
+    #container{style: "max-width: 95%;"}
+      = link_to image_tag("index2.jpg", :alt => "La Présence", style: "max-width: 100%"), bio_path
+

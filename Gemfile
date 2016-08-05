@@ -4,7 +4,7 @@ gem 'rack', '~> 1.6.2'
 
 gem 'rake', '10.0.3'
 gem 'json', '~> 1.8.0'
-gem 'rails', '4.2.5.2'
+gem 'rails', '4.2.7'
 gem 'nokogiri', '~> 1.6.8'
 gem 'mysql2', '~> 0.4.2'
 gem 'simple_form', '3.1.0.rc2'

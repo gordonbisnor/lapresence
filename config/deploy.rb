@@ -3,9 +3,9 @@ require "bundler/capistrano"
 
 user = 'lapresence'
 password = "99#k:T7+89M4.qz7WU3n?.,g7&9(@y"
-application = "lap2"
+application = "lap"
 domain = 'lapresence.webfactional.com'
-path = "/home/#{user}/webapps/lap2/"
+path = "/home/#{user}/webapps/lap/"
 
 set :deploy_to, path
 

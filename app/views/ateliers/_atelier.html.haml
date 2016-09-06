@@ -1,5 +1,5 @@
 = div_for atelier do
-  = image_tag atelier.picture.url(:thumb), class: "float_right"
+  = image_tag atelier.picture.url(:thumb), class: "float_right" if atelier.picture?
   %h2= link_to atelier.title, atelier
   = raw atelier.content
   %dl

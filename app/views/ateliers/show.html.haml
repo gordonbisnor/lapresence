@@ -1,5 +1,5 @@
 %h1= link_to @item.title, @item
-= image_tag @item.picture.url(:thumb), class: "float_right"
+= image_tag @item.picture.url(:thumb), class: "float_right" if @item.picture?
 = raw @item.content
 %dl
   - if dates(@item).present?

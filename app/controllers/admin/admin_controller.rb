@@ -1,7 +1,7 @@
 class Admin::AdminController < ApplicationController
   layout 'admin'
-  before_filter :get_klass
-  before_filter :get_object_params, only: [:create,:update]
+  before_action :get_klass
+  before_action :get_object_params, only: [:create,:update]
   
   before_action :authenticate_user!
   

@@ -1,4 +1,4 @@
-class Event < ActiveRecord::Base
+class Event < ApplicationRecord
   default_scope {order("position ASC")}
 
   has_attached_file :picture,

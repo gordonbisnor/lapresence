@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
-  before_filter :core_redirect
+  before_action :core_redirect
   
   def core_redirect
     redirect_to "http://www.lapresence.ca/formation#english" and return if request.domain =~ /coreenergeticsmontreal/ && !(request.request_uri =~ /formation/)

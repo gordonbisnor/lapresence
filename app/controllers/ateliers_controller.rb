@@ -1,5 +1,5 @@
 class AteliersController < ApplicationController
-  before_filter :french
+  before_action :french
   
   def index
     @items = Atelier.all

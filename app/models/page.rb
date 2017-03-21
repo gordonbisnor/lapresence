@@ -1,3 +1,3 @@
-class Page < ActiveRecord::Base
+class Page < ApplicationRecord
 	has_paper_trail
 end

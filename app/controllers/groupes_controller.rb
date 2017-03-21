@@ -1,5 +1,5 @@
 class GroupesController < ApplicationController
-  before_filter :french
+  before_action :french
   
   def index
     @items = Groupe.all

@@ -3,6 +3,8 @@ class Attachment < ApplicationRecord
     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
     :url => "/system/:attachment/:id/:style/:filename",
     :styles => { :thumb => "100x100#" }
+  
+  do_not_validate_attachment_file_type :attachment
 
   def url
     APP_CONFIG[:site_url] + attachment.url.split("?")[0]

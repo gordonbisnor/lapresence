@@ -6,9 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '464031cfcb34f956d62f414454462ae401f3f14fd431119abd644abfd5150eb3985181a2d598cda3533f9946141bf24480b76a93850858cf653fe0662d1c54b1'
-  
-  config.secret_key = '37bcad00de1fdcee87947a67511cd8d54cc06e153cb2444908de9be621c2131a2406886ec56af9c0353c4561a9f072e5b6b1e1292989bb9676ae4f1df61b0748'
+  # config.secret_key = '4d57a16f9856fc72d57f50d2036d5236411bda56e45ce39491629bb6cd16c3b5a8645afd4dcf435d8c9e50e52532ef01f90b420ad7af0ab4ac135d8970e6b6f8'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -92,6 +90,12 @@ Devise.setup do |config|
   # from the server. You can disable this option at your own risk.
   # config.clean_up_csrf_token_on_authentication = true
 
+  # When false, Devise will not attempt to reload routes on eager load.
+  # This can reduce the time taken to boot the app but if your application
+  # requires the Devise mappings to be loaded during boot time the application
+  # won't boot properly.
+  # config.reload_routes = true
+
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 11. If
   # using other algorithms, it sets how many times you want the password to be hashed.
@@ -104,9 +108,12 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'ed22a3f59e29371df6df4a10bfb89e40c541218d48d0d2795ad3b5083b25b43e1e83096fbe5c0a7f14548c822499eb09a8aa22ea09ff70a734ada9c5280254dd'
+  # config.pepper = '97e6c74ac723e2184bb31c850b1c474b02d116a6e1b14d8da67ceab55de9b738513ae717a8b60e22e5ed3e55481f2d5215335a9dbfa19f76cd107408c826502d'
 
-  # Send a notification email when the user's password is changed
+  # Send a notification to the original email when the user's email is changed.
+  # config.send_email_changed_notification = false
+
+  # Send a notification email when the user's password is changed.
   # config.send_password_change_notification = false
 
   # ==> Configuration for :confirmable
@@ -155,7 +162,7 @@ Devise.setup do |config|
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  config.email_regexp = /\A[^@]+@[^@]+\z/
+  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
@@ -166,27 +173,27 @@ Devise.setup do |config|
   # Defines which strategy will be used to lock an account.
   # :failed_attempts = Locks an account after a number of failed attempts to sign in.
   # :none            = No lock strategy. You should handle locking by yourself.
-  config.lock_strategy = :failed_attempts
+  # config.lock_strategy = :failed_attempts
 
   # Defines which key will be used when locking and unlocking an account
-  config.unlock_keys = [:email]
+  # config.unlock_keys = [:email]
 
   # Defines which strategy will be used to unlock an account.
   # :email = Sends an unlock link to the user email
   # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
   # :both  = Enables both strategies
   # :none  = No unlock strategy. You should handle unlocking by yourself.
-  config.unlock_strategy = :both
+  # config.unlock_strategy = :both
 
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
-  config.maximum_attempts = 5
+  # config.maximum_attempts = 20
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
-  config.unlock_in = 1.hour
+  # config.unlock_in = 1.hour
 
   # Warn on the last attempt before the account is locked.
-  config.last_attempt_warning = true
+  # config.last_attempt_warning = true
 
   # ==> Configuration for :recoverable
   #

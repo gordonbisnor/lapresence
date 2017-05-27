@@ -1,12 +1,14 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  protect_from_forgery
-  
+
+  protect_from_forgery prepend: true
+
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+
   before_action :core_redirect
   
   def core_redirect
-    redirect_to "http://www.lapresence.ca/formation#english" and return if request.domain =~ /coreenergeticsmontreal/ && !(request.request_uri =~ /formation/)
+    redirect_to "https://www.lapresence.ca/formation#english" and return if request.domain =~ /coreenergeticsmontreal/ && !(request.request_uri =~ /formation/)
   end
   
   protected

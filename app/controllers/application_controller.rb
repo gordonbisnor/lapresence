@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 
-  protect_from_forgery prepend: true
+  protect_from_forgery prepend: true, with: :exception
 
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 

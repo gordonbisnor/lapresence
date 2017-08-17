@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.2'
+gem 'nokogiri', '>= 1.7.2'
+gem 'rails', '5.0.5'
 gem 'jbuilder', '~> 2.0'
 gem 'mysql2', '~> 0.4.2'
 gem 'simple_form'

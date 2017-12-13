@@ -17,6 +17,14 @@ feature 'ateliers' do
     expect(page).to have_text(@item.title)
   end
   
+  scenario 'publish and unpublish', js: true do
+    visit index_path
+    click_link "Click to hide from public"
+    expect(page).to have_css("span.glyphicon-unchecked")
+    click_link "Click to show to public"
+    expect(page).to have_css("span.glyphicon-check")
+  end
+  
   it_behaves_like 'admin crud'
 
   it_behaves_like 'clearable date form'

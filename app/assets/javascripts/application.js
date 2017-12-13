@@ -13,3 +13,6 @@
 //= require jquery
 //= require jquery.scrollTo-1.4.2-min
 //= require lapresence
+//= require react
+//= require react_ujs
+//= require components

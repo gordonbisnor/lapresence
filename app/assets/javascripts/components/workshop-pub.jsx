@@ -1,0 +1,44 @@
+
+window.WorkshopPub = createReactClass({
+
+  getInitialState: function () {
+    return {
+      published: this.props.published,
+      atelierId: this.props.atelierId
+    }
+  },
+  
+  togglePublishStatus() {
+    let state = !this.state.published;
+    let url = '/admin/ateliers/' + this.state.atelierId + ".js";
+    let _this = this;
+    $.ajax({
+      type: "PUT",
+      url: url,
+      data: {atelier: {published: state}},
+      success: function(){ _this.setState({published: state}); }
+    });
+  },
+    
+
+  publishButton () {
+
+    if (this.state.published) {
+      return (
+        <span role="button" onClick={ this.togglePublishStatus } title="Click to hide from public"  className="glyphicon glyphicon-check text-success">
+          
+        </span>
+      );
+    } else {
+      return (
+        <span role="button" onClick={ this.togglePublishStatus } title="Click to show to public" className="glyphicon glyphicon-unchecked text-danger">
+          
+        </span>
+      );
+    }
+  },
+
+  render: function() {
+    return (<span className="admin-button"> { this.publishButton() } </span>);
+  }
+})

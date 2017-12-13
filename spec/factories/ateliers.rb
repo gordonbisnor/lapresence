@@ -9,5 +9,6 @@ FactoryGirl.define do
     schedule "yes"
     cost "FREE"
     available_spots "2"
+    published true
   end
 end

@@ -2,11 +2,11 @@ class AteliersController < ApplicationController
   before_action :french
   
   def index
-    @items = Atelier.all
+    @items = Atelier.published.all
   end
 
   def show
-    @item = Atelier.find(params[:id])
+    @item = Atelier.published.find(params[:id])
   end
 
 end

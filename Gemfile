@@ -18,6 +18,7 @@ gem 'devise'
 gem 'mime-types', '3.1'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'record_tag_helper'
+gem 'react-rails'
 
 group :development, :test do
   gem 'byebug'

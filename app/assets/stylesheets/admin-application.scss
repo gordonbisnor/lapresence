@@ -1,7 +1,7 @@
 @import "jquery-ui";
 
 
-body { padding-top: 60px;}
+body { padding-top: 60px; }
 
 .offset-right {
 	margin-right: 1em;
@@ -15,4 +15,7 @@ body { padding-top: 60px;}
 	&:hover {
 		cursor: pointer;
 	}
+}
+td, th, .item, .admin-button {
+  font-size: 18px;
 }

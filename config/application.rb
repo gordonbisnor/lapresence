@@ -15,8 +15,7 @@ module Lapresence
     config.action_controller.forgery_protection_origin_check = true
 
     config.action_controller.per_form_csrf_tokens = true
-
-    config.active_record.raise_in_transactional_callbacks = true            
+         
     config.assets.precompile += %w(admin-application.css admin-application.js tinymce-jquery.js)
 
     # Settings in config/environments/* take precedence over those specified here.

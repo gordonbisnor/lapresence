@@ -1,18 +1,18 @@
 source 'https://rubygems.org'
 gem 'loofah', '~> 2.2.1'
 gem 'nokogiri', '>= 1.8.2'
-gem 'rails', '5.0.5'
+gem 'rails', '5.2'
 gem 'jbuilder', '~> 2.0'
 gem 'mysql2', '~> 0.4.2'
 gem 'simple_form'
 gem 'tinymce-rails', '~> 4.3.8'
 #gem 'airbrake', '4.1.0'
 gem 'paperclip', '~> 5.2.0'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'#, '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'paper_trail', '4.0.0.beta2'
+gem 'paper_trail'#, '4.0.0.beta2'
 gem 'haml-rails'
 gem 'devise'
 gem 'mime-types', '3.1'
@@ -30,7 +30,7 @@ group :development do
   gem 'spring'
   gem "spring-commands-rspec"
   gem 'bundler-audit'
-  gem 'capistrano', '~> 2.15.5'
+  gem 'capistrano', '< 3'
 end
 
 group :test do

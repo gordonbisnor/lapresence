@@ -1,5 +1,8 @@
+$highlight-color: darken(#3367cc,10%);
+$lighter-highlight: rgb(88,181,215);
+
 a {
-	color: rgb(102,	153,	204);
+	color: $highlight-color;
 	text-decoration: none;
 }
 a:hover {
@@ -103,8 +106,8 @@ div#credit {
 div#content {
 	background-image: url('/assets/gradient.png');
 	background-repeat: repeat-x;
-	margin-left: 25px;
-	margin-right: 25px;
+	padding-left: 25px;
+	padding-right: 25px;
 	padding-top: 25px;
 	padding-bottom: 25px;
 	overflow: hidden;
@@ -116,8 +119,9 @@ div#content {
 	margin: 15px;
 
 }
-h1, h2, h3, dt, sup {
-	color: rgb(88,181,215);
+h1, h2, h3, dt, sup, th {
+	color: $highlight-color
+	 
 }
 h1 {
 	margin-top: 0.5em;
@@ -239,4 +243,27 @@ img {
 	border-bottom-width: 1px;
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+input {
+	border: 1px solid $highlight-color;
+	padding: 1em;
+	outline: none;
+	&:focus {
+		box-shadow: 0 0 0 1px $highlight-color;
+	}
+}
+input[type="text"], input[type="email"], input[type="password"] {
+	display: block;
+}
+input[type="submit"], button {
+	background-color: $highlight-color;
+	border-radius: 3px;
+	color: white;
+	padding-left: 2em;
+	padding-right: 2em;
+	cursor: pointer;
+	&:hover {
+		background-color: lighten($highlight-color, 10%);
+		
+	}
 }

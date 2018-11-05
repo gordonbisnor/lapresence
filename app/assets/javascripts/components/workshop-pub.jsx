@@ -25,15 +25,13 @@ window.WorkshopPub = createReactClass({
 
     if (this.state.published) {
       return (
-        <span role="button" onClick={ this.togglePublishStatus } title="Click to hide from public"  className="glyphicon glyphicon-check text-success">
-          
-        </span>
+        <button onClick={ this.togglePublishStatus } title="Click to hide from public"  className="glyphicon glyphicon-check text-success unbutton">
+        </button>
       );
     } else {
       return (
-        <span role="button" onClick={ this.togglePublishStatus } title="Click to show to public" className="glyphicon glyphicon-unchecked text-danger">
-          
-        </span>
+        <button onClick={ this.togglePublishStatus } title="Click to show to public" className="glyphicon glyphicon-unchecked text-danger unbutton">
+        </button>
       );
     }
   },

@@ -3,7 +3,7 @@ require "bundler/capistrano"
 
 user = 'lapresence'
 password = "99#k:T7+89M4.qz7WU3n?.,g7&9(@y"
-application = "lap5"
+application = "lap_oct_2018"
 domain = 'lapresence.webfactional.com'
 path = "/home/#{user}/webapps/#{application}/"
 

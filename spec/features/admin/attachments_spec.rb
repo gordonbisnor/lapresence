@@ -21,7 +21,8 @@ feature 'attachments' do
 
   def fill_form
     fill_in "Name", with: "foo bar"
-    page.find("#submit").click
+    find(:css, 'input', id: 'submit').click
   end
 
 end
+

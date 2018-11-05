@@ -19,10 +19,10 @@ feature 'ateliers' do
   
   scenario 'publish and unpublish', js: true do
     visit index_path
-    click_link "Click to hide from public"
-    expect(page).to have_css("span.glyphicon-unchecked")
-    click_link "Click to show to public"
-    expect(page).to have_css("span.glyphicon-check")
+    click_button "Click to hide from public"
+    expect(page).to have_css("button.glyphicon-unchecked")
+    click_button "Click to show to public"
+    expect(page).to have_css("button.glyphicon-check")
   end
   
   it_behaves_like 'admin crud'
@@ -37,8 +37,6 @@ feature 'ateliers' do
     fill_in "Cost", with: "baz"
     fill_in "Available spots", with: 8
     fill_in "Schedule", with: "foo"
-    fill_in "Content", with: "qux"
-    fill_in "Notes", with: "foo"
     page.find("#submit").click
   end
 

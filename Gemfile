@@ -34,9 +34,9 @@ group :development do
 end
 
 group :test do
+  gem 'capybara-selenium'
   gem 'rails-controller-testing'
   gem 'capybara'
-  gem 'poltergeist'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'minitest'

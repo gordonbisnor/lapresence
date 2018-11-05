@@ -68,8 +68,12 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-selenium (0.0.6)
+      capybara
+      selenium-webdriver
+    childprocess (0.9.0)
+      ffi (~> 1.0, >= 1.0.11)
     climate_control (0.2.0)
-    cliver (0.3.2)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
     concurrent-ruby (1.0.5)
@@ -92,6 +96,7 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -160,10 +165,6 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
-    poltergeist (1.14.0)
-      capybara (~> 2.1)
-      cliver (~> 0.3.1)
-      websocket-driver (>= 0.2.0)
     public_suffix (2.0.5)
     rack (2.0.5)
     rack-test (1.1.0)
@@ -230,6 +231,7 @@ GEM
     rspec-support (3.8.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
+    rubyzip (1.2.2)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -240,6 +242,9 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    selenium-webdriver (3.141.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2, >= 1.2.2)
     sexp_processor (4.11.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
@@ -288,6 +293,7 @@ DEPENDENCIES
   byebug
   capistrano (< 3)
   capybara
+  capybara-selenium
   database_cleaner
   devise
   factory_girl_rails
@@ -303,7 +309,6 @@ DEPENDENCIES
   nokogiri (>= 1.8.2)
   paper_trail
   paperclip (~> 5.2.0)
-  poltergeist
   rails (= 5.2)
   rails-controller-testing
   react-rails

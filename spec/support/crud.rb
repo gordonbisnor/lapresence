@@ -1,13 +1,13 @@
 shared_examples 'admin crud' do
 
-  scenario 'create' do
+  scenario 'create', js: true do
     visit index_path
     click_link t('admin.new_item')
     fill_form
     expect(page).to have_text("Item Created Successfully.")    
   end
   
-  scenario 'edit' do
+  scenario 'edit', js: true do
     visit index_path
     page.first('.edit-button').click
     fill_form

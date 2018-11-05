@@ -12,7 +12,11 @@ plugins:
   - table
   - textcolor
 
-toolbar: "forecolor backcolor"
+toolbar: "forecolor backcolor fontselect fontsizeselect"
 
 paste_as_text: true
 paste_word_valid_elements: true
+
+#font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;Times='
+
+fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt'

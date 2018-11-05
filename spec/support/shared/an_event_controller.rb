@@ -2,16 +2,16 @@ shared_examples 'an event controller' do
   
 	describe 'index' do
 		before { item; get :index }
-		it { should respond_with(:success) }
-		it { should render_template(:index) } 
-		specify { assigns[:items].should include(item) }
+		it { is_expected.to respond_with(:success) }
+		it { is_expected.to render_template(:index) } 
+		specify { expect(assigns[:items]).to include(item) }
 	end
 
 	describe 'show' do
-		before { get :show, id: item.id }
-		it { should respond_with(:success) }
-		it { should render_template(:show) } 
-		specify { assigns[:item].should eql(item) }
+		before { get :show, params: {id: item.id} }
+		it { is_expected.to respond_with(:success) }
+		it { is_expected.to render_template(:show) } 
+		specify { expect(assigns[:item]).to eql(item) }
 	end
 
 end

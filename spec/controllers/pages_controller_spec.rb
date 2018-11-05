@@ -7,14 +7,14 @@ describe PagesController do
 		before { get :extrait_impr }
 		it { is_expected.to respond_with(:success) }
 		it { is_expected.to render_template(:extrait_impr) }
-		specify { assigns[:page].should eql(@page) }
+		specify { expect(assigns[:page]).to eql(@page) }
 	end
 	
 	describe 'show' do
 		before { get :show, params: {id: @page.slug} }
 		it { is_expected.to respond_with(:success) }
 		it { is_expected.to render_template(:show) }
-		specify { assigns[:page].should eql(@page) }
+		specify { expect(assigns[:page]).to eql(@page) }
 	end
 	
 	describe 'index' do

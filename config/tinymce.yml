@@ -17,6 +17,7 @@ toolbar: "forecolor backcolor fontselect fontsizeselect"
 paste_as_text: true
 paste_word_valid_elements: true
 
-#font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;Times='
+font_formats: 'Arial=arial,helvetica,sans-serif;Calibri=Calibri, sans-serif;Courier New=courier new,courier,monospace;Times=times,san-serif'
 
 fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt'
+

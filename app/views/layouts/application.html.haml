@@ -18,20 +18,20 @@
     = csrf_meta_tags
   %body
     #container
-      #header
+      %header#header
         = image_tag "banner.jpg", :alt => "La Présence", id: "banner"
-        #navigation_container
+        %nav#navigation_container
           %ul#navigation
             = raw navigation
-      #content
+      %main#content
         = raw flash_messages
         = yield :layout
-      #footer
+      %footer#footer
         %ul#footer_navigation= raw navigation
         .container
           .pull-left= link_to "Inscrivez-vous à ma liste d’envoi", "http://eepurl.com/bf-L71", class: 'btn btn-primary'
           %a{href: "mailto:pratiquer@lapresence.ca"} Pratiquer@LaPresence.ca
-    #post_footer
+    %footer#post_footer
       #credit
         designer web :
         %a{href: "mailto:arti@endirect.qc.ca"} Johanne Ratté 2008

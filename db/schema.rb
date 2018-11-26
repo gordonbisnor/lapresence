@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_11_13_171440) do
 
-  create_table "attachments", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "attachments", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "attachment_file_name"
     t.string "attachment_content_type"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_171440) do
     t.datetime "updated_at"
   end
 
-  create_table "events", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "events", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "title"
     t.date "start_date"
     t.date "end_date"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_171440) do
     t.boolean "published"
   end
 
-  create_table "pages", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "pages", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "title"
     t.string "slug"
     t.text "content"

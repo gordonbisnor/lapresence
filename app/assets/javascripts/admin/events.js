@@ -1,7 +1,7 @@
-jQuery(document).ready(function(){
+$(document).ready(function(){
 	
-	jQuery(".datepicker").datepicker({dateFormat:'yy-mm-dd'}).keyup(function(e) {
-    if(e.keyCode == 8 || e.keyCode == 46) {
+	$(".datepicker").datepicker({dateFormat:'yy-mm-dd'}).keyup(function(e) {
+    if (e.keyCode === 8 || e.keyCode === 46) {
         $.datepicker._clearDate(this);
     }
 	});
@@ -11,14 +11,14 @@ jQuery(document).ready(function(){
 		$(this).prev('.datepicker').val('');
 	});
 
-	jQuery('#content_tab, #notes_tab').hide();
-	jQuery('.tabs li a').click(function(){
-		jQuery('.tabs li a').removeClass('selected');
-		jQuery(this).addClass('selected');
-		jQuery('.tab').hide();
-		target = jQuery(this).attr('href')
-		jQuery(target).show();
+	$('#content_tab, #notes_tab').hide();
+	
+	$('.tabs li a').click(function () {
+		$('.tabs li a').removeClass('selected');
+		$(this).addClass('selected');
+		$('.tab').hide();
+		target = $(this).attr('href')
+		$(target).show();
 		return false;
-
-	})
+	});
 })

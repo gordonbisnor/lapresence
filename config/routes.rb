@@ -20,12 +20,9 @@ Lapresence::Application.routes.draw do
   get "/pages/consultations.html"   => "redirects#formation"
   get "/pages/extrait_livre.html"   => "redirects#extrait_du_livre"
   
-  #get  "/bibliographie"     => "pages#show",    id: "bibliographie",     as:  :bibliographie 
+  
+
   get  "/bio"               => "pages#show",    id: "bio",               as:  :bio
-  #get  "/approche"          => "pages#show",    id: "approche",          as:  :approche
-  #get  "/formation"         => "pages#show",    id: "formation",         as:  :formation
-  #get  "/coordonnees"       => "pages#show",    id: "coordonnees",       as:  :coordonnees
-  #get  "/extrait_du_livre"  => "pages#show",    id: "extrait_du_livre",  as:  :extrait_du_livre
 
   get  "/extrait_impr"      => "pages#extrait_impr", as:  :extrait_impr
  

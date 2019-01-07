@@ -25,6 +25,15 @@ feature 'ateliers' do
     expect(page).to have_css("button.glyphicon-check")
   end
   
+
+  scenario 'edit publish and unpublish', js: true do
+    visit edit_admin_atelier_path(@item)
+    click_button "Click to hide from public"
+    expect(page).to have_css("button.glyphicon-unchecked")
+    click_button "Click to show to public"
+    expect(page).to have_css("button.glyphicon-check")
+  end
+
   it_behaves_like 'admin crud'
 
   it_behaves_like 'clearable date form'

@@ -1,4 +1,12 @@
-= simple_form_for [:admin,@item], html: {class: 'form-vertical' } do |f|
+= simple_form_for [:admin, @item], html: {class: 'form-vertical' } do |f|
+
+  - if @item.persisted?
+    %hr  
+    Published?  
+    = react_component "WorkshopPub", {published: @item.published, atelierId: @item.id}, {tag: "span"}
+    %hr
+
+
   .row
     .col-sm-3= f.input :title
   
@@ -26,5 +34,7 @@
   .btn-group
     = f.submit class: 'btn btn-primary', id: "submit"
     = link_to "Cancel", :back, class: 'btn btn-default'
-    
+
+
+
 - content_for :js, tinymce 

@@ -8,7 +8,8 @@ window.WorkshopPub = createReactClass({
     }
   },
   
-  togglePublishStatus() {
+  togglePublishStatus(event) {
+    event.preventDefault();
     let state = !this.state.published;
     let url = '/admin/ateliers/' + this.state.atelierId + ".js";
     let _this = this;
@@ -37,6 +38,6 @@ window.WorkshopPub = createReactClass({
   },
 
   render: function() {
-    return (<span className="admin-button"> { this.publishButton() } </span>);
+    return (<span className="admin-button publish-button"> { this.publishButton() } </span>);
   }
 })

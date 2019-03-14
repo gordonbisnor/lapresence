@@ -3,7 +3,7 @@ gem 'loofah', '~> 2.2.3'
 gem 'nokogiri', '>= 1.8.2'
 gem 'rails', '~> 5.2'
 gem 'jbuilder', '~> 2.0'
-gem 'mysql2', '~> 0.4.2'
+gem 'mysql2'
 gem 'simple_form'
 gem 'tinymce-rails', '~> 4.3.8'
 gem 'paperclip', '~> 5.2.0'
@@ -24,6 +24,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "capistrano-db-tasks", '< 0.3', require: false
   gem 'web-console'
   gem 'spring'
   gem "spring-commands-rspec"

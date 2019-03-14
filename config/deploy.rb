@@ -58,3 +58,9 @@ desc "deploy the precompiled assets"
 
 after 'deploy:update_code', 'deploy_assets'
 
+
+### CAP DB TASKS
+require 'capistrano-db-tasks'
+set :db_local_clean, true
+set :db_remote_clean, true
+set :disallow_pushing, true

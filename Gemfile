@@ -21,6 +21,7 @@ gem 'react-rails'
 
 group :development, :test do
   gem 'byebug'
+  gem 'puma'
 end
 
 group :development do

@@ -1,4 +1,3 @@
-fontsize_formats: "10px,12px,14px,16px,24px,36px,48px"
 plugins:
   - paste
   - image
@@ -16,6 +15,8 @@ toolbar: "forecolor backcolor fontselect fontsizeselect"
 
 paste_as_text: true
 paste_word_valid_elements: true
+#paste_webkit_styles: "color font-size"
+paste_webkit_styles: "all"
 
 font_formats: 'Arial=arial,helvetica,sans-serif;Calibri=Calibri, sans-serif;Courier New=courier new,courier,monospace;Times=times,san-serif'
 

@@ -7,4 +7,4 @@
 			= link_to "Cancel", :back, class: 'btn btn-default'
 
 = content_for :js do
-	<script type="text/javascript">ClassicEditor.create( document.querySelector( '#editor' ) ).catch( error => {console.error( error );} );</script>
+	<script type="text/javascript">ClassicEditor.create( document.querySelector( '#editor' ), {plugins: [ Essentials, Paragraph, Bold, Italic, Alignment ]} ).catch( error => {console.error( error );} );</script>

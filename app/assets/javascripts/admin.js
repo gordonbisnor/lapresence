@@ -13,7 +13,6 @@
 //= require jquery3
 //= require jquery_ujs
 //= require jquery-ui
-//= require tinymce-jquery
 //= require admin/general
 //= require admin/events
 //= require react

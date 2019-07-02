@@ -1,14 +1,7 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
-ClassicEditor
-  .create( document.querySelector( '#editor' ) )
-  .catch( error => {
-      console.error( error );
-  } );
-
 $(document).ready(function(){
-  //$('.tinymce').tinymce();
 	$('.close').click(function () {
 		$(this).parent('div').fadeOut(1000);
 	});

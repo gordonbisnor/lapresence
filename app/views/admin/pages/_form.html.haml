@@ -5,4 +5,6 @@
 		.btn-group
 			= f.submit class: 'btn btn-primary', id: "submit"
 			= link_to "Cancel", :back, class: 'btn btn-default'
-- content_for :js, tinymce 
+
+= content_for :js do
+	<script type="text/javascript">ClassicEditor.create( document.querySelector( '#editor' ) ).catch( error => {console.error( error );} );</script>

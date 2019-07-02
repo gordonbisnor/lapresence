@@ -2,7 +2,7 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 ClassicEditor
-  .create( document.querySelector( '.tinymce' ) )
+  .create( document.querySelector( '#editor' ) )
   .catch( error => {
       console.error( error );
   } );

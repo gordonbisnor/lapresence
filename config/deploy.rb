@@ -29,7 +29,7 @@ set :deploy_via, :checkout
 set :local_scm_command, "git"
 set :repository,  "ssh://git@bitbucket.org/gordonbisnor/lapresence.git"
 set :use_sudo, false                                 
-set :branch, "master"
+set :branch, "tiny_pro_test"
 set :scm_verbose, true
 set :git_shallow_clone, 1
 set :group_writable, false     

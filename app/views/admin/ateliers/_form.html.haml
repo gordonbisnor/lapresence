@@ -28,8 +28,8 @@
     .col-sm-3= f.input :schedule
     .col-sm-3= f.input :picture
   .row
-    = f.input :content, input_html: { class: "tinymce", style: "width:680px;height:500px" }
-    = f.input :notes, input_html: { class: "tinymce", style: "width:680px;height:500px" }
+    = f.input :content, input_html: { class: "tinymce"}
+    = f.input :notes, input_html: { class: "tinymce"}
     
   .btn-group
     = f.submit class: 'btn btn-primary', id: "submit"

@@ -21,10 +21,9 @@
       .col-sm-3= f.input :schedule
       .col-sm-3= f.input :picture
     .row
-      .col-sm-6= f.input :content,  input_html: { class: "tinymce", style: "width:680px;height:500px" }
-      .col-sm-6= f.input :notes,  input_html: { class: "tinymce", style: "width:680px;height:500px" }
+      .col-sm-6= f.input :content, as: :ckeditor, input_html: {ckeditor: {toolbar: "Full"}, style: "width:680px;height:500px" }
+      .col-sm-6= f.input :notes, as: :ckeditor, input_html: { ckeditor: {toolbar: "Full"}, style: "width:680px;height:500px" }
   .btn-group
     = f.submit class: 'btn btn-primary', id: "submit"
     = link_to "Cancel", :back, class: 'btn btn-default'
 
-- content_for :js, tinymce 

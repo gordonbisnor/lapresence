@@ -2,7 +2,6 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(document).ready(function(){
-  $('.tinymce').tinymce();
 	$('.close').click(function () {
 		$(this).parent('div').fadeOut(1000);
 	});

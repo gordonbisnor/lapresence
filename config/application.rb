@@ -16,7 +16,7 @@ module Lapresence
 
     config.action_controller.per_form_csrf_tokens = true
          
-    config.assets.precompile += %w(admin.css admin.js tinymce-jquery.js)
+    config.assets.precompile += %w(admin.css admin.js)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

@@ -36,10 +36,14 @@ feature 'ateliers' do
     click_link "New Item"
     expect(page).to have_css(:h1, text: "Editing Page")
     fill_in "Title", with: "Foo Page"
-    fill_in "Content", with: Faker::Lorem.paragraph(sentence_count: 7)
+    content = Faker::Lorem.paragraph(sentence_count: 7)
+    fill_in "Content", with: content
+    fill_in "Slug", with: "foo-page"
     click_button "Create Page"
     expect(page).to have_text "Item Created Successfully"
     expect(page).to have_text "Foo Page"
+    visit "/foo-page"
+    expect(page).to have_text(content)
   end
 
 end

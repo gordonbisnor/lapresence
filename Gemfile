@@ -40,6 +40,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'minitest'
+  gem 'faker'
   gem 'rspec-rails'
   gem 'launchy'
   gem 'shoulda-matchers', require: false

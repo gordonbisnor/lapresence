@@ -30,4 +30,16 @@ feature 'ateliers' do
     page.find("#submit").click
   end
 
+  scenario "admin can create a new page" do
+    visit index_path
+    expect(page).to have_link("New Item")
+    click_link "New Item"
+    expect(page).to have_css(:h1, text: "Editing Page")
+    fill_in "Title", with: "Foo Page"
+    fill_in "Content", with: Faker::Lorem.paragraph(sentence_count: 7)
+    click_button "Create Page"
+    expect(page).to have_text "Item Created Successfully"
+    expect(page).to have_text "Foo Page"
+  end
+
 end

@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'shoulda/matchers'
 require 'devise'
 require 'capybara/rspec'
+require 'faker'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

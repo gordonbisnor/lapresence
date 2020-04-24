@@ -3,10 +3,12 @@ class GroupesController < ApplicationController
   
   def index
     @items = Groupe.all
+    @seo_title = "Groupes"
   end
 
   def show
     @item = Groupe.find(params[:id])
+    @seo_title = @item.title
   end
 
 end

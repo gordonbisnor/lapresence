@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     @page = Page.find_by_slug(params[:id])
     @seo_image = @page.seo_image if @page.seo_image.present?
     @seo_description = @page.seo_description if @page.seo_description.present?
-    @page_title = @page.title
+    @seo_title = @page_title = @page.title
     record_not_found if @page.blank?
   end
 

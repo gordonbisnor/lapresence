@@ -4,11 +4,12 @@ class AteliersController < ApplicationController
   def index
     @seo_description = "Horaire Des Ateliers par Lorraine Desmarais"
     @items = Atelier.published.all
+    @seo_title = "Ateliers"
   end
 
   def show
     @item = Atelier.published.find(params[:id])
-    @page_title = @item.title
+    @seo_title = @page_title = @item.title
   end
 
 end

@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   
   def show
     @page = Page.find_by_slug(params[:id])
+    @seo_image = @page.seo_image if @page.seo_image.present?
+    @seo_description = @page.seo_description if @page.seo_description.present?
+    
     record_not_found if @page.blank?
   end
 

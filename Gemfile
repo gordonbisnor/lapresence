@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'loofah', '~> 2.2.3'
+gem 'loofah', '~> 2.3.1'
 gem 'nokogiri', '>= 1.8.2'
 gem 'rails', '~> 5.2'
 gem 'jbuilder', '~> 2.0'
@@ -7,21 +7,22 @@ gem 'mysql2'
 gem 'simple_form'
 gem 'ckeditor'
 gem 'paperclip', '~> 5.2.0'
-gem 'sass-rails'#, '~> 5.0'
+gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'paper_trail'#, '4.0.0.beta2'
+gem 'paper_trail'
 gem 'haml-rails'
 gem 'devise'
 gem 'mime-types', '3.1'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc', group: :doc
 gem 'record_tag_helper'
 gem 'react-rails'
 
 group :development, :test do
   gem 'byebug'
   gem 'puma'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -36,9 +37,8 @@ end
 group :test do
   gem 'capybara-selenium'
   gem 'rails-controller-testing'
-  gem 'capybara'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'minitest'
   gem 'faker'
   gem 'rspec-rails'

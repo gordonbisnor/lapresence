@@ -4,7 +4,7 @@ feature 'ateliers' do
 	
   before do
   	login
-  	@item = FactoryGirl.create(:atelier)
+  	@item = FactoryBot.create(:atelier)
   end
 
   def index_path

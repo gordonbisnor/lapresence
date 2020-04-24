@@ -10,7 +10,7 @@ feature 'pages' do
 
 
   scenario 'show' do
-  	p = FactoryGirl.create(:page)
+  	p = FactoryBot.create(:page)
    	visit page_path(p.slug)
     expect(page).to have_text(p.content)
   end

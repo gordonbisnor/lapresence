@@ -2,17 +2,34 @@
 %html{lang: "en"}
   %head
     %title= @page_title || APP_CONFIG[:site_name]
-    %meta{:content => "text/xhtml; charset=utf-8", "http-equiv" => "content-type"}/
-    %meta{:content => "no", "http-equiv" => "imagetoolbar"}/
-    %meta{:content => "all", :name => "distribution"}/
-    %meta{:content => "all", :name => "robots"}/
-    %meta{:content => "document", :name => "resource-type"}/
-    %meta{:content => "true", :name => "MSSmartTagsPreventParsing"}/
-    %meta{:content => "Lorraine Desmarais, Th&eacute;rapeute, animatrice, Healer, connaissance de soi, amour de soi, gu&eacute;rison spirituelle, l&acirc;cher prise.\n\t\t", :name => "Description"}/
-    %meta{:content => "Abus, accompagnement, accueillir, agression, amour de soi, apprendre &agrave; s&rsquo;aimer, apprendre &agrave; s&rsquo;aimer, approche &eacute;nerg&eacute;tique, bien-&ecirc;tre, bio-&eacute;nergie, blessures, chemin de transformation, cheminement spirituel, c&oelig;ur, col&egrave;re, compassion, connaissance de soi, conscience, Core Energetics, couples, &eacute;motions, &eacute;nergie, enracinement, &eacute;veil, &eacute;motions, &eacute;nergie, enracinement, &eacute;veil, formation Barbara Brennan, groupe de travail, gu&eacute;rison, gu&eacute;rison cabalistique, gu&eacute;rison spirituelle, hakomi, Healer, Healing, holistique, int&eacute;gration, intimit&eacute;, joie, Kabbalistic  healing, Kabbalistique Healing, l&acirc;cher prise, lib&eacute;ration, libert&eacute;, m&eacute;ditation, mieux-&ecirc;tre, non-duelle, oui, pr&eacute;sence, r&eacute;alit&eacute;, Rebirth, relations, Releasing, renaissance, respiration, sagesse, spiritualit&eacute;, structures de, d&eacute;fenses, th&eacute;rapie , th&eacute;rapie des champs &eacute;nerg&eacute;tiques, th&eacute;rapie psycho-corporelle\n\t\tth&eacute;rapie psycho-spirituelle, Totalement humain, totalement divin, transformation, v&eacute;rit&eacute;, vibrant, vivant, Lorraine Desmarais, Desmarais, Dipl&ocirc;m&eacute;e de Barbara Brennan, Integrated Kabbalistic Healing\n\t\t", :name => "Keywords"}/
-    %meta{:content => "Accompagnement, th&eacute;rapie psycho-corporelle, healing, Barbara Brennan, La Présence", :name => ""}/
+    %meta{:content => "text/xhtml; charset=utf-8", "http-equiv" => "content-type"}
+    %meta{:content => "no", "http-equiv" => "imagetoolbar"}
+    %meta{:content => "all", :name => "distribution"}
+    %meta{:content => "all", :name => "robots"}
+    %meta{:content => "document", :name => "resource-type"}
+    %meta{:content => "true", :name => "MSSmartTagsPreventParsing"}
+    %meta{:content => "<%= t 'seo.description' %>", :name => "Description"}
     %meta{name:"viewport", content: "width=device-width, initial-scale=1"}
-    = stylesheet_link_tag    "application", :media => "all"
+    %meta{content: "fr_CA", property: "og:locale"}
+    %meta{content: "<%= @seo_title %>", property: "og:site_name"}
+    %meta{content: "<%= @seo_title %>", property: "og:title"}
+    %meta{content: "<%= @seo_url %>", property: "og:url"}
+    %meta{content: "website", property: "og:type"}
+    %meta{content: "<%= @seo_description %>", property: "og:description"}
+    %meta{content: "<%= @seo_image %>", property: "og:image"}
+    %meta{content: "<%= @seo_image %>", property: "og:image:url"}
+    %meta{content: "<%= @seo_image %>", property: "og:image:secure_url"}
+    %meta{content: "<%= @seo_title %>", itemprop: "name"}
+    %meta{content: "<%= @seo_headline %>", itemprop: "headline"}
+    %meta{content: "<%= @seo_description %>", itemprop: "description"}
+    %meta{content: "<%= @seo_image %>", itemprop: "image"}
+    %meta{content: "<%= @seo_title %>", name: "twitter:title"}
+    %meta{content: "<%= @seo_url %>", name: "twitter:url"}
+    %meta{content: "<%= @seo_description %>", name: "twitter:description"}
+    %meta{content: "<%= @seo_image %>", name: "twitter:image"}
+    %meta{content: "summary_large_image", name: "twitter:card"}
+    
+    = stylesheet_link_tag "application", :media => "all"
     = csrf_meta_tags
   %body
     #container

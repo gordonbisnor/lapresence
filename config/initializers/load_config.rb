@@ -8,7 +8,7 @@ NAVIGATION = [
 	["Bibliographie", "bibliographie"],
 	["Les Ateliers", "ateliers"],
 	["Les Groupes", "groupes"],
-	["Formation", "http://www.coeurenergetique.ca/formation"],
+	["Méditations", "meditations"],
 	["Coordonnées", "coordonnees"]
 ]
 

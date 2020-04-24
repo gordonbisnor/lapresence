@@ -4,7 +4,7 @@ feature 'ateliers' do
   
   before do
     login
-    @item = FactoryGirl.create(:page)
+    @item = FactoryBot.create(:page)
   end
 
   def index_path
@@ -34,12 +34,12 @@ feature 'ateliers' do
     visit index_path
     expect(page).to have_link("New Item")
     click_link "New Item"
-    expect(page).to have_css(:h1, text: "Editing Page")
+    expect(page).to have_css("h1", text: "Editing Page")
     fill_in "Title", with: "Foo Page"
     content = Faker::Lorem.paragraph(sentence_count: 7)
     fill_in "Content", with: content
     fill_in "Slug", with: "foo-page"
-    click_button "Create Page"
+    page.find("#submit").click
     expect(page).to have_text "Item Created Successfully"
     expect(page).to have_text "Foo Page"
     visit "/foo-page"

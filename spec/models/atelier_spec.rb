@@ -4,8 +4,8 @@ describe Atelier do
   
   describe 'published scope' do
     before do
-      @published = FactoryGirl.create(:atelier, published: true)
-      @unpublished = FactoryGirl.create(:atelier, published: false)
+      @published = FactoryBot.create(:atelier, published: true)
+      @unpublished = FactoryBot.create(:atelier, published: false)
     end
     
     it 'finds published items' do

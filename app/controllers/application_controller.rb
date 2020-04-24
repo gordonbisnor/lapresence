@@ -6,6 +6,15 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 
   before_action :core_redirect
+  before_action :seo
+  
+  def seo
+    @seo_image = "https://lapresence.ca/system/pictures/3/thumb/guide.jpg?1273796283"
+    @seo_description = "Lorraine Desmarais, Thérapeute, animatrice, Healer, connaissance de soi, amour de soi, guérison spirituelle, làcher prise."
+    @seo_title = "La Présence" 
+    @seo_url = request.original_url
+    @seo_headline = "La guérison ne peut survenir que dans la présence"
+  end
   
   def core_redirect
     redirect_to "https://www.lapresence.ca/formation#english" and return if request.domain =~ /coreenergeticsmontreal/ && !(request.request_uri =~ /formation/)
@@ -20,6 +29,10 @@ class ApplicationController < ActionController::Base
   
   def french
     I18n.locale = :fr
+  end
+  
+  def set_meta_locale
+    @meta_locale = "fr_CA"
   end
 
   def after_sign_in_path_for(resource)

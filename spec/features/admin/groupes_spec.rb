@@ -4,7 +4,7 @@ feature 'groupes' do
   
   before do
     login
-    @item = FactoryGirl.create(:groupe)
+    @item = FactoryBot.create(:groupe)
   end
 
   def index_path

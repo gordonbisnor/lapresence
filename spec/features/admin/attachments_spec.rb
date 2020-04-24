@@ -4,7 +4,7 @@ feature 'attachments' do
 	
   before do
   	login
-  	@item = FactoryGirl.create(:attachment)
+  	@item = FactoryBot.create(:attachment)
   end
 
   def index_path

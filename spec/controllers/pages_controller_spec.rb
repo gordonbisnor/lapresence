@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe PagesController do
-	before { @page = FactoryGirl.create(:page, slug: 'extrait_impr') }
+	before { @page = FactoryBot.create(:page, slug: 'extrait_impr') }
 	
 	describe 'extrait_impr' do
 		before { get :extrait_impr }

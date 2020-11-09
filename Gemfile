@@ -26,7 +26,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "capistrano-db-tasks", '< 0.3', require: false
+  gem "capistrano-db-tasks", require: false
   gem 'web-console'
   gem 'spring'
   gem "spring-commands-rspec"

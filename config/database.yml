@@ -9,6 +9,3 @@ development:
 
 test:
   database: lapresence_test<%= ENV['TEST_ENV_NUMBER'] %>
-
-production:
-  database: lapresence_production

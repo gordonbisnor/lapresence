@@ -1,66 +1,53 @@
-require "bundler/capistrano"
-#require 'airbrake/capistrano'
+# config valid for current version and patch releases of Capistrano
+lock "~> 3.14.1"
 
-user = 'lapresence'
-password = "99#k:T7+89M4.qz7WU3n?.,g7&9(@y"
-application = "lap_oct_2018"
-domain = 'lapresence.webfactional.com'
-path = "/home/#{user}/webapps/#{application}/"
+set :application, "lap"
 
-set :deploy_to, path
+set :repo_url, "ssh://git@bitbucket.org/gordonbisnor/lapresence.git"
 
-set :default_environment, {
-  'GEM_PATH' => "#{path}/gems/bin",
-  'GEM_HOME' => "#{path}/gems",
-  'PATH' => "#{path}/bin:$PATH"
-}
+# Deploy to the user's home directory
+set :deploy_to, "/home/deploy/#{fetch :application}"
 
-default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
-set :keep_releases, 4 
-set :rake, "GEM_PATH=#{path}/gems:#{path}/gems/bin  #{path}/bin/rake"
-set :webfaction_username, "#{user}"
-set :user, user
-set :domain, domain
-set :application, "#{application}"
-set :scm, :git
-set :deploy_via, :checkout
-set :local_scm_command, "git"
-set :repository,  "ssh://git@bitbucket.org/gordonbisnor/lapresence.git"
-set :use_sudo, false                                 
-set :branch, "master"
-set :scm_verbose, true
-set :git_shallow_clone, 1
-set :group_writable, false     
- 
-role :app, domain
-role :web, domain
-role :db,  domain, :primary => true
+# Only keep the last 5 releases to save disk space
+set :keep_releases, 5
 
-namespace :deploy do
- task :start do ; end
- task :stop do ; end
- task :restart, :roles => :app, :except => { :no_release => true } do
-   run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
- end
-end
-
-after "deploy:update", "deploy:cleanup"
-
-desc "deploy the precompiled assets"
- task :deploy_assets, :except => { :no_release => true } do
-    run_locally("rake RAILS_ENV=development assets:clean && rake RAILS_ENV=development assets:precompile")
-    upload("public/assets", "#{release_path}/public/assets", :via =>
-:scp, :recursive => true)
-    run_locally "rm -rf public/assets"
- end
-
-after 'deploy:update_code', 'deploy_assets'
+# Optionally, you can symlink your database.yml and/or secrets.yml file from the shared directory during deploy
+# This is useful if you don't want to use ENV variables
+# append :linked_files, 'config/database.yml', 'config/secrets.yml'
 
 
-### CAP DB TASKS
-require 'capistrano-db-tasks'
-set :db_local_clean, true
-set :db_remote_clean, true
-set :disallow_pushing, true
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+
+# Default deploy_to directory is /var/www/my_app_name
+# set :deploy_to, "/var/www/my_app_name"
+
+# Default value for :format is :airbrussh.
+# set :format, :airbrussh
+
+# You can configure the Airbrussh format using :format_options.
+# These are the defaults.
+# set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
+
+# Default value for :pty is false
+# set :pty, true
+
+# Default value for :linked_files is []
+# append :linked_files, "config/database.yml"
+
+# Default value for linked_dirs is []
+# append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+
+# Default value for local_user is ENV['USER']
+# set :local_user, -> { `git config user.name`.chomp }
+
+# Default value for keep_releases is 5
+# set :keep_releases, 5
+
+# Uncomment the following to require manually verifying the host key before first deploy.
+# set :ssh_options, verify_host_key: :secure

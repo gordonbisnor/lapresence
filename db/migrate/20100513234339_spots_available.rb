@@ -1,4 +1,4 @@
-class SpotsAvailable < ActiveRecord::Migration
+class SpotsAvailable < ActiveRecord::Migration[4.2]
   def self.up
     add_column :events, :available_spots, :string
   end

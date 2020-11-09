@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_04_24_150205) do
 
-  create_table "attachments", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "attachments", id: :serial, force: :cascade do |t|
     t.string "name"
     t.string "attachment_file_name"
     t.string "attachment_content_type"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_150205) do
     t.datetime "updated_at"
   end
 
-  create_table "events", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "events", id: :serial, force: :cascade do |t|
     t.string "title"
     t.date "start_date"
     t.date "end_date"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_150205) do
     t.boolean "published"
   end
 
-  create_table "pages", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "pages", id: :serial, force: :cascade do |t|
     t.string "title"
     t.string "slug"
     t.text "content"
@@ -53,7 +56,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_150205) do
     t.string "seo_description"
   end
 
-  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -72,7 +75,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_150205) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "versions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "versions", id: :serial, force: :cascade do |t|
     t.string "item_type", null: false
     t.integer "item_id", null: false
     t.string "event", null: false

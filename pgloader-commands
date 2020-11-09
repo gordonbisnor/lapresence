@@ -1,5 +1,0 @@
-LOAD DATABASE
-    FROM mysql://root@localhost/lapresence_development
-    INTO postgresql:///lapresence_development
-
-WITH truncate;

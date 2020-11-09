@@ -1,11 +1,10 @@
-
 shared:
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
-  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
-
 development:
   database: lapresence_development
-
+  password:
+  username: root
 test:
-  database: lapresence_test<%= ENV['TEST_ENV_NUMBER'] %>
+  database: lapresence_test
+  username: root

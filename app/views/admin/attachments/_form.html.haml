@@ -1,7 +1,10 @@
-
+- if @item.persisted?
+  %h2 Attachment ##{@item.id}
+%hr
 = simple_form_for([:admin, @item]) do |f|
   = f.input :name
   = f.input :attachment
+  %hr
   .btn-group
     = f.submit class: 'btn btn-primary', id: "submit"
     = link_to "Cancel", :back, class: 'btn btn-default'

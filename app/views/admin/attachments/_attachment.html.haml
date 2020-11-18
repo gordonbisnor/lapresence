@@ -1,5 +1,7 @@
 %tr
 	%td
+		= attachment.id
+	%td
 		= link_to link_button, attachment.url, target: '_blank'
 		= link_to edit_button, edit_admin_attachment_path(attachment), title: "Edit", class: "edit-button"
 		= link_to delete_button, admin_attachment_path(attachment), :confirm => 'Are you sure?', method: :delete, title: "Delete", class: "delete-button"

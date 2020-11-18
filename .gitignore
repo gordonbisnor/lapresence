@@ -23,6 +23,6 @@ db.sql
 
 /public/system/pictures/13
 /public/system/attachments/8
-
+public/system/*
 doc/*
 lapresence_lap2.sql

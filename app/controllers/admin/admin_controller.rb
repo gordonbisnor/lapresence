@@ -37,14 +37,14 @@ class Admin::AdminController < ApplicationController
     @item = @klass.find(params[:id])
     respond_to do |format|
       format.html {
-        if @item.update_attributes(@object_params)
+        if @item.update(@object_params)
           redirect_to(url_for(action: :index, controller: controller_name), notice: "Item Updated Successfully. #{undo_link}".html_safe) 
         else
           render action: "edit" 
         end
       }
       format.js {
-        if @item.update_attributes(@object_params)
+        if @item.update(@object_params)
           head :ok
         else
           head :bad_request

@@ -1,4 +1,5 @@
 class Attachment < ApplicationRecord
+
   has_attached_file :attachment,
     :styles => { :thumb => "100x100#" },
     :storage => :s3,
@@ -9,7 +10,8 @@ class Attachment < ApplicationRecord
     s3_protocol: "https",
     bucket: ENV['S3_BUCKET'],
     s3_region: "ca-central-1",
-    path: "/:attachment/:id/:style/:filename"#,
+    path: "/:attachment/:id/:style/:filename",
+    url: ":s3_domain_url"
 
   def s3_credentials
     {:bucket => ENV['S3_BUCKET'], :access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET'] }

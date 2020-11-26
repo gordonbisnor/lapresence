@@ -18,6 +18,9 @@ gem 'mime-types', '3.1'
 gem 'sdoc', group: :doc
 gem 'record_tag_helper'
 gem 'react-rails'
+gem 'aws-sdk-s3'
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 group :development, :test do
   gem 'byebug'

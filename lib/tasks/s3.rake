@@ -14,7 +14,7 @@ namespace :s3 do
       puts bucket.inspect
       s3_path = "attachments" + path.split('attachments')[1]
       obj = bucket.object(s3_path)
-      obj.put({acl: "public-read", body: path})
+      obj.put({acl: "public-read", body: File.read(path)})
     end
   end
 

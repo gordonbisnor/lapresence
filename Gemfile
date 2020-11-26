@@ -20,7 +20,7 @@ gem 'record_tag_helper'
 gem 'react-rails'
 gem 'aws-sdk-s3'
 gem 'dotenv-rails', groups: [:development, :test]
-
+gem 'colorize'
 
 group :development, :test do
   gem 'byebug'

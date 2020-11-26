@@ -118,6 +118,7 @@ GEM
     ckeditor (5.0.0)
       orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
+    colorize (0.8.1)
     concurrent-ruby (1.1.7)
     connection_pool (2.2.2)
     crass (1.0.6)
@@ -357,6 +358,7 @@ DEPENDENCIES
   capistrano-rbenv (~> 2.1, >= 2.1.4)
   capybara-selenium
   ckeditor
+  colorize
   database_cleaner
   devise
   dotenv-rails

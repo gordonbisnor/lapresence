@@ -20,7 +20,7 @@ namespace :s3 do
 
   desc "others"
     attachment_data = [
-      {id: 9, file: "9.doc", was: "Dépliant_LE_DEFI_D'ÊTRE_SOI-MËME_-_Nov__2014.doc"}
+      {id: 9,  file: "9.doc",   was: "Dépliant_LE_DEFI_D'ÊTRE_SOI-MËME_-_Nov__2014.doc"},
       {id: 44, file: "010.mp3", was: "010_-_Être_émerveillé.mp3"},
       {id: 45, file: "011.mp3", was: "011_-_Être_et_avoir_-_désidentification.mp3"},
       {id: 46, file: "012.mp3", was: "012_-_Conscience_témoin.mp3"},

@@ -1,9 +1,13 @@
 .page-header
 	.pull-right	
 		.alert.alert-info Change item order by dragging and dropping them into place.
-	%h1= t 'admin.ateliers.header'
+	%h1
+		<i class="far fa-handshake"></i>
+		= t 'admin.ateliers.header'
 
-= link_to t('admin.new_item'), new_admin_atelier_path, class: 'btn btn-default'
+= link_to  new_admin_atelier_path, class: 'btn btn-success' do
+	<i class="fas fa-plus-circle"></i>
+	= t('admin.new_item')
 
 %hr
 

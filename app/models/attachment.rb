@@ -1,4 +1,5 @@
 class Attachment < ApplicationRecord
+  include ShrineUploader::Attachment(:shrine) # adds an `image` virtual attribute 
 
   has_attached_file :attachment,
     :styles => { :thumb => "100x100#" },
@@ -9,7 +10,7 @@ class Attachment < ApplicationRecord
     },
     s3_protocol: "https",
     bucket: ENV['S3_BUCKET'],
-    s3_region: "ca-central-1",
+    s3_region: ENV['S3_REGION'],
     path: "/:attachment/:id/:style/:filename",
     url: ":s3_domain_url"
 
@@ -20,7 +21,6 @@ class Attachment < ApplicationRecord
   do_not_validate_attachment_file_type :attachment
 
   def url
-    #APP_CONFIG[:site_url] + attachment.url.split("?")[0]
     attachment.url.split("?")[0]
   end
 
@@ -30,14 +30,30 @@ class Attachment < ApplicationRecord
 	end
   
   def content_type
-    case attachment_content_type
-      when /^image.*/
-        "Image"
-      when "application/pdf"
-        "PDF"
-      else
-        "Attachment"
+    if shrine_url.present?
+      content_type_case(shrine.mime_type)
+    else
+      content_type_case(attachment_content_type)
     end
+  end
+
+  def content_type_case(val)
+    case val
+    when /^image.*/
+      "Image"
+    when "application/pdf"
+      "PDF"
+    when /^audio.*/
+      "Audio"
+    when /^video.*/
+      "Video"
+    else
+      "Attachment"
+    end
+  end
+
+  def image?
+    content_type == 'Image'
   end
 
 end

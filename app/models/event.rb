@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
   default_scope {order("position ASC")}
 
+  include EventUploader::Attachment(:image) # adds an `image` virtual attribute
+
   has_attached_file :picture,
     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
     :url => "/system/:attachment/:id/:style/:filename",
@@ -12,7 +14,7 @@ class Event < ApplicationRecord
     },
     s3_protocol: "https",
     bucket: ENV['S3_BUCKET'],
-    s3_region: "ca-central-1",
+    s3_region: ENV['S3_REGION'],
     path: "/:attachment/:id/:style/:filename",
     url: ":s3_domain_url"
 

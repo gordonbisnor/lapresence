@@ -5,16 +5,31 @@
 				%span.icon-bar
 				%span.icon-bar
 				%span.icon-bar
-			= link_to "La Présence Admin", admin_dashboard_path, class: "navbar-brand #{active_on('dashboard')}"
+			= link_to "La Présence", admin_dashboard_path, class: "navbar-brand #{active_on('dashboard')}"
 		.navbar-collapse.collapse.navbar-responsive-collapse
 			%ul.nav.navbar-nav
-				%li{class: "#{active_on('pages')}" }= link_to "Pages", admin_pages_path
-				%li{class: "#{active_on('ateliers')}" }= link_to "Ateliers", admin_ateliers_path
-				%li{class: "#{active_on('groupes')}" }= link_to "Groupes", admin_groupes_path
-				%li{class: "#{active_on('attachments')}" }= link_to "Attachments", admin_attachments_path
+				%li{class: "#{active_on('pages')}" }
+					= link_to admin_pages_path do
+						<i class="far fa-file-code"></i>
+						Pages
+				%li{class: "#{active_on('ateliers')}" }
+					= link_to admin_ateliers_path do
+						<i class="far fa-handshake"></i>
+						Ateliers
+				%li{class: "#{active_on('groupes')}" }
+					= link_to admin_groupes_path do
+						<i class="fas fa-user-friends"></i>
+						Groupes
+				%li{class: "#{active_on('attachments')}" }
+					= link_to admin_attachments_path do
+						<i class="fas fa-paperclip"></i>
+						Attachments
 				%li= link_to "Go To Site", root_path
 			%ul.nav.navbar-nav.pull-right
 				%li 
-					%a Signed in as #{current_user.email}
+					%a 
+						<i class="fas fa-user"></i> Signed in as #{current_user.email}
 				%li
-					= link_to "Sign Out", destroy_user_session_path, method: :delete
+					= link_to destroy_user_session_path, method: :delete do
+						<i class="fas fa-sign-out-alt"></i>
+						Sign out

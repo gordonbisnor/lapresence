@@ -1,10 +1,27 @@
 %tr
-	%td
-		= attachment.id
-	%td
-		= link_to link_button, attachment.url, target: '_blank'
-		= link_to edit_button, edit_admin_attachment_path(attachment), title: "Edit", class: "edit-button"
-		= link_to delete_button, admin_attachment_path(attachment), :confirm => 'Are you sure?', method: :delete, title: "Delete", class: "delete-button"
-	%td= link_to attachment.name, admin_attachment_path(attachment)
-	%td= attachment.content_type
+  %td= attachment.id
+  %td
+    - if attachment.shrine
+      = link_to link_button, attachment.shrine_url, target: "_blank", class: "mr3"
+    - else
+      = link_to link_button, attachment.url, target: '_blank', class: "mr3"
+    = link_to edit_button, edit_admin_attachment_path(attachment), title: "Edit", class: "edit-button mr3"
+    = link_to delete_button, admin_attachment_path(attachment), :confirm => 'Are you sure?', method: :delete, title: "Delete", class: "delete-button"
+  %td= link_to attachment.name, admin_attachment_path(attachment)
 
+
+  %td
+    - if attachment.image?
+      Image
+    - elsif attachment.shrine_url && attachment.shrine.mime_type == "audio/mpeg"
+      Audio
+    - elsif attachment.shrine_url && attachment.shrine.mime_type == "video/mp4"
+      Video
+    - else 
+      Other
+
+  %td
+    - if attachment.shrine_url && attachment.image?
+      = image_tag attachment.shrine_url, style: "max-width:50px;"
+    - elsif attachment.image?
+      = image_tag attachment.attachment.url

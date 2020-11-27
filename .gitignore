@@ -26,6 +26,10 @@ db.sql
 public/system/*
 doc/*
 lapresence_lap2.sql
-node_modules
 .env
-public/packs
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

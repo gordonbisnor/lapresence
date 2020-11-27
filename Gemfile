@@ -22,6 +22,13 @@ gem 'aws-sdk-s3'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'colorize'
 
+gem "shrine", "~> 3.0"
+gem "marcel", "~> 0.3" # shrine content type analyzer
+gem 'fastimage'
+gem "uppy-s3_multipart", "~> 0.3"
+gem 'webpacker', '~> 5.x'
+
+
 group :development, :test do
   gem 'byebug'
   gem 'puma'

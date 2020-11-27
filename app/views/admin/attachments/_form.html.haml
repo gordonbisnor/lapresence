@@ -1,3 +1,5 @@
+= stylesheet_pack_tag "admin_attachments"
+
 - if @item.persisted?
   %h2 Attachment ##{@item.id}
 = simple_form_for([:admin, @item]) do |f|

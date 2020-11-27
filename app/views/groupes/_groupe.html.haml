@@ -1,6 +1,6 @@
 = div_for groupe do
-  - if groupe.shrine_url
-  = image_tag groupe.shrine_url, class: "float_right"
+  - if groupe.image_url
+    = image_tag groupe.image_url, class: "float_right"
   %h2= link_to groupe.title, groupe
   = raw groupe.content
   %dl

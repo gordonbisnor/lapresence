@@ -1,7 +1,9 @@
-%div{:class => "item #{cycle("even","odd")}", :id => "sort_item_#{atelier.id}"}
-  .pull-left.offset-right
+%div{:class => "bb b--light-gray pa4 flex justify-between w-100 item #{cycle("even","odd")}", :id => "sort_item_#{atelier.id}"}
+  %div.mr3
     = link_to edit_button, edit_admin_atelier_path(atelier), title: "Edit", class: "edit-button"
     = link_to delete_button, admin_atelier_path(atelier), method: :delete, data: {confirm: "Are you sure?"}, title: "Delete", class: "delete-button"
-    = react_component "WorkshopPub", {published: atelier.published, atelierId: atelier.id}, {tag: "span"}
-  = link_to atelier.title, atelier, target: "_blank"
-  %hr
+  
+  %div.ml5{style: "flex-grow:1"}    
+    = link_to atelier.title, atelier, target: "_blank"
+
+  = react_component "WorkshopPub", { published: atelier.published, atelierId: atelier.id}, {tag: "span"}

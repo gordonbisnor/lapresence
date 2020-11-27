@@ -26,18 +26,18 @@ window.WorkshopPub = createReactClass({
 
     if (this.state.published) {
       return (
-        <button onClick={ this.togglePublishStatus } title="Click to hide from public"  className="text-success unbutton"><i className="fa fa-check-circle"></i> Published
+        <button onClick={ this.togglePublishStatus } title="Click to hide from public"  className="text-success unbutton"><i className="fa fa-check-circle"></i> Published?
         </button>
       );
     } else {
       return (
-        <button onClick={ this.togglePublishStatus } title="Click to show to public" className="text-danger unbutton sans"><i className="far fa-circle"></i> Not Published
+        <button onClick={ this.togglePublishStatus } title="Click to show to public" className="text-danger unbutton sans"><i className="far fa-circle"></i> Published?
         </button>
       );
     }
   },
 
   render: function() {
-    return (<span className="f2 publish-button pr1">{ this.publishButton() }</span>);
+    return (<span className="publish-button pr1">{ this.publishButton() }</span>);
   }
 })

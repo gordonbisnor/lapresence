@@ -26,3 +26,6 @@ db.sql
 public/system/*
 doc/*
 lapresence_lap2.sql
+node_modules
+.env
+public/packs

@@ -1,5 +1,5 @@
 #page_form
-	= simple_form_for [:admin,@item] do |f|
+	= simple_form_for [:admin, @item] do |f|
 		= f.input :title
 		= f.input :slug
 		= f.input :content, as: :ckeditor, input_html: { ckeditor: {toolbar: "Full"}, rows: 30 }
@@ -9,3 +9,9 @@
 		.btn-group
 			= f.submit class: 'btn btn-primary', id: "submit"
 			= link_to "Cancel", :back, class: 'btn btn-default'
+
+%hr
+%div.mt6.fr
+	= link_to admin_page_path(@item), method: :delete, data: {confirm: "Are you sure?"}, title: "Delete", class: "btn btn-danger" do
+		<i class="far fa-times-circle"></i>
+		Delete Page

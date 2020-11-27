@@ -1,5 +1,6 @@
 = div_for groupe do
-  = image_tag groupe.picture.url(:thumb), class: "float_right"
+  - if groupe.shrine_url
+  = image_tag groupe.shrine_url, class: "float_right"
   %h2= link_to groupe.title, groupe
   = raw groupe.content
   %dl

@@ -1,5 +1,5 @@
 = div_for atelier do
-  = image_tag atelier.picture.url(:thumb), class: "float_right" if atelier.picture?
+  = image_tag atelier.shrine_url, class: "float_right" if atelier.shrine_url
   = raw atelier.content
   %dl
     - if dates(atelier).present?

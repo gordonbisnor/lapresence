@@ -19,11 +19,17 @@
       .col-sm-3= f.input :cost
       .col-sm-3= f.input :available_spots
       .col-sm-3= f.input :schedule
-      .col-sm-3= f.input :picture
+      .col-sm-3
+        %h3 OLD IMAGE SYSTEM
+        = f.input :picture
+        %textarea.pa3.w-100{rows:5}= @item.picture.url(:original)
+        %h3 NEW IMAGE SYSTEM
+        - if @item.image
+          = image_tag @item.image_url
+        = f.hidden_field :image, value: @item.cached_image_data
+        = f.file_field :image 
     .row
       .col-sm-6= f.input :content, as: :ckeditor, input_html: {ckeditor: {toolbar: "Full"}, style: "width:680px;height:500px" }
       .col-sm-6= f.input :notes, as: :ckeditor, input_html: { ckeditor: {toolbar: "Full"}, style: "width:680px;height:500px" }
-  .btn-group
-    = f.submit class: 'btn btn-primary', id: "submit"
-    = link_to "Cancel", :back, class: 'btn btn-default'
-
+  
+  = render "admin/shared/save_cancel", text: "Groupe"

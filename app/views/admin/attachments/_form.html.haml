@@ -1,10 +1,44 @@
 - if @item.persisted?
   %h2 Attachment ##{@item.id}
-%hr
 = simple_form_for([:admin, @item]) do |f|
-  = f.input :name
-  = f.input :attachment
-  %hr
-  .btn-group
-    = f.submit class: 'btn btn-primary', id: "submit"
-    = link_to "Cancel", :back, class: 'btn btn-default'
+  
+  .flex.w-100.justify-stretch
+
+    %div.pr5{style: "flex-grow: 1"}
+      = f.input :name
+      .flex
+        = f.input :shrine, as: :file, label: "Upload", input_html: {class: "upload-file"}, wrapper_html: {class: "pr5"}
+        = f.input :shrine, as: :text, wrapper_html: {style: "flex-grow:1"}, input_html: { value: @item.cached_shrine_data, class: "upload-data", readonly: true }, label: "Upload metadata", hint: "When this has been filled in, the upload is ready"
+      .progress-indicator.w-100{style:"height:40px;"}
+        &nbsp
+
+      = render "admin/shared/save_cancel", text: "Attachment"
+
+    -  if @item.shrine
+      %div.pl5{style: "flex-grow: 1"}
+        .f2.green= content_typer @item.content_type
+        %h2 Metadata 
+        %dl
+          - @item.shrine.metadata.each_pair do |k,v|
+            %dt.blue= k.titlecase
+            %dd= k == 'size' ? number_to_human_size(v) : v
+          %dt.blue Analyzed MIME type
+          %dd= @item.shrine.mime_type
+
+    .upload-preview.pl3
+      - if @item.shrine_url && @item.image?
+        = image_tag @item.shrine_url, style: "max-width:280px;"
+      - elsif @item.image?
+        .upload-preview= image_tag @item.attachment.url
+      - elsif @item.shrine_url && @item.shrine.mime_type == "audio/mpeg"
+        %audio{controls: true}
+          %source{src: @item.shrine_url, type: "audio/mpeg"}
+          Your browser does not support the audio tag.
+      - elsif @item.shrine_url && @item.shrine.mime_type == "video/mp4"
+        %video{width: "320", height: "240", controls: true}
+          %source{src: @item.shrine_url, type: "video/mp4"}
+          Your browser does not support the video tag.
+
+
+
+= javascript_pack_tag "admin_attachments"

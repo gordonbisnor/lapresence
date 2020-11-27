@@ -1,9 +1,14 @@
 .page-header
 	.pull-right
 		.alert.alert-info Change item order by dragging and dropping them into place.
-	%h1= t 'admin.groupes.header'
+	%h1
+		<i class="fas fa-user-friends"></i>
+		= t 'admin.groupes.header'
 
-= link_to t('admin.new_item'), new_admin_groupe_path, class: 'btn btn-default'
+= link_to new_admin_groupe_path, class: 'btn btn-success' do
+	<i class="fas fa-plus-circle"></i>
+	= t('admin.new_item')
+
 %hr
 #groupes.sortable{"data-target" => "/admin/groupes/sort"}
 	= render partial: "admin/groupes/groupe", collection: @items

@@ -20,10 +20,6 @@
       .col-sm-3= f.input :available_spots
       .col-sm-3= f.input :schedule
       .col-sm-3
-        %h3 OLD IMAGE SYSTEM
-        = f.input :picture
-        %textarea.pa3.w-100{rows:5}= @item.picture.url(:original)
-        %h3 NEW IMAGE SYSTEM
         - if @item.image
           = image_tag @item.image_url
         = f.hidden_field :image, value: @item.cached_image_data

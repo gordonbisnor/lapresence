@@ -22,8 +22,9 @@
       .col-sm-3
         - if @item.image
           = image_tag @item.image_url
+        = f.label :image
         = f.hidden_field :image, value: @item.cached_image_data
-        = f.file_field :image 
+        = f.file_field :image
     .row
       .col-sm-6= f.input :content, as: :ckeditor, input_html: {ckeditor: {toolbar: "Full"}, style: "width:680px;height:500px" }
       .col-sm-6= f.input :notes, as: :ckeditor, input_html: { ckeditor: {toolbar: "Full"}, style: "width:680px;height:500px" }

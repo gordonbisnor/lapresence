@@ -2,7 +2,19 @@
 	%h1= t 'admin.dashboard.header'
 
 %ul.nav.nav-stacked.nav-pills
-	%li= link_to t('admin.pages.header'), admin_pages_path
-	%li= link_to t('admin.ateliers.header'), admin_ateliers_path
-	%li= link_to t('admin.groupes.header'), admin_groupes_path
-	%li= link_to t('admin.attachments.header'), admin_attachments_path
+	%li
+		= link_to admin_pages_path do
+			<i class="far fa-file-code"></i>
+			= t('admin.pages.header')
+	%li
+		= link_to admin_ateliers_path do
+			<i class="far fa-handshake"></i>
+			= t('admin.ateliers.header')
+	%li
+		= link_to admin_groupes_path do
+			<i class="fas fa-user-friends"></i>
+			= t('admin.groupes.header')
+	%li
+		= link_to admin_attachments_path do
+			<i class="fas fa-paperclip"></i>
+			= t('admin.attachments.header')

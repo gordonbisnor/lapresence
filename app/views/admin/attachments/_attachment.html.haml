@@ -24,4 +24,4 @@
     - if attachment.shrine_url && attachment.image?
       = image_tag attachment.shrine_url, style: "max-width:50px;"
     - elsif attachment.image?
-      = image_tag attachment.attachment.url(:thumb)
+      = image_tag attachment.attachment.url(:original), style: "max-width:50px;"

@@ -24,11 +24,14 @@
 					= link_to admin_attachments_path do
 						<i class="fas fa-paperclip"></i>
 						Attachments
-				%li= link_to "Go To Site", root_path
+				%li
+					= link_to root_path do
+						<i class="fas fa-globe-americas"></i>
+						Go To Site
 			%ul.nav.navbar-nav.pull-right
 				%li 
 					%a 
-						<i class="fas fa-user"></i> Signed in as #{current_user.email}
+						<i class="fas fa-user"></i> #{current_user.email}
 				%li
 					= link_to destroy_user_session_path, method: :delete do
 						<i class="fas fa-sign-out-alt"></i>

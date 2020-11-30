@@ -15,4 +15,7 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
+import $ from 'jquery';
+
+$('a[href$=".mp4"]').on('contextmenu',function() { return false; });
+

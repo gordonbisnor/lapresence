@@ -5,11 +5,13 @@
       = link_to link_button, attachment.shrine_url, target: "_blank", class: "mr3"
     - else
       = link_to link_button, attachment.url, target: '_blank', class: "mr3"
+    
     = link_to edit_button, edit_admin_attachment_path(attachment), title: "Edit", class: "edit-button mr3"
     = link_to delete_button, admin_attachment_path(attachment), :confirm => 'Are you sure?', method: :delete, title: "Delete", class: "delete-button"
   %td= link_to attachment.name, admin_attachment_path(attachment)
-
-
+  %td
+    %button.copy-to-clipboard.btn.btn-sm Copy URL to clipboard
+    %input.dn{name: "url", value: attachment.shrine ? attachment.shrine_url : attachment.url}
   %td
     - if attachment.image?
       Image

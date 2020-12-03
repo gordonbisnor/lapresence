@@ -17,5 +17,7 @@
 
 import $ from 'jquery';
 
-$('a[href$=".mp4"]|video').on('contextmenu',function() { return false; });
+$('a[href$=".mp4"]').on('contextmenu',function() { return false; });
+$('video').on('contextmenu',function() { return false; });
+
 

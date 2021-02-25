@@ -74,7 +74,7 @@ Lapresence::Application.configure do
 
   ActionMailer::Base.smtp_settings = {
       address: "smtp.sendgrid.net",
-      domain: 'lapresence.ca'
+      domain: 'lapresence.ca',
       authentication: :plain,
       port: 587,
       enable_starttls_auto: true,

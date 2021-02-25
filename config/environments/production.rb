@@ -72,14 +72,14 @@ Lapresence::Application.configure do
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.delivery_method = :smtp
 
-  ActionMailer::Base.smtp_settings = {
-      address: "smtp.sendgrid.net",
-      domain: 'lapresence.ca',
-      authentication: :plain,
-      port: 587,
-      enable_starttls_auto: true,
-      user_name: Settings.sendgrid_user_name,
-      password: Settings.sendgrid_password,
-   }
+#  ActionMailer::Base.smtp_settings = {
+#      address: "smtp.sendgrid.net",
+#      domain: 'lapresence.ca',
+#      authentication: :plain,
+#      port: 587,
+#      enable_starttls_auto: true,
+#      user_name: Settings.sendgrid_user_name,
+#      password: Settings.sendgrid_password,
+#   }
 
 end

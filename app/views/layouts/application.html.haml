@@ -28,9 +28,16 @@
     %meta{content: @seo_description, name: "twitter:description"}
     %meta{content: @seo_image, name: "twitter:image"}
     %meta{content: "summary_large_image", name: "twitter:card"}
-    
     = stylesheet_link_tag "application", :media => "all"
     = csrf_meta_tags
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TLMY6T4H6C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TLMY6T4H6C');
+    </script>
   %body
     #container
       %header#header

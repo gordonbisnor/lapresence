@@ -27,7 +27,7 @@ feature 'ateliers' do
   def fill_form
     fill_in "Title", with: "foo"
     fill_in "Content", with: "qux"
-    page.find("#submit").click
+    find('#item-submit-button').click
   end
 
   scenario "admin can create a new page" do
@@ -39,7 +39,7 @@ feature 'ateliers' do
     content = Faker::Lorem.paragraph(sentence_count: 7)
     fill_in "Content", with: content
     fill_in "Slug", with: "foo-page"
-    page.find("#submit").click
+    click_button ".btn-sucess"
     expect(page).to have_text "Item Created Successfully"
     expect(page).to have_text "Foo Page"
     visit "/foo-page"

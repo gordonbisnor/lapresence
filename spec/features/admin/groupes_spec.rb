@@ -28,7 +28,7 @@ feature 'groupes' do
     fill_in "Cost", with: "baz"
     fill_in "Available spots", with: 8
     fill_in "Schedule", with: "foo"
-    page.find("#submit").click
+    find('#item-submit-button').click
   end
 
 end

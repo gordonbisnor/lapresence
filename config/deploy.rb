@@ -93,6 +93,7 @@ set :disallow_pushing, false
 # if you prefer bzip2/unbzip2 instead of gzip
 set :compressor, :bzip2
 
+set :passenger_restart_with_touch, true
 
 before "deploy:assets:precompile", "deploy:yarn_install"
 namespace :deploy do

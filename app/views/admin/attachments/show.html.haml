@@ -1,8 +1,8 @@
 %dl
   %dt Name
-  %dd= h @attachment.name
+  %dd= h @item.name
   %dt URL:
-  %dd= link_to @attachment.url, @attachment.url
+  %dd= link_to @item.url, @item.url
 %p#submit_buttons
-  = link_to 'Edit', edit_admin_attachment_path(@attachment), class: "submit"
+  = link_to 'Edit', edit_admin_attachment_path(@item), class: "submit"
   = link_to 'Back', admin_attachments_path, class: "submit"

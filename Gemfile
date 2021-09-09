@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 gem 'loofah', '~> 2.3.1'
 gem 'nokogiri', '>= 1.8.2'
-gem 'rails', '~> 6.0.3'
+gem 'rails', '~> 6.0.4'
 gem 'jbuilder', '~> 2.0'
 gem 'mysql2'
 gem 'simple_form'
@@ -23,7 +23,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'colorize'
 
 gem "shrine", "~> 3.0"
-gem "marcel", "~> 0.3" # shrine content type analyzer
+gem "marcel", "~> 1.0.0" # shrine content type analyzer
 gem 'fastimage'
 gem "uppy-s3_multipart", "~> 0.3"
 gem 'webpacker', '~> 5.x'

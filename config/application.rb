@@ -12,6 +12,8 @@ end
 module Lapresence
   class Application < Rails::Application
     
+    config.active_record.legacy_connection_handling = false
+    
     config.action_controller.forgery_protection_origin_check = true
 
     config.action_controller.per_form_csrf_tokens = true

@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 gem 'loofah', '~> 2.3.1'
 gem 'nokogiri', '>= 1.8.2'
-gem 'rails', '~> 6.0.4'
+gem 'rails', '~> 7.0'
 gem 'jbuilder', '~> 2.0'
 gem 'mysql2'
 gem 'simple_form'
 gem 'ckeditor'
-gem "kt-paperclip", "~> 6.3"
+gem "kt-paperclip"
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'

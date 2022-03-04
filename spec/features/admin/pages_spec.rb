@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'ateliers' do
+feature 'pages' do
   
   before do
     login
@@ -17,7 +17,7 @@ feature 'ateliers' do
     expect(page).to have_text(@item.title)
   end
 
-  scenario 'edit' do
+  scenario 'edit', js: true do
     visit index_path
     page.first('.edit-button').click
     fill_form
@@ -26,24 +26,20 @@ feature 'ateliers' do
 
   def fill_form
     fill_in "Title", with: "foo"
-    fill_in "Content", with: "qux"
     find('#item-submit-button').click
   end
 
-  scenario "admin can create a new page" do
+  scenario "admin can create a new page", js: true do
     visit index_path
     expect(page).to have_link("New Item")
     click_link "New Item"
     expect(page).to have_css("h1", text: "Editing Page")
     fill_in "Title", with: "Foo Page"
-    content = Faker::Lorem.paragraph(sentence_count: 7)
-    fill_in "Content", with: content
     fill_in "Slug", with: "foo-page"
-    click_button ".btn-sucess"
+    find('#item-submit-button').click
     expect(page).to have_text "Item Created Successfully"
     expect(page).to have_text "Foo Page"
     visit "/foo-page"
-    expect(page).to have_text(content)
   end
 
 end

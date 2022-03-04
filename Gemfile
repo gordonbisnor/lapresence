@@ -28,6 +28,7 @@ gem 'fastimage'
 gem "uppy-s3_multipart", "~> 0.3"
 gem 'webpacker', '~> 5.x'
 
+gem 'strscan', '1.0.3'
 
 group :development, :test do
   gem 'byebug'

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'loofah', '~> 2.3.1'
-gem 'nokogiri', '>= 1.8.2'
+gem 'nokogiri', '>= 1.8'
 gem 'rails', '~> 7.0'
 gem 'jbuilder', '~> 2.0'
 gem 'mysql2'

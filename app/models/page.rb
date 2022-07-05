@@ -1,4 +1,4 @@
 class Page < ApplicationRecord
 	has_paper_trail
-	validates_uniqueness_of :slug, case_sensitive: true
+	validates :slug, presence: true, uniqueness: { case_sensitive: true }
 end

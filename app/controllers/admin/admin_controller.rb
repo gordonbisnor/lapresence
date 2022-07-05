@@ -29,7 +29,8 @@ class Admin::AdminController < ApplicationController
     if @item.save
       redirect_to(url_for(action: :index, controller: controller_name), notice: "Item Created Successfully. #{undo_link}".html_safe) 
     else
-      render action: "new" 
+      flash.now[:error] = "There was a problem creating your item"
+      render action: "new", template: "admin/shared/form"
     end
   end
 
@@ -40,7 +41,8 @@ class Admin::AdminController < ApplicationController
         if @item.update(@object_params)
           redirect_to(url_for(action: :index, controller: controller_name), notice: "Item Updated Successfully. #{undo_link}".html_safe) 
         else
-          render action: "edit" 
+          flash.now[:error] = "There was a problem updating your item"
+          render action: "edit", template: "admin/shared/form" 
         end
       }
       format.js {

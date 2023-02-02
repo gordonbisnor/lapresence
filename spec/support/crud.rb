@@ -11,7 +11,6 @@ shared_examples 'admin crud' do
     visit index_path
     page.first('.edit-button').click
     fill_form
-    save_and_open_page    
     expect(page).to have_text("Item Updated Successfully.")
   end
 

@@ -77,7 +77,7 @@ set :db_ignore_tables, []
 set :db_ignore_data_tables, []
 
 # configure location where the dump file should be created
-set :db_dump_dir, "./db"
+set :db_dump_dir, "/home/deploy/db"
 
 # If you want to import assets, you can change default asset dir (default = system)
 # This directory must be in your shared directory on the server
@@ -91,7 +91,7 @@ set :locals_rails_env, "production"
 set :disallow_pushing, false
 
 # if you prefer bzip2/unbzip2 instead of gzip
-set :compressor, :bzip2
+# set :compressor, :bzip2
 
 set :passenger_restart_with_touch, true
 

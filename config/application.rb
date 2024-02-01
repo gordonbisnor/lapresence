@@ -12,7 +12,7 @@ end
 module Lapresence
   class Application < Rails::Application
     
-    config.active_record.legacy_connection_handling = false
+    #config.active_record.legacy_connection_handling = false
     
     config.action_controller.forgery_protection_origin_check = true
 

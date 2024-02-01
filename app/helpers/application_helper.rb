@@ -15,7 +15,7 @@ module ApplicationHelper
     items = []
     NAVIGATION.map { |item|
       begin
-        items << content_tag(:li, link_to(item[0], send("#{item[1]}_path")), class: "#{'selected' if @page.present? && @page.slug == item[1]}")
+        items << content_tag(:li, link_to(item[0], send("#{item[1]}_path"), target: "_blank"), class: "#{'selected' if @page.present? && @page.slug == item[1]}")
       rescue
         items << content_tag(:li, link_to(item[0], item[1], target: "_blank"))
       end

@@ -1,6 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
+set :branch, :main
+
 set :application, "lap"
 
 set :repo_url, "ssh://git@bitbucket.org/gordonbisnor/lapresence.git"

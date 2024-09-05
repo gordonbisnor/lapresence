@@ -49,3 +49,12 @@ img[src=""] {
 .odd {
 	background-color: lighten(#f4f4f4,1%);
 }
+
+.new_user {
+	input[type="text"], input[type="email"], input[type="password"] { 
+		width: 90%;
+	}
+	.field {
+		margin-bottom: 1em;
+	}
+}

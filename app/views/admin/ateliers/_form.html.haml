@@ -28,9 +28,13 @@
       = f.label :image
       = f.hidden_field :image, value: @item.cached_image_data
       = f.file_field :image
+  %hr
   .row
-    = f.input :content, as: :ckeditor, input_html: { ckeditor: {toolbar: "Full"}, style: "width:680px;height:500px" }
-    = f.input :notes, as: :ckeditor, input_html: { ckeditor: {toolbar: "Full"}, style: "width:680px;height:500px" }
-
+    = f.label :content
+    = f.ckeditor :content, style: "width:680px;height:500px" 
+    %hr
+    = f.label :notes
+    = f.ckeditor :notes, style: "width:680px;height:500px" 
+  %hr
   = render "admin/shared/save_cancel", text: "Atelier"
 

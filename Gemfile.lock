@@ -138,8 +138,6 @@ GEM
       capybara
       selenium-webdriver
     childprocess (4.1.0)
-    ckeditor (5.1.1)
-      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     colorize (0.8.1)
     concurrent-ruby (1.2.3)
@@ -253,6 +251,8 @@ GEM
     net-smtp (0.4.0.1)
       net-protocol
     net-ssh (6.1.0)
+    new_ckeditor (0.1.2)
+      rails
     nio4r (2.7.0)
     nokogiri (1.15.5)
       mini_portile2 (~> 2.8.2)
@@ -441,7 +441,6 @@ DEPENDENCIES
   capistrano-rails (~> 1.4)
   capistrano-rbenv (~> 2.1, >= 2.1.4)
   capybara-selenium
-  ckeditor
   colorize
   database_cleaner
   devise
@@ -459,6 +458,7 @@ DEPENDENCIES
   mime-types (= 3.1)
   minitest
   mysql2
+  new_ckeditor
   paper_trail
   puma
   rails (~> 7.0)

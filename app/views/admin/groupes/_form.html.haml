@@ -26,7 +26,11 @@
         = f.hidden_field :image, value: @item.cached_image_data
         = f.file_field :image
     .row
-      .col-sm-6= f.input :content, as: :ckeditor, input_html: {ckeditor: {toolbar: "Full"}, style: "width:680px;height:500px" }
-      .col-sm-6= f.input :notes, as: :ckeditor, input_html: { ckeditor: {toolbar: "Full"}, style: "width:680px;height:500px" }
+      .col-sm-6
+        = f.label :content
+        = f.ckeditor :content
+      .col-sm-6
+        = f.label :notes
+        = f.ckeditor :notes
   
   = render "admin/shared/save_cancel", text: "Groupe"

@@ -2,7 +2,8 @@
 	= simple_form_for [:admin, @item] do |f|
 		= f.input :title
 		= f.input :slug, hint: "The slug is the URL path, eg the slug for the bio page at lapresence.ca/bio would be: “bio”"
-		= f.input :content, as: :ckeditor, input_html: { ckeditor: {toolbar: "Full"}, rows: 30 }
+		= f.label :content
+		= f.ckeditor :content
 		.btn-group
 		= f.input :seo_image
 		= f.input :seo_description

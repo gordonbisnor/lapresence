@@ -3,7 +3,7 @@ gem 'rails', '~> 7.0'
 gem 'jbuilder', '~> 2.0'
 gem 'mysql2'
 gem 'simple_form'
-gem 'ckeditor'
+gem 'new_ckeditor'
 gem "kt-paperclip"
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'

@@ -12,7 +12,7 @@ gem 'jquery-ui-rails'
 gem 'paper_trail'
 gem 'haml-rails'
 gem 'devise'
-gem 'mime-types', '3.1'
+gem 'mime-types', '3.6'
 gem 'sdoc', group: :doc
 gem 'record_tag_helper'
 gem 'react-rails'

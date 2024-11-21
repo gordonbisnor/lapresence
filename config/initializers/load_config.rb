@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-APP_CONFIG = YAML.load_file("#{Rails.root}/config/settings.yml")[Rails.env].symbolize_keys
+APP_CONFIG = YAML.load_file("#{Rails.root}/config/settings.yml", aliases: true)[Rails.env].symbolize_keys
 
 NAVIGATION = [
  	["Lorraine Desmarais", "bio"],

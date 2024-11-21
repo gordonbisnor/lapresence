@@ -431,6 +431,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk-s3
+  base64
   bundler-audit
   byebug
   capistrano (~> 3.11)

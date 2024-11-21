@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'base64', require: false
 gem 'rails', '~> 7.0'
 gem 'jbuilder', '~> 2.0'
 gem 'mysql2'

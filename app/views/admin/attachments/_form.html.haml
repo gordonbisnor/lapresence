@@ -8,12 +8,7 @@
 
     %div.pr5{style: "flex-grow: 1"}
       = f.input :name
-      .flex
-        = f.input :shrine, as: :file, label: "Upload", input_html: {class: "upload-file"}, wrapper_html: {class: "pr5"}
-        = f.input :shrine, as: :text, wrapper_html: {style: "flex-grow:1"}, input_html: { value: @item.cached_shrine_data, class: "upload-data", readonly: true }, label: "Upload metadata", hint: "When this has been filled in, the upload is ready"
-      .progress-indicator.w-100{style:"height:40px;"}
-        &nbsp
-
+      = f.file_field :attachment 
       = render "admin/shared/save_cancel", text: "Attachment"
 
     -  if @item.shrine

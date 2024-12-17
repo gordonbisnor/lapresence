@@ -3,7 +3,12 @@
 		= f.input :title
 		= f.input :slug, hint: "The slug is the URL path, eg the slug for the bio page at lapresence.ca/bio would be: “bio”"
 		= f.label :content
-		= f.ckeditor :content
+
+		- if params[:use_source]
+			= f.textarea :content
+		- else
+			= f.ckeditor :content
+		
 		.btn-group
 		= f.input :seo_image
 		= f.input :seo_description

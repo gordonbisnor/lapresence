@@ -5,7 +5,7 @@
 		= f.label :content
 
 		- if params[:use_source]
-			= f.textarea :content
+			= f.text_area :content
 		- else
 			= f.ckeditor :content
 		

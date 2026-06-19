@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 gem 'base64', '>= 0.2.0', require: false
-gem 'rails', '~> 8.0'
+gem 'rails', '~> 8.1'
 gem 'jbuilder', '~> 2.0'
 gem 'mysql2'
 gem 'simple_form'
-gem 'new_ckeditor'
 gem "kt-paperclip"
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'

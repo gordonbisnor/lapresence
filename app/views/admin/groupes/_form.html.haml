@@ -28,9 +28,9 @@
     .row
       .col-sm-6
         = f.label :content
-        = f.ckeditor :content
+        = f.text_area :content, id: 'content', class: 'ckeditor'
       .col-sm-6
         = f.label :notes
-        = f.ckeditor :notes
+        = f.text_area :notes, id: 'notes', class: 'ckeditor'
   
   = render "admin/shared/save_cancel", text: "Groupe"

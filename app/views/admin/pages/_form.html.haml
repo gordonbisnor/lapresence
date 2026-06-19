@@ -7,8 +7,8 @@
 		- if params[:use_source]
 			= f.text_area :content
 		- else
-			= f.ckeditor :content
-		
+			= f.text_area :content, id: 'content', class: 'ckeditor'
+
 		.btn-group
 		= f.input :seo_image
 		= f.input :seo_description

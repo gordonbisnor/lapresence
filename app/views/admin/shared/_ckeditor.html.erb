@@ -1,0 +1,32 @@
+<script>
+  const { ClassicEditor, Essentials, Bold, Italic, Underline, Heading,
+          Link, List, BlockQuote, Table, TableToolbar, MediaEmbed,
+          Indent, IndentBlock, Autoformat, Paragraph, SourceEditing,
+          ImageBlock, ImageInline, ImageInsertViaUrl, ImageToolbar,
+          ImageStyle, AutoImage } = CKEDITOR;
+
+  document.querySelectorAll('.ckeditor').forEach(function(el) {
+    ClassicEditor.create(el, {
+      licenseKey: 'GPL',
+      plugins: [ Essentials, Bold, Italic, Underline, Heading,
+                 Link, List, BlockQuote, Table, TableToolbar, MediaEmbed,
+                 Indent, IndentBlock, Autoformat, Paragraph, SourceEditing,
+                 ImageBlock, ImageInline, ImageInsertViaUrl, ImageToolbar,
+                 ImageStyle, AutoImage ],
+      toolbar: {
+        items: [
+          'undo', 'redo', '|', 'sourceEditing', '|',
+          'heading', '|', 'bold', 'italic', 'underline', '|',
+          'link', 'insertImage', 'mediaEmbed', 'insertTable', 'blockQuote', '|',
+          'bulletedList', 'numberedList', 'outdent', 'indent'
+        ]
+      },
+      image: {
+        toolbar: ['imageTextAlternative', '|', 'imageStyle:inline', 'imageStyle:wrapText', 'imageStyle:breakText']
+      },
+      table: {
+        contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
+      }
+    }).catch(error => console.error(error));
+  });
+</script>

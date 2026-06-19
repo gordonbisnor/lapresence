@@ -11,14 +11,14 @@
     = stylesheet_link_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
     <script src="https://kit.fontawesome.com/0c6f0bfe01.js" crossorigin="anonymous"></script>
-    = javascript_include_tag 'new_ckeditor/classic/ckeditor', 'data-turbolinks-track': 'reload'
+    <script src="https://cdn.jsdelivr.net/npm/ckeditor5@44.3.0/dist/browser/ckeditor5.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5@44.3.0/dist/browser/ckeditor5.css">
     = javascript_include_tag :admin
     = javascript_include_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"
-    
   %body
     =render "layouts/admin_nav"
     .container
       = bootstrap_flash
       = yield
-
     = yield :js
+    = render 'admin/shared/ckeditor'

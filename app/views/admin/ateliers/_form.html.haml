@@ -31,10 +31,10 @@
   %hr
   .row
     = f.label :content
-    = f.ckeditor :content, style: "width:680px;height:500px" 
+    = f.text_area :content, id: 'content', class: 'ckeditor', style: "width:680px;height:500px" 
     %hr
     = f.label :notes
-    = f.ckeditor :notes, style: "width:680px;height:500px" 
+    = f.text_area :notes, id: 'notes', class: 'ckeditor', style: "width:680px;height:500px" 
   %hr
   = render "admin/shared/save_cancel", text: "Atelier"
 

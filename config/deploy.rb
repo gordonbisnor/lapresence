@@ -94,24 +94,35 @@ set :disallow_pushing, false
 
 set :passenger_restart_with_touch, true
 
-set :default_env, {
-  PATH: "/home/deploy/.asdf/shims:/home/deploy/.asdf/bin:$PATH"
-}
+# Ensure asdf is usable in non-interactive shells
+set :default_env, fetch(:default_env, {}).merge(
+  'PATH' => "/home/deploy/.asdf/shims:/home/deploy/.asdf/bin:$PATH"
+)
+
+# Force these commands to run under asdf-selected versions
+SSHKit.config.command_map[:node] = "asdf exec node"
+SSHKit.config.command_map[:npm]  = "asdf exec npm"
+SSHKit.config.command_map[:yarn] = "asdf exec yarn"
+SSHKit.config.command_map[:npx]  = "asdf exec npx"
+
 
 set :yarn, "yarn"
 
 before 'deploy:assets:precompile', 'deploy:yarn_install'
 
 namespace :deploy do
-  desc 'Run yarn install'
+  
+  execute :which, :node
+  execute :node, "-v"
+  execute :which, :yarn
+  execute :yarn, "node -v"
+  execute :ls, "-la"
+  execute :ls, "-la package.json"
+
   task :yarn_install do
-    on roles(:all) do
+    on roles(:web) do
       within release_path do
-        execute "pwd"
-        execute "ls -la"
-        execute "#{fetch(:yarn)} node -v"
-        execute "#{fetch(:yarn)} install --production=false --no-progress --no-audit --no-optional"
-        execute "ls node_modules/.bin/webpack"
+        execute :yarn, "install --production=false --no-progress --no-audit --no-optional"
       end
     end
   end

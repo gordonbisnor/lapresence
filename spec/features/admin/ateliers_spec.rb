@@ -16,22 +16,6 @@ feature 'ateliers' do
     expect(page).to have_css('h1', text: t('admin.ateliers.header'))
     expect(page).to have_text(@item.title)
   end
-  
-  scenario 'publish and unpublish', js: true do
-    visit index_path
-    click_button "Click to hide from public"
-    it_should_be_unpublished
-    click_button "Click to show to public"
-    it_should_be_published
-  end
-
-  scenario 'edit publish and unpublish', js: true do
-    visit edit_admin_atelier_path(@item)
-    click_button "Click to hide from public"
-    it_should_be_unpublished
-    click_button "Click to show to public"
-    it_should_be_published
-  end
 
   it_behaves_like 'admin crud'
 

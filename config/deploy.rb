@@ -112,16 +112,19 @@ before 'deploy:assets:precompile', 'deploy:yarn_install'
 
 namespace :deploy do
   
-  execute :which, :node
+
+
+  task :yarn_install do
+    on roles(:web) do
+      within release_path do
+
+          execute :which, :node
   execute :node, "-v"
   execute :which, :yarn
   execute :yarn, "node -v"
   execute :ls, "-la"
   execute :ls, "-la package.json"
 
-  task :yarn_install do
-    on roles(:web) do
-      within release_path do
         execute :yarn, "install --production=false --no-progress --no-audit --no-optional"
       end
     end

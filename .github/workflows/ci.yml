@@ -44,6 +44,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '16.20.0'
+          cache: yarn
+
+      - name: Install JS dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Install Chrome for Capybara
         uses: browser-actions/setup-chrome@v1

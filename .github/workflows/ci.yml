@@ -38,6 +38,13 @@ jobs:
           ruby-version: '3.2.6'
           bundler-cache: true # runs `bundle install` and caches gems automatically
 
+      # Remove this step if your Rails 8 app doesn't need a JS build step
+      # (e.g. using importmap-rails with no compile step)
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16.20.0'
+
       - name: Install Chrome for Capybara
         uses: browser-actions/setup-chrome@v1
         with:

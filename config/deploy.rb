@@ -94,36 +94,33 @@ set :disallow_pushing, false
 
 set :passenger_restart_with_touch, true
 
+
 # Ensure asdf is usable in non-interactive shells
 set :default_env, fetch(:default_env, {}).merge(
   'PATH' => "/home/deploy/.asdf/shims:/home/deploy/.asdf/bin:$PATH"
 )
 
 # Force these commands to run under asdf-selected versions
+SSHKit.config.command_map[:asdf] = "/home/deploy/.asdf/bin/asdf"
 SSHKit.config.command_map[:node] = "asdf exec node"
 SSHKit.config.command_map[:npm]  = "asdf exec npm"
 SSHKit.config.command_map[:yarn] = "asdf exec yarn"
 SSHKit.config.command_map[:npx]  = "asdf exec npx"
 
-
-set :yarn, "yarn"
-
 before 'deploy:assets:precompile', 'deploy:yarn_install'
 
 namespace :deploy do
-  
-
-
   task :yarn_install do
     on roles(:web) do
       within release_path do
-
-          execute :which, :node
-  execute :node, "-v"
-  execute :which, :yarn
-  execute :yarn, "node -v"
-  execute :ls, "-la"
-  execute :ls, "-la package.json"
+        # Debug (safe to remove once confirmed)
+        execute :pwd
+        execute :which, :node
+        execute :node, "-v"
+        execute :which, :yarn
+        execute :yarn, "node -v"
+        execute :ls, "-la"
+        execute :ls, "-la package.json"
 
         execute :yarn, "install --production=false --no-progress --no-audit --no-optional"
       end

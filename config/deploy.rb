@@ -95,10 +95,10 @@ set :disallow_pushing, false
 set :passenger_restart_with_touch, true
 
 set :default_env, {
-  PATH: "/home/deploy/.asdf/shims:/home/deploy/.asdf/bin:/home/deploy/.rbenv/shims:$PATH"
+  PATH: "/home/deploy/.asdf/shims:/home/deploy/.asdf/bin:$PATH"
 }
 
-set :yarn, "/home/deploy/.asdf/installs/nodejs/22.17.0/bin/yarn"
+set :yarn, "yarn"
 
 before 'deploy:assets:precompile', 'deploy:yarn_install'
 

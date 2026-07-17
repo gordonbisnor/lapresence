@@ -97,7 +97,8 @@ set :passenger_restart_with_touch, true
 
 # Ensure asdf is usable in non-interactive shells
 set :default_env, fetch(:default_env, {}).merge(
-  'PATH' => "/home/deploy/.asdf/shims:/home/deploy/.asdf/bin:$PATH"
+  'PATH' => "/home/deploy/.asdf/shims:/home/deploy/.asdf/bin:$PATH",
+  'NODE_OPTIONS' => '--openssl-legacy-provider'
 )
 
 # Force these commands to run under asdf-selected versions

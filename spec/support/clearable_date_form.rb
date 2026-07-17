@@ -1,20 +1,19 @@
-shared_examples 'clearable date form' do
+# frozen_string_literal: true
 
+shared_examples 'clearable date form' do
   scenario 'clearable date form', js: true do
     visit index_path
     click_link t('admin.new_item')
-    fill_in "Start date", with: "2001-01-01"
-    fill_in "End date", with: "2010-01-01"
+    fill_in 'Start date', with: '2001-01-01'
+    fill_in 'End date', with: '2010-01-01'
     page.first('.clear-date').click
     page.all('.clear-date').last.click
     expect(page).not_to have_xpath("//input[@value='2001-01-01']")
     expect(page).not_to have_xpath("//input[@value='2010-01-01']")
     page.find('.btn-success').click
-    expect(page).to have_text("Item Created Successfully.")    
+    expect(page).to have_text('Item Created Successfully.')
     page.first('.edit-button').click
-    expect(page).not_to have_xpath("//input[@value='2001-01-01']")    
-    expect(page).not_to have_xpath("//input[@value='2010-01-01']")    
+    expect(page).not_to have_xpath("//input[@value='2001-01-01']")
+    expect(page).not_to have_xpath("//input[@value='2010-01-01']")
   end
-  
-
 end

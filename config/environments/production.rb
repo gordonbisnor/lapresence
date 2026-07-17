@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 Lapresence::Application.configure do
-  
   config.action_mailer.default_url_options = { host: 'lapresence.ca' }
-  
+
   config.eager_load = true
-  
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -66,20 +67,18 @@ Lapresence::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-
-  config.action_mailer.default_url_options = { :host =>  "lapresence.ca" }
+  config.action_mailer.default_url_options = { host: 'lapresence.ca' }
 
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.delivery_method = :smtp
 
-#  ActionMailer::Base.smtp_settings = {
-#      address: "smtp.sendgrid.net",
-#      domain: 'lapresence.ca',
-#      authentication: :plain,
-#      port: 587,
-#      enable_starttls_auto: true,
-#      user_name: Settings.sendgrid_user_name,
-#      password: Settings.sendgrid_password,
-#   }
-
+  #  ActionMailer::Base.smtp_settings = {
+  #      address: "smtp.sendgrid.net",
+  #      domain: 'lapresence.ca',
+  #      authentication: :plain,
+  #      port: 587,
+  #      enable_starttls_auto: true,
+  #      user_name: Settings.sendgrid_user_name,
+  #      password: Settings.sendgrid_password,
+  #   }
 end

@@ -1,5 +1,6 @@
-Lapresence::Application.configure do
+# frozen_string_literal: true
 
+Lapresence::Application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.eager_load = false
@@ -14,7 +15,7 @@ Lapresence::Application.configure do
 
   # Configure static asset server for tests with Cache-Control for performance
   config.serve_static_assets = true
-  config.static_cache_control = "public, max-age=3600"
+  config.static_cache_control = 'public, max-age=3600'
 
   # Log error messages when you accidentally call methods on nil
   config.whiny_nils = true
@@ -27,7 +28,7 @@ Lapresence::Application.configure do
   config.action_dispatch.show_exceptions = false
 
   # Disable request forgery protection in test environment
-  config.action_controller.allow_forgery_protection    = false
+  config.action_controller.allow_forgery_protection = false
 
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the

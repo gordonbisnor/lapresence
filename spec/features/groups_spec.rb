@@ -1,14 +1,14 @@
-# -*- encoding: utf-8 -*-
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 feature 'groupes' do
-  
-  before do 
+  before do
     @groupe = FactoryBot.create(:groupe)
   end
 
   scenario 'index' do
-   	visit groupes_path
+    visit groupes_path
     expect(page).to have_css('h1', text: I18n.t('groups.header'))
     expect(page).to have_text(@groupe.title)
     expect(page).to have_text(@groupe.location)
@@ -19,5 +19,4 @@ feature 'groupes' do
     expect(page).to have_css('h1', text: @groupe.title)
     expect(page).to have_text(@groupe.content)
   end
-
 end

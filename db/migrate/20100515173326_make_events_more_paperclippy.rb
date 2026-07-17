@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MakeEventsMorePaperclippy < ActiveRecord::Migration[4.2]
   def self.up
     rename_column :events, :picture_file_type, :picture_content_type

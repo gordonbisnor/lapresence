@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 feature 'dashboard' do
-	
   before do
-  	login
+    login
   end
 
   def index_path
@@ -14,5 +15,4 @@ feature 'dashboard' do
     visit index_path
     expect(page).to have_css('h1', text: t('admin.dashboard.header'))
   end
-  
 end

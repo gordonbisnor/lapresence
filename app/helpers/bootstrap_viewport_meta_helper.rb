@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BootstrapViewportMetaHelper
   #
   # Creates the meta tag for Bootstrap with the specified parameters:
@@ -18,10 +20,11 @@ module BootstrapViewportMetaHelper
   #
   def viewport_meta_tag(*args)
     options = {
-      width: "device-width",
-      initial_scale: "1.0" }.merge(args[0] || {})
+      width: 'device-width',
+      initial_scale: '1.0'
+    }.merge(args[0] || {})
 
-      content = options.collect {|key,value| "#{key.to_s.dasherize}=#{value}"}.join(",")
-      raw(tag(:meta, name: "viewport", content: content))
+    content = options.collect { |key, value| "#{key.to_s.dasherize}=#{value}" }.join(',')
+    raw(tag(:meta, name: 'viewport', content: content))
   end
 end

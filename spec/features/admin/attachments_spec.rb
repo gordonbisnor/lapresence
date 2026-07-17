@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 feature 'attachments' do
-	
   before do
-  	login
-  	@item = FactoryBot.create(:attachment)
+    login
+    @item = FactoryBot.create(:attachment)
   end
 
   def index_path
@@ -16,13 +17,11 @@ feature 'attachments' do
     expect(page).to have_css('h1', text: t('admin.attachments.header'))
     expect(page).to have_text(@item.name)
   end
-  
+
   it_behaves_like 'admin crud'
 
   def fill_form
-    fill_in "Name", with: "foo bar"
+    fill_in 'Name', with: 'foo bar'
     find('#item-submit-button').click
   end
-
 end
-

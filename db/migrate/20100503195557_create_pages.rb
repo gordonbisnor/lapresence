@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreatePages < ActiveRecord::Migration[4.2]
   def self.up
     create_table :pages do |t|

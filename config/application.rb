@@ -1,4 +1,6 @@
-require File.expand_path('../boot', __FILE__)
+# frozen_string_literal: true
+
+require File.expand_path('boot', __dir__)
 
 require 'rails/all'
 
@@ -11,14 +13,13 @@ end
 
 module Lapresence
   class Application < Rails::Application
-    
-    #config.active_record.legacy_connection_handling = false
-    
+    # config.active_record.legacy_connection_handling = false
+
     config.action_controller.forgery_protection_origin_check = true
 
     config.action_controller.per_form_csrf_tokens = true
-         
-    config.assets.precompile += %w(admin.css admin.js)
+
+    config.assets.precompile += %w[admin.css admin.js]
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -38,13 +39,13 @@ module Lapresence
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
     config.time_zone = 'Eastern Time (US & Canada)'
-    
+
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
     # Configure the default encoding used in templates for Ruby 1.9.
-    config.encoding = "utf-8"
+    config.encoding = 'utf-8'
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]

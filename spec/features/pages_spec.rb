@@ -1,18 +1,16 @@
-# -*- encoding: utf-8 -*-
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 feature 'pages' do
-
   scenario 'index' do
-   	visit "/"
+    visit '/'
     expect(page).to have_css('body#home')
   end
 
-
   scenario 'show' do
-  	p = FactoryBot.create(:page)
-   	visit page_path(p.slug)
+    p = FactoryBot.create(:page)
+    visit page_path(p.slug)
     expect(page).to have_text(p.content)
   end
-
 end

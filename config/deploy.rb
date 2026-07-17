@@ -1,16 +1,19 @@
+# frozen_string_literal: true
+
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.19.2"
+lock '~> 3.19.2'
 
 set :branch, :main
 
-set :application, "lap"
+set :application, 'lap'
 
-set :repo_url, "ssh://git@bitbucket.org/gordonbisnor/lapresence.git"
+set :repo_url, 'ssh://git@bitbucket.org/gordonbisnor/lapresence.git'
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"
 
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system',
+       'public/uploads'
 
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5
@@ -18,7 +21,6 @@ set :keep_releases, 5
 # Optionally, you can symlink your database.yml and/or secrets.yml file from the shared directory during deploy
 # This is useful if you don't want to use ENV variables
 # append :linked_files, 'config/database.yml', 'config/secrets.yml'
-
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -54,17 +56,12 @@ set :keep_releases, 5
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-
-
-
-
-
 ### DB TASKS GEM
 
 require 'capistrano-db-tasks'
 
 # if you haven't already specified
-set :rails_env, "production"
+set :rails_env, 'production'
 
 # if you want to remove the local dump file after loading
 set :db_local_clean, true
@@ -79,15 +76,15 @@ set :db_ignore_tables, []
 set :db_ignore_data_tables, []
 
 # configure location where the dump file should be created
-set :db_dump_dir, "/home/deploy/db"
+set :db_dump_dir, '/home/deploy/db'
 
 # If you want to import assets, you can change default asset dir (default = system)
 # This directory must be in your shared directory on the server
-set :assets_dir, %w(public/assets public/att)
-set :local_assets_dir, %w(public/assets public/att)
+set :assets_dir, %w[public/assets public/att]
+set :local_assets_dir, %w[public/assets public/att]
 
 # if you want to work on a specific local environment (default = ENV['RAILS_ENV'] || 'development')
-set :locals_rails_env, "production"
+set :locals_rails_env, 'production'
 
 # if you are highly paranoid and want to prevent any push operation to the server
 set :disallow_pushing, false
@@ -97,9 +94,9 @@ set :disallow_pushing, false
 
 set :passenger_restart_with_touch, true
 
-before "deploy:assets:precompile", "deploy:yarn_install"
+before 'deploy:assets:precompile', 'deploy:yarn_install'
 namespace :deploy do
-  desc "Run rake yarn install"
+  desc 'Run rake yarn install'
   task :yarn_install do
     on roles(:web) do
       within release_path do

@@ -1,31 +1,46 @@
 <script>
-  const { ClassicEditor, Essentials, Bold, Italic, Underline, Heading,
-          Link, List, BlockQuote, Table, TableToolbar, MediaEmbed,
-          Indent, IndentBlock, Autoformat, Paragraph, SourceEditing,
+  const { ClassicEditor, Essentials, Bold, Italic, Underline, Strikethrough,
+          Subscript, Superscript, Heading, Link, List, BlockQuote, Table,
+          TableToolbar, TableProperties, TableCellProperties, MediaEmbed,
+          Indent, IndentBlock, Alignment, Autoformat, Paragraph, SourceEditing,
           ImageBlock, ImageInline, ImageInsertViaUrl, ImageToolbar,
-          ImageStyle, AutoImage } = CKEDITOR;
+          ImageStyle, AutoImage, FontFamily, FontSize, FontColor,
+          FontBackgroundColor, Highlight, RemoveFormat } = CKEDITOR;
 
   document.querySelectorAll('.ckeditor').forEach(function(el) {
     ClassicEditor.create(el, {
       licenseKey: 'GPL',
-      plugins: [ Essentials, Bold, Italic, Underline, Heading,
-                 Link, List, BlockQuote, Table, TableToolbar, MediaEmbed,
-                 Indent, IndentBlock, Autoformat, Paragraph, SourceEditing,
-                 ImageBlock, ImageInline, ImageInsertViaUrl, ImageToolbar,
-                 ImageStyle, AutoImage ],
+      plugins: [ Essentials, Bold, Italic, Underline, Strikethrough, Subscript,
+                 Superscript, Heading, Link, List, BlockQuote, Table,
+                 TableToolbar, TableProperties, TableCellProperties, MediaEmbed,
+                 Indent, IndentBlock, Alignment, Autoformat, Paragraph,
+                 SourceEditing, ImageBlock, ImageInline, ImageInsertViaUrl,
+                 ImageToolbar, ImageStyle, AutoImage, FontFamily, FontSize,
+                 FontColor, FontBackgroundColor, Highlight, RemoveFormat ],
       toolbar: {
         items: [
           'undo', 'redo', '|', 'sourceEditing', '|',
-          'heading', '|', 'bold', 'italic', 'underline', '|',
+          'heading', '|',
+          'fontFamily', 'fontSize', 'fontColor', 'fontBackgroundColor', '|',
+          'bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript', 'highlight', 'removeFormat', '|',
+          'alignment', '|',
           'link', 'insertImage', 'mediaEmbed', 'insertTable', 'blockQuote', '|',
           'bulletedList', 'numberedList', 'outdent', 'indent'
-        ]
+        ],
+        shouldNotGroupWhenFull: true
+      },
+      fontSize: {
+        options: [9, 10, 11, 12, 'default', 14, 16, 18, 20, 24, 28, 32, 36, 48],
+        supportAllValues: true
+      },
+      fontFamily: {
+        supportAllValues: true
       },
       image: {
         toolbar: ['imageTextAlternative', '|', 'imageStyle:inline', 'imageStyle:wrapText', 'imageStyle:breakText']
       },
       table: {
-        contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
+        contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
       }
     }).catch(error => console.error(error));
   });

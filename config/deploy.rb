@@ -107,7 +107,11 @@ namespace :deploy do
   task :yarn_install do
     on roles(:all) do
       within release_path do
-        execute "PATH=/home/deploy/.asdf/shims:/home/deploy/.asdf/bin:$PATH yarn install --production=false --silent --no-progress --no-audit --no-optional"
+        execute "pwd"
+        execute "ls -la"
+        execute "#{fetch(:yarn)} node -v"
+        execute "#{fetch(:yarn)} install --production=false --no-progress --no-audit --no-optional"
+        execute "ls node_modules/.bin/webpack"
       end
     end
   end

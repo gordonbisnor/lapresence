@@ -34,3 +34,4 @@ lapresence_lap2.sql
 yarn-debug.log*
 .yarn-integrity
 notes
+public/assets

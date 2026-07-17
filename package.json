@@ -6,6 +6,13 @@
     "uppy": "^1.23.2"
   },
   "devDependencies": {
+    "sass": "^1.101.0",
     "webpack-dev-server": "^3.11.0"
+  },
+  "resolutions": {
+    "node-sass": "npm:sass@^1.32.0"
+  },
+  "scripts": {
+    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --config config/webpack/production.js"
   }
 }

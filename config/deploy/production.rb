@@ -11,6 +11,10 @@
 
 server '172.105.15.41', user: 'deploy', roles: %w[app db web]
 
+set :default_env, {
+  path: "/home/deploy/.asdf/shims:/home/deploy/.asdf/bin:/home/deploy/.rbenv/shims:$PATH"
+}
+
 # role-based syntax
 # ==================
 

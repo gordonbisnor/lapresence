@@ -7,7 +7,7 @@ set :branch, :main
 
 set :application, 'lap'
 
-set :repo_url, 'ssh://git@bitbucket.org/gordonbisnor/lapresence.git'
+set :repo_url, 'ssh://git@github.com/gordonbisnor/lapresence.git'
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"

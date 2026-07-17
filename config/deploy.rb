@@ -98,13 +98,12 @@ set :yarn, "/home/deploy/.asdf/installs/nodejs/22.17.0/bin/yarn"
 
 before 'deploy:assets:precompile', 'deploy:yarn_install'
 namespace :deploy do
-  desc 'Run rake yarn install'
+  desc 'Run yarn install'
   task :yarn_install do
     on roles(:all) do
       within release_path do
         #execute("cd #{release_path} && yarn install --silent --no-progress --no-audit --no-optional")
         #
-        execute "#{fetch(:yarn)} install --silent --no-progress --no-audit --no-optional"      end
-    end
+        execute "#{fetch(:yarn)} install --production=false --silent --no-progress --no-audit --no-optional"    end
   end
 end

@@ -1,8 +1,10 @@
 Lapresence::Application.routes.draw do
 
-  mount Shrine.presign_endpoint(:cache) => "/s3/params" # GET /s3/params 
-  mount Shrine.uppy_s3_multipart(:cache) => "/s3/multipart"
-
+  unless Rails.env.test?
+    mount Shrine.presign_endpoint(:cache) => "/s3/params" # GET /s3/params 
+    mount Shrine.uppy_s3_multipart(:cache) => "/s3/multipart"
+  end
+  
   devise_for :users
   resources :groupes
   resources :ateliers

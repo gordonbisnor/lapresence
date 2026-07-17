@@ -104,6 +104,8 @@ namespace :deploy do
       within release_path do
         #execute("cd #{release_path} && yarn install --silent --no-progress --no-audit --no-optional")
         #
-        execute "#{fetch(:yarn)} install --production=false --silent --no-progress --no-audit --no-optional"    end
+        execute "#{fetch(:yarn)} install --production=false --silent --no-progress --no-audit --no-optional"
+      end
+    end
   end
 end

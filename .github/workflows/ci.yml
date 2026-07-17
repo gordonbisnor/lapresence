@@ -13,6 +13,7 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: mysql2://root:@127.0.0.1:3306/lapresence_test
+      NODE_OPTIONS: --openssl-legacy-provider
 
     services:
       mysql:

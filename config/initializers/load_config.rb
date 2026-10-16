@@ -8,7 +8,7 @@ NAVIGATION = [
   ['Bibliographie', 'bibliographie'],
   ['Les Ateliers', 'ateliers'],
   ['Les Groupes', 'groupes'],
-  ['Méditations', 'meditations'],
+  # ['Méditations', 'meditations'],
   ['Coordonnées', 'coordonnees']
 ].freeze
 

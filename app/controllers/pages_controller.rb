@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    banned = %w[approche bibliographie ateliers groupes meditations coordonnees]
+    banned = %w[approche bibliographie ateliers groupes coordonnees]
     if banned.include? params[:id]
       render template: 'pages/maintenance'
       return

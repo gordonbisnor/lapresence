@@ -7,10 +7,10 @@ Lapresence::Application.routes.draw do
   end
 
   devise_for :users
-  resources :groupes
-  resources :ateliers
+  # resources :groupes
+  # resources :ateliers
   resources :images
-  resources :events
+  # resources :events
 
   get 'admin' => 'admin/dashboard#index', as: :admin_dashboard
 
@@ -48,5 +48,5 @@ Lapresence::Application.routes.draw do
 
   post 'admin/versions/:id/revert' => 'admin/versions#revert', as: 'admin_revert_version'
 
-  root to: 'pages#index'
+  root to: 'pages#show', id: 'bio'
 end
